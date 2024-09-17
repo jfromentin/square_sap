@@ -1,0 +1,108 @@
+\doxysection{src/array.hpp File Reference}
+\hypertarget{array_8hpp}{}\label{array_8hpp}\index{src/array.hpp@{src/array.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$initializer\+\_\+list$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classArray}{Array$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Class for array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{array_8hpp_acbb1120125023bdadae727b5e921a6c8}{cmp}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{array_8hpp_a9c1da21109786376aecaf7015a2f895a}{cmp}} (const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&A, const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&B)
+\item 
+{\footnotesize template$<$class T $>$ }\\ostream \& \mbox{\hyperlink{array_8hpp_a67f23d68bd6b2ffa1da680d78e484c72}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&)
+\begin{DoxyCompactList}\small\item\em Operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for \doxylink{classArray}{Array}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\string \mbox{\hyperlink{array_8hpp_a29ec543824f311df1a91e42db46cfa73}{to\+\_\+string}} (const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&)
+\begin{DoxyCompactList}\small\item\em to\+\_\+string function for \doxylink{classArray}{Array} \end{DoxyCompactList}\item 
+ostream \& \mbox{\hyperlink{array_8hpp_a9e42c11b7c1e8a4e36eddd9967aa11c7}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classArray}{Array}}$<$ uint8\+\_\+t $>$ \&a)
+\item 
+ostream \& \mbox{\hyperlink{array_8hpp_a8b52dd63d8e660e99c348f771be0571c}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classArray}{Array}}$<$ int8\+\_\+t $>$ \&a)
+\item 
+{\footnotesize template$<$class T $>$ }\\ostream \& \mbox{\hyperlink{array_8hpp_a9ecf534fee13053f80e386fe1acbc77f}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&a)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{array_8hpp_a9c1da21109786376aecaf7015a2f895a}\index{array.hpp@{array.hpp}!cmp@{cmp}}
+\index{cmp@{cmp}!array.hpp@{array.hpp}}
+\doxysubsubsection{\texorpdfstring{cmp()}{cmp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{array_8hpp_a9c1da21109786376aecaf7015a2f895a} 
+template$<$class T $>$ \\
+int cmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&}]{A}{, }\item[{const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&}]{B}{}\end{DoxyParamCaption})}
+
+Comparison function for \doxylink{classArray}{Array} 
+\begin{DoxyParams}{Parameters}
+{\em A} & an \doxylink{classArray}{Array} \\
+\hline
+{\em B} & an \doxylink{classArray}{Array} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 is A\texorpdfstring{$<$}{<}B, 0 if A==B and 1 is A\texorpdfstring{$>$}{>}B 
+\end{DoxyReturn}
+\Hypertarget{array_8hpp_acbb1120125023bdadae727b5e921a6c8}\index{array.hpp@{array.hpp}!cmp@{cmp}}
+\index{cmp@{cmp}!array.hpp@{array.hpp}}
+\doxysubsubsection{\texorpdfstring{cmp()}{cmp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{array_8hpp_acbb1120125023bdadae727b5e921a6c8} 
+int cmp (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x}{, }\item[{int16\+\_\+t}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Comparison function for int16\+\_\+t 
+\begin{DoxyParams}{Parameters}
+{\em x} & a int16\+\_\+t \\
+\hline
+{\em y} & a int16\+\_\+t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 is x\texorpdfstring{$<$}{<}y, 0 if x==y and 1 is x\texorpdfstring{$>$}{>}y 
+\end{DoxyReturn}
+\Hypertarget{array_8hpp_a8b52dd63d8e660e99c348f771be0571c}\index{array.hpp@{array.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!array.hpp@{array.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{array_8hpp_a8b52dd63d8e660e99c348f771be0571c} 
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classArray}{Array}}$<$ int8\+\_\+t $>$ \&}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{array_8hpp_a9ecf534fee13053f80e386fe1acbc77f}\index{array.hpp@{array.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!array.hpp@{array.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{array_8hpp_a9ecf534fee13053f80e386fe1acbc77f} 
+template$<$class T $>$ \\
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&}]{a}{}\end{DoxyParamCaption})}
+
+\Hypertarget{array_8hpp_a9e42c11b7c1e8a4e36eddd9967aa11c7}\index{array.hpp@{array.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!array.hpp@{array.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{array_8hpp_a9e42c11b7c1e8a4e36eddd9967aa11c7} 
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classArray}{Array}}$<$ uint8\+\_\+t $>$ \&}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{array_8hpp_a67f23d68bd6b2ffa1da680d78e484c72}\index{array.hpp@{array.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!array.hpp@{array.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{array_8hpp_a67f23d68bd6b2ffa1da680d78e484c72} 
+template$<$class T $>$ \\
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})}
+
+
+
+Operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for \doxylink{classArray}{Array}. 
+
+\Hypertarget{array_8hpp_a29ec543824f311df1a91e42db46cfa73}\index{array.hpp@{array.hpp}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!array.hpp@{array.hpp}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily \label{array_8hpp_a29ec543824f311df1a91e42db46cfa73} 
+template$<$class T $>$ \\
+string to\+\_\+string (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}}$<$ T $>$ \&}]{arr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+to\+\_\+string function for \doxylink{classArray}{Array} 
+

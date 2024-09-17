@@ -1,0 +1,87 @@
+\doxysection{stack.\+hpp}
+\hypertarget{stack_8hpp_source}{}\label{stack_8hpp_source}\index{src/stack.hpp@{src/stack.hpp}}
+\mbox{\hyperlink{stack_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//****************************************************************************//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ \ \ Copyright\ (C)\ 2024\ Jean\ Fromentin\ <jean.fromentin@univ-\/littoral.fr>\ \ \ \ \ //}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \ This\ file\ is\ part\ of\ SquareSAP\ <https://github.com/jfromentin/square\_sap>\ //}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ the\ \ \ \ \ //}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ \ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or\ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ \ //}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ \ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or\ \ \ \ \ //}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ //}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ for\ \ more\ details.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ along\ \ \ //}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ with\ SquareSAP.\ If\ not,\ see\ <https://www.gnu.org/licenses/>.\ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//****************************************************************************//}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ STACK\_HPP}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ STACK\_HPP}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classStack}{Stack}}\{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{size\_t}\ capacity;}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00032\ \ \ T**\ data;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{classStack_a513c02dd3292d48cd31cbecb461d8d77}{Stack}}(\textcolor{keywordtype}{size\_t}\ capacity);}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStack_afb38e09bef8fb93c8b5f82f777e908a1}{pop}}(T**\ S);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStack_a7a4b3b18d87183bde0bbfc20e900fea4}{push}}();}
+\DoxyCodeLine{00037\ \ \ T*\ \mbox{\hyperlink{classStack_ac2cd1c5ca343d975ce1830b0838ea937}{next}}();}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStack_ae667e7ba22b4abd3158996ec17a712a4}{is\_empty}}();}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classStack_a9e7a00875aefbdac560ab189b7bc61d1}{\string~Stack}}();}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classStack_a513c02dd3292d48cd31cbecb461d8d77}{Stack<T>::Stack}}(\textcolor{keywordtype}{size\_t}\ c)\ \{}
+\DoxyCodeLine{00043\ \ \ capacity\ =\ c;}
+\DoxyCodeLine{00044\ \ \ data\ =\ \textcolor{keyword}{new}\ T*[capacity];}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ capacity;\ ++\ i)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ data[i]\ =\ \textcolor{keyword}{new}\ T;}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ \ \ size\ =\ 0;}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00053\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStack_afb38e09bef8fb93c8b5f82f777e908a1}{Stack<T>::pop}}(T**\ S)\ \{}
+\DoxyCodeLine{00054\ \ \ swap(*S,\ data[-\/-\/\ size]);}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00058\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStack_a7a4b3b18d87183bde0bbfc20e900fea4}{Stack<T>::push}}()\ \{}
+\DoxyCodeLine{00059\ \ \ size\ ++;}
+\DoxyCodeLine{00060\ \ \ assert(size\ <=\ capacity);}
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00064\ \textcolor{keyword}{inline}\ T*\ \mbox{\hyperlink{classStack_ac2cd1c5ca343d975ce1830b0838ea937}{Stack<T>::next}}()\ \{}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordflow}{return}\ data[size];}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00069\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStack_ae667e7ba22b4abd3158996ec17a712a4}{Stack<T>::is\_empty}}()\ \{}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordflow}{return}\ size==0;}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00074\ \mbox{\hyperlink{classStack_a9e7a00875aefbdac560ab189b7bc61d1}{Stack<T>::\string~Stack}}()\ \{}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ capacity;\ ++\ i)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{delete}\ data[i];}
+\DoxyCodeLine{00077\ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \textcolor{keyword}{delete}[]\ data;}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,63 @@
+\doxysection{src/gameboard.hpp File Reference}
+\hypertarget{gameboard_8hpp}{}\label{gameboard_8hpp}\index{src/gameboard.hpp@{src/gameboard.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include "{}config.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGameBoard}{Game\+Board}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} = uint16\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \mbox{\hyperlink{gameboard_8hpp_a43b0e6a46d45401f8459488c5a48c955}{init\+\_\+cell\+\_\+data}} (uint8\+\_\+t a, uint8\+\_\+t b)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{gameboard_8hpp_a08804bf7f39eff5573d91d63f24bde37}{get\+\_\+d}} (\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} c)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{gameboard_8hpp_ae96501490e057e77d213555ee0c82cef}{get\+\_\+t}} (\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} c)
+\item 
+void \mbox{\hyperlink{gameboard_8hpp_a2e06c7eae0fffed39df6ef674f837d6a}{set\+\_\+t}} (\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \&c, uint8\+\_\+t b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}\index{gameboard.hpp@{gameboard.hpp}!CellData@{CellData}}
+\index{CellData@{CellData}!gameboard.hpp@{gameboard.hpp}}
+\doxysubsubsection{\texorpdfstring{CellData}{CellData}}
+{\footnotesize\ttfamily \label{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53} 
+using \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} = uint16\+\_\+t}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gameboard_8hpp_a08804bf7f39eff5573d91d63f24bde37}\index{gameboard.hpp@{gameboard.hpp}!get\_d@{get\_d}}
+\index{get\_d@{get\_d}!gameboard.hpp@{gameboard.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_d()}{get\_d()}}
+{\footnotesize\ttfamily \label{gameboard_8hpp_a08804bf7f39eff5573d91d63f24bde37} 
+uint8\+\_\+t get\+\_\+d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{gameboard_8hpp_ae96501490e057e77d213555ee0c82cef}\index{gameboard.hpp@{gameboard.hpp}!get\_t@{get\_t}}
+\index{get\_t@{get\_t}!gameboard.hpp@{gameboard.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_t()}{get\_t()}}
+{\footnotesize\ttfamily \label{gameboard_8hpp_ae96501490e057e77d213555ee0c82cef} 
+uint8\+\_\+t get\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{gameboard_8hpp_a43b0e6a46d45401f8459488c5a48c955}\index{gameboard.hpp@{gameboard.hpp}!init\_cell\_data@{init\_cell\_data}}
+\index{init\_cell\_data@{init\_cell\_data}!gameboard.hpp@{gameboard.hpp}}
+\doxysubsubsection{\texorpdfstring{init\_cell\_data()}{init\_cell\_data()}}
+{\footnotesize\ttfamily \label{gameboard_8hpp_a43b0e6a46d45401f8459488c5a48c955} 
+\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} init\+\_\+cell\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{a}{, }\item[{uint8\+\_\+t}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{gameboard_8hpp_a2e06c7eae0fffed39df6ef674f837d6a}\index{gameboard.hpp@{gameboard.hpp}!set\_t@{set\_t}}
+\index{set\_t@{set\_t}!gameboard.hpp@{gameboard.hpp}}
+\doxysubsubsection{\texorpdfstring{set\_t()}{set\_t()}}
+{\footnotesize\ttfamily \label{gameboard_8hpp_a2e06c7eae0fffed39df6ef674f837d6a} 
+void set\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \&}]{c}{, }\item[{uint8\+\_\+t}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

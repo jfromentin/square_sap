@@ -1,0 +1,131 @@
+\doxysection{polygon.\+hpp}
+\hypertarget{polygon_8hpp_source}{}\label{polygon_8hpp_source}\index{src/polygon.hpp@{src/polygon.hpp}}
+\mbox{\hyperlink{polygon_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//****************************************************************************//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ \ \ Copyright\ (C)\ 2024\ Jean\ Fromentin\ <jean.fromentin@univ-\/littoral.fr>\ \ \ \ \ //}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \ This\ file\ is\ part\ of\ SquareSAP\ <https://github.com/jfromentin/square\_sap>\ //}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ the\ \ \ \ \ //}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ \ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or\ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ \ //}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ \ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or\ \ \ \ \ //}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ //}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ for\ \ more\ details.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ along\ \ \ //}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ with\ SquareSAP.\ If\ not,\ see\ <https://www.gnu.org/licenses/>.\ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//****************************************************************************//}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ POLYGON\_HPP}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ POLYGON\_HPP}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{config_8hpp}{config.hpp}}"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}:uint8\_t\ \{\mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb}{Left}}\ =\ 0,\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66}{Right}}\ =\ 1,\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2}{Up}}\ =\ 2,\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27}{Down}}\ =\ 3\};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{polygon_8hpp_a560f29558d24ac396fb53cb81921da15}{step\_to\_char}}(\mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}\ s);}
+\DoxyCodeLine{00031\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}\ \mbox{\hyperlink{polygon_8hpp_ae026ec90d1a4edbcad92f3f00935d64f}{char\_to\_step}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPolygon}{Polygon}}\{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{size\_t}\ length;}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}\ steps[max\_length];}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{classPolygon_ac183e712f8be1e13f1c9d5b4d4512ead}{Polygon}}();}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ \mbox{\hyperlink{classPolygon_afa6c4ee147650491a3685c645430b992}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ p);}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygon_a78e8feed35695d02772bc637d0901805}{set\_length}}(\textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}\&\ \mbox{\hyperlink{classPolygon_ae24f646c19f4a6e059be06e111dac32c}{operator[]}}(\textcolor{keywordtype}{size\_t}\ i);}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}\ \mbox{\hyperlink{classPolygon_ae24f646c19f4a6e059be06e111dac32c}{operator[]}}(\textcolor{keywordtype}{size\_t}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygon_a7d2bfb42148113157e387ac1f319a46e}{display}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classPolygon_a3fac72ee0350975ed24c4f69749d32c6}{common\_prefix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{polygon_8hpp_a560f29558d24ac396fb53cb81921da15}{step\_to\_char}}(\mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}\ s)\ \{}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordflow}{switch}(s)\{}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb}{Left}}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'L'};}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66}{Right}}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'R'};}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2}{Up}}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'U'};}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27}{Down}}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'D'};}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'?'};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00060\ \ \ \};}
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}\ \mbox{\hyperlink{polygon_8hpp_ae026ec90d1a4edbcad92f3f00935d64f}{char\_to\_step}}(\textcolor{keywordtype}{char}\ c)\ \{}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordflow}{switch}(c)\{}
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'L'}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb}{Left}};}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'R'}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66}{Right}};}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'U'}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2}{Up}};}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'D'}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27}{Down}};}
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00073\ \ \ \ \ assert(\textcolor{keyword}{false});}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00075\ \ \ \};}
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66}{Right}};}
+\DoxyCodeLine{00077\ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classPolygon_ac183e712f8be1e13f1c9d5b4d4512ead}{Polygon::Polygon}}()\ \{}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ \mbox{\hyperlink{classPolygon_afa6c4ee147650491a3685c645430b992}{Polygon::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ P)\ \{}
+\DoxyCodeLine{00083\ \ \ length\ =\ P.length;}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ length;\ ++\ i)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ steps[i]\ =\ P.steps[i];}
+\DoxyCodeLine{00086\ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00088\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygon_a78e8feed35695d02772bc637d0901805}{Polygon::set\_length}}(\textcolor{keywordtype}{size\_t}\ l)\ \{}
+\DoxyCodeLine{00091\ \ \ length\ =\ l;}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ l\ /\ 2\ -\/\ 1;\ ++\ i)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ steps[i]\ =\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66}{Right}};}
+\DoxyCodeLine{00094\ \ \ \ \ steps[i\ +\ l\ /\ 2]\ =\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb}{Left}};}
+\DoxyCodeLine{00095\ \ \ \}}
+\DoxyCodeLine{00096\ \ \ steps[l\ /\ 2\ -\/\ 1]\ =\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2}{Up}};}
+\DoxyCodeLine{00097\ \ \ steps[l\ -\/\ 1]\ =\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27}{Down}};}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}\&\ \mbox{\hyperlink{classPolygon_ae24f646c19f4a6e059be06e111dac32c}{Polygon::operator[]}}(\textcolor{keywordtype}{size\_t}\ i)\ \{}
+\DoxyCodeLine{00101\ \ \ assert(0\ <=\ i);}
+\DoxyCodeLine{00102\ \ \ assert(i<\ length);}
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordflow}{return}\ steps[i];}
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}\ \mbox{\hyperlink{classPolygon_ae24f646c19f4a6e059be06e111dac32c}{Polygon::operator[]}}(\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00107\ \ \ assert(0\ <=\ i);}
+\DoxyCodeLine{00108\ \ \ assert(i<\ length);}
+\DoxyCodeLine{00109\ \ \ \textcolor{keywordflow}{return}\ steps[i];}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygon_a7d2bfb42148113157e387ac1f319a46e}{Polygon::display}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ length;\ ++\ i)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ cout\ <<\ \mbox{\hyperlink{polygon_8hpp_a560f29558d24ac396fb53cb81921da15}{step\_to\_char}}(steps[i]);}
+\DoxyCodeLine{00115\ \ \ \}}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classPolygon_a3fac72ee0350975ed24c4f69749d32c6}{Polygon::common\_prefix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ P)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00119\ \ \ \textcolor{keywordtype}{size\_t}\ i;}
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ length;\ ++\ i)\{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (steps[i]\ !=\ P.steps[i])\ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{00122\ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

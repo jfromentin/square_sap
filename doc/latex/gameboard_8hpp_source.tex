@@ -1,0 +1,91 @@
+\doxysection{gameboard.\+hpp}
+\hypertarget{gameboard_8hpp_source}{}\label{gameboard_8hpp_source}\index{src/gameboard.hpp@{src/gameboard.hpp}}
+\mbox{\hyperlink{gameboard_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//****************************************************************************//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ \ \ Copyright\ (C)\ 2024\ Jean\ Fromentin\ <jean.fromentin@univ-\/littoral.fr>\ \ \ \ \ //}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \ This\ file\ is\ part\ of\ SquareSAP\ <https://github.com/jfromentin/square\_sap>\ //}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ the\ \ \ \ \ //}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ \ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or\ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ \ //}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ \ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or\ \ \ \ \ //}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ //}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ for\ \ more\ details.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ along\ \ \ //}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ with\ SquareSAP.\ If\ not,\ see\ <https://www.gnu.org/licenses/>.\ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//****************************************************************************//}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ GAMEBOARD\_HPP}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ GAMEBOARD\_HPP}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{config_8hpp}{config.hpp}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{using\ }\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\ =\ uint16\_t;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\ \mbox{\hyperlink{gameboard_8hpp_a43b0e6a46d45401f8459488c5a48c955}{init\_cell\_data}}(uint8\_t\ a,\ uint8\_t\ b)\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordflow}{return}\ \ a\ +\ (b\ <<\ 8);}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{inline}\ uint8\_t\ \mbox{\hyperlink{gameboard_8hpp_a08804bf7f39eff5573d91d63f24bde37}{get\_d}}(\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\ c)\ \{}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordflow}{return}\ c\ \&\ 255;}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{inline}\ uint8\_t\ \mbox{\hyperlink{gameboard_8hpp_ae96501490e057e77d213555ee0c82cef}{get\_t}}(\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\ c)\ \{}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordflow}{return}\ c\ >>\ 8;}
+\DoxyCodeLine{00040\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gameboard_8hpp_a2e06c7eae0fffed39df6ef674f837d6a}{set\_t}}(\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\ \&c,\ uint8\_t\ b)\ \{}
+\DoxyCodeLine{00043\ \ \ c\ \&=\ 127;}
+\DoxyCodeLine{00044\ \ \ c\ +=\ (b\ <<\ 8);}
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ max\_width\ =\ max\_length\ -\/\ 1;}
+\DoxyCodeLine{00048\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ max\_height\ =\ max\_length\ /\ 2\ +\ 2;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameBoard}{GameBoard}}\{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ size\ =\ max\_width\ *\ max\_height;}
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\ tab[size];}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{size\_t}\ width;}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{size\_t}\ height;}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{size\_t}\ length;}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{size\_t}\ x\_base;}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ y\_base\ =\ 1;}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{size\_t}\ pos(\textcolor{keywordtype}{size\_t}\ x,\ \textcolor{keywordtype}{size\_t}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{bool}\ on\_border(\textcolor{keywordtype}{size\_t}\ x,\ \textcolor{keywordtype}{size\_t}\ y);}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classGameBoard_ad437d09a131a917f48ee1e2348a18234}{GameBoard}}(\textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\&\ \mbox{\hyperlink{classGameBoard_a49d352a02fe13ebb84ed117a03d7c6b4}{operator[]}}(\textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\&\ \mbox{\hyperlink{classGameBoard_a49d352a02fe13ebb84ed117a03d7c6b4}{operator[]}}(\textcolor{keywordtype}{size\_t}\ size)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classGameBoard_afc0cf7d7c9a22fb7c17391d513379c31}{base\_cell}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ GameBoard::pos(\textcolor{keywordtype}{size\_t}\ x,\ \textcolor{keywordtype}{size\_t}\ y)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordflow}{return}\ x\ +\ y\ *\ \ max\_width;}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\&\ \mbox{\hyperlink{classGameBoard_a49d352a02fe13ebb84ed117a03d7c6b4}{GameBoard::operator[]}}(\textcolor{keywordtype}{size\_t}\ c)\ \{}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordflow}{return}\ tab[c];}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{CellData}}\&\ \mbox{\hyperlink{classGameBoard_a49d352a02fe13ebb84ed117a03d7c6b4}{GameBoard::operator[]}}(\textcolor{keywordtype}{size\_t}\ c)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordflow}{return}\ tab[c];}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classGameBoard_afc0cf7d7c9a22fb7c17391d513379c31}{GameBoard::base\_cell}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordflow}{return}\ pos(x\_base,\ y\_base);}
+\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

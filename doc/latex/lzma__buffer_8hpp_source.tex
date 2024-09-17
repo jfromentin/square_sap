@@ -1,0 +1,179 @@
+\doxysection{lzma\+\_\+buffer.\+hpp}
+\hypertarget{lzma__buffer_8hpp_source}{}\label{lzma__buffer_8hpp_source}\index{src/lzma\_buffer.hpp@{src/lzma\_buffer.hpp}}
+\mbox{\hyperlink{lzma__buffer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//****************************************************************************//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ \ \ Copyright\ (C)\ 2024\ Jean\ Fromentin\ <jean.fromentin@univ-\/littoral.fr>\ \ \ \ \ //}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \ This\ file\ is\ part\ of\ SquareSAP\ <https://github.com/jfromentin/square\_sap>\ //}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ the\ \ \ \ \ //}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ \ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or\ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ \ //}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ \ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or\ \ \ \ \ //}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ //}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ for\ \ more\ details.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ along\ \ \ //}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ with\ SquareSAP.\ If\ not,\ see\ <https://www.gnu.org/licenses/>.\ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//****************************************************************************//}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ LZMA\_BUFFER\_HPP}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ LZMA\_BUFFER\_HPP}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <lzma.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{buffer_8hpp}{buffer.hpp}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}<IO\ D,\ \textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLzma}{Lzma}}\{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ Buffer\ capacity}}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classLzma_a257685e169c1e16b255cdcf827d857f6}{capacity}}\ =\ 65536;}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ Stream\ used\ by\ LZMA\ algoritm}}
+\DoxyCodeLine{00037\ \ \ lzma\_stream\ \mbox{\hyperlink{classLzma_af01ac7bd4f6b480a68d8c7bffd381cef}{strm}};}
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ Return\ error\ message\ associated\ to\ LZMA\ return\ value}}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classLzma_a35e9a2b748bdb386550aed5f4b7c6d63}{message}}(lzma\_ret\ ret)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}},\ T>:\mbox{\hyperlink{classLzma}{Lzma}}\{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ Ouput\ buffer}}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ output\_buffer[capacity];}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ Output\ where\ flush\ buffer}}
+\DoxyCodeLine{00047\ \ \ T\&\ output;}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ Initialise\ an\ LZMA\ defalte\ buffer\ flushing\ in\ output\ object}}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer}}(T\&\ output);}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Write\ data\ to\ deflate\ in\ the\ LZMA\ buffer}}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ write(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ Close\ the\ buffer}}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}},\ T>:\mbox{\hyperlink{classLzma}{Lzma}}\{}
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Input\ buffer}}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ input\_buffer[capacity];}
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ Object\ where\ read\ data}}
+\DoxyCodeLine{00062\ \ \ T\&\ input;}
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//\ LZMA\ action\ use\ by\ the\ LZMA\ algorithm}}
+\DoxyCodeLine{00064\ \ \ lzma\_action\ action\ =\ LZMA\_RUN;}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \textcolor{comment}{//\ Initialise\ an\ LZMA\ inflate\ defalte\ buffer\ which\ read\ from\ input\ object}}
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer}}(T\&\ input);}
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ Read\ inflated\ data\ from\ input\ object}}
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{size\_t}\ read(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ Close\ the\ buffer}}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer<Out,\ T>::LzmaBuffer}}(T\&\ o):output(o)\{}
+\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ Initialising\ the\ internal\ LZMA\ encoder\ structure\ using\ default\ preset\ and\ 64\ bit\ checksum}}
+\DoxyCodeLine{00076\ \ \ strm\ =\ LZMA\_STREAM\_INIT;}
+\DoxyCodeLine{00077\ \ \ lzma\_ret\ ret\ =\ lzma\_easy\_encoder(\&strm,\ LZMA\_PRESET\_DEFAULT,\ LZMA\_CHECK\_CRC64);}
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//\ Set\ output\ buffer\ for\ inflated\ data}}
+\DoxyCodeLine{00079\ \ \ strm.next\_out\ =\ output\_buffer;}
+\DoxyCodeLine{00080\ \ \ strm.avail\_out\ =\ capacity;}
+\DoxyCodeLine{00081\ \ \ \textcolor{comment}{//\ Check\ if\ an\ error\ occured}}
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordflow}{if}\ (ret\ !=\ LZMA\_OK)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}[LZMA\ error]\ "{}}\ <<\ message(ret)\ <<\ endl;}
+\DoxyCodeLine{00084\ \ \ \}}
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer<Out,\ T>::write}}(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ We\ assume\ that\ size\ is\ less\ than\ the\ input\ buffer\ capacity}}
+\DoxyCodeLine{00089\ \ \ assert(size\ <=\ capacity);}
+\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ Run\ LZMA\ algorithm\ until\ we\ reach\ the\ end\ of\ the\ input\ buffer}}
+\DoxyCodeLine{00091\ \ \ lzma\_action\ action\ =\ LZMA\_RUN;}
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//\ Set\ buffer\ as\ input\ buffer\ (inflate)\ of\ lzma\ algorithm}}
+\DoxyCodeLine{00093\ \ \ strm.next\_in\ =\ buffer;}
+\DoxyCodeLine{00094\ \ \ strm.avail\_in\ =\ size;}
+\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ Loop\ until\ input\ buffer\ is\ empty}}
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordflow}{while}\ (strm.avail\_in)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ Call\ lzma\ defalte\ algorithm}}
+\DoxyCodeLine{00098\ \ \ \ \ lzma\_ret\ ret\ =\ lzma\_code(\&strm,\ action);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{//\ Test\ if\ an\ error\ occured}}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{if}\ (ret\ !=\ LZMA\_OK)\ cerr\ <<\ \textcolor{stringliteral}{"{}[LZMA\ error]\ "{}}\ <<\ message(ret)\ <<\ endl;}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ Test\ if\ the\ ouput\ buffer\ is\ full}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (strm.avail\_out\ ==\ 0)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{comment}{//\ If\ it\ the\ case,\ flush\ the\ output\ buffer\ in\ output\ object}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ output.write(output\_buffer,\ capacity);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ the\ output\ buffer}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ strm.next\_out\ =\ output\_buffer;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ strm.avail\_out\ =\ capacity;}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \}}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer<Out,\ T>::close}}()\ \{}
+\DoxyCodeLine{00113\ \ \ \textcolor{comment}{//\ Write\ the\ remaining\ data}}
+\DoxyCodeLine{00114\ \ \ lzma\_ret\ ret\ =\ lzma\_code(\&strm,\ LZMA\_FINISH);}
+\DoxyCodeLine{00115\ \ \ output.write(output\_buffer,\ capacity\ -\/\ strm.avail\_out);}
+\DoxyCodeLine{00116\ \ \ output.close();}
+\DoxyCodeLine{00117\ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer<In,\ T>::LzmaBuffer}}(T\&\ i):input(i)\{}
+\DoxyCodeLine{00120\ \ \ \textcolor{comment}{//\ Initialising\ the\ interal\ LZMA\ decoder}}
+\DoxyCodeLine{00121\ \ \ strm\ =\ LZMA\_STREAM\_INIT;}
+\DoxyCodeLine{00122\ \ \ lzma\_ret\ ret\ =\ lzma\_stream\_decoder(\&strm,\ UINT64\_MAX,\ LZMA\_CONCATENATED);}
+\DoxyCodeLine{00123\ \ \ \textcolor{comment}{//\ Check\ if\ an\ error\ occured}}
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordflow}{if}\ (ret\ !=\ LZMA\_OK)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}[LZMA\ error]\ "{}}\ <<\ message(ret)\ <<\ endl;}
+\DoxyCodeLine{00126\ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \textcolor{comment}{//\ Set\ action\ to\ run\ LZMA\ alogrithm\ until\ end\ of\ input\ buffer\ is\ reached}}
+\DoxyCodeLine{00128\ \ \ action\ =\ LZMA\_RUN;}
+\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer<In,\ T>::read}}(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
+\DoxyCodeLine{00132\ \ \ \textcolor{comment}{//\ Set\ output\ buffer}}
+\DoxyCodeLine{00133\ \ \ strm.next\_out\ =\ buffer;}
+\DoxyCodeLine{00134\ \ \ strm.avail\_out\ =\ size;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \textcolor{comment}{//\ Loop\ until\ we\ can\ add\ data\ to\ output\ buffer}}
+\DoxyCodeLine{00137\ \ \ \textcolor{keywordflow}{while}(strm.avail\_out\ >\ 0)\ \{}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//\ Test\ is\ there\ is\ available\ data\ in\ input\ buffer}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{if}(strm.avail\_in\ ==\ 0)\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \textcolor{comment}{//\ If\ no,\ fill\ the\ input\ buffer}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ strm.next\_in\ =\ input\_buffer;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ strm.avail\_in\ =\ input.read(input\_buffer,\ capacity);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ is\ there\ is\ now\ available\ data\ in\ }}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strm.avail\_in\ ==\ 0)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{comment}{//\ If\ no,\ tell\ LZMA\ algorithm\ that\ we\ want\ to\ finish}}
+\DoxyCodeLine{00147\ \ \ \ \ action\ =\ LZMA\_FINISH;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{//\ Call\ the\ LZMA\ algoritm}}
+\DoxyCodeLine{00151\ \ \ \ \ lzma\_ret\ ret\ =\ lzma\_code(\&strm,\ action);}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ an\ error\ occured}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{if}\ (ret\ ==\ LZMA\_STREAM\_END)\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \textcolor{comment}{//\ Enf\ of\ the\ input\ stream\ reached,\ quit\ the\ loop}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{comment}{//\ Test\ if\ an\ error\ occured}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{if}\ (ret\ !=\ LZMA\_OK)\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}[LZMA\ error]\ ("{}}\ <<\ ret\ <<\ \textcolor{stringliteral}{"{})\ "{}}\ <<\ message(ret)\ <<\ endl;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ exit(0);}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \textcolor{comment}{//\ Compute\ the\ number\ of\ bytes\ actually\ added\ in\ output\ uffer}}
+\DoxyCodeLine{00164\ \ \ \textcolor{keywordtype}{size\_t}\ s\ =\ \ size\ -\/\ strm.avail\_out;}
+\DoxyCodeLine{00165\ \ \ \textcolor{comment}{//\ Return\ this\ value}}
+\DoxyCodeLine{00166\ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{00167\ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLzmaBuffer}{LzmaBuffer<In,\ T>::close}}()\ \{}
+\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00173\ }
+
+\end{DoxyCode}
