@@ -23,27 +23,48 @@
 #include <fstream>
 #include "buffer.hpp"
 
+//! Class for In/Output binary file
 template<IO D> class BinaryFile;
 
+//! Class for output binary file. It allow us to have a Buffer's like interface
 template<> class BinaryFile<Out>{
 private:
+  //! Filename of the file
   string filename;
+  //! Output file stream
   ofstream file;
 public:
+  //! Construct an output BinaryFil efrom a filenbale
+  //! \param filename name of the file to open
   BinaryFile(const string filename);
-  void close();
+  //! Write Bytes in the output BinaryFile from a buffer
+  //! \param the source buffer
+  //! \param size number of bytes to write
   void write(Byte* buffer, size_t size);
+  //! Close the  BinaryFile
+  void close();
 };
 
+//! Class for input binary file. It allow us to have a Buffer's like interface
 template<> class BinaryFile<In>{
 private:
+  //! Filename of the file
   string filename;
+  //! Input file stream
   ifstream file;
 public:
+  //! Construct an input BinaryFile
+  //! \param filename  name of the file to open
   BinaryFile(const string filename);
-  void close();
+   //! Read Bytes from the BinaryFiles to in the output BinaryFile from a bufferto a buffer
+  //! \param buffer the destination buffer
+  //! \param size maximum number of bytes to read
+  //! \return the actual number ob Bytes read
   size_t read(Byte* buffer, size_t size);
+  //! Close the BinaryFile
+  void close();
 };
+
 
 inline BinaryFile<Out>::BinaryFile(const string filename) {
   file.open(filename.c_str(), ios::binary | ios::trunc);

@@ -25,35 +25,58 @@
 #include <cassert>
 #include "config.hpp"
 
+//! CellData is an 16 bits unsigned integer composed of two 8bits unsigned integer :
+//! - d which is the minimal number of steps needed to reach the base cell.
+//! - t which is the position, in the path, of the step that reach the cell
 using CellData = uint16_t;
 
-inline CellData init_cell_data(uint8_t a, uint8_t b) {
-  return  a + (b << 8);
+//! Construct a CellData from the values d and t
+//! \param d minimal number of steps needed to reach the base cell
+//! \param t time when the curent path reach that cell.
+inline CellData init_cell_data(uint8_t d, uint8_t t) {
+  return  d + (t << 8);
 }
 
+//! Return the value d of a given CellData
+//! \param c a CellData
 inline uint8_t get_d(CellData c) {
   return c & 255;
 }
 
+//! Return the value t of a given CellData
+//! \param c a CellData
 inline uint8_t get_t(CellData c) {
   return c >> 8;
 }
 
-inline void set_t(CellData &c, uint8_t b) {
+//! Set the value t of a given CellData
+//! \param c a CellData
+//! \parma t the value to set
+inline void set_t(CellData &c, uint8_t t) {
   c &= 127;
-  c += (b << 8);
+  c += (t << 8);
 }
 
+//! Maximal width of the GameBoard (with borders)
 static const size_t max_width = max_length - 1;
+//! Maximal height of the GameBoard (with borders)
 static const size_t max_height = max_length / 2 + 2;
 
+//! Class for the Gmaeboard where self avoiding polygons will be contructed
 class GameBoard{
 private:
+  //! Number of cells in the maximal GameBoard, this for self avoinding
+  //! polygons of length max_length
   static const size_t size = max_width * max_height;
+  //! An array of CellData for each Cell of the maximal GameBoard
   CellData tab[size];
-  size_t width;
-  size_t height;
+  //! Size of self avoing polygons we want to construc
   size_t length;
+  //! Actual width of the considered GameBoard
+  size_t width;
+  //! Actual heaight ot the considered GameBoard
+  size_t height;
+  
   size_t x_base;
   const size_t y_base = 1;
   size_t pos(size_t x, size_t y) const;

@@ -22,61 +22,72 @@
 
 #include "buffer.hpp"
 
+//! Class for Input/Output BitBuffer. This class is designed to handle
+//! stream of bits.
 template<IO D, class T> class BitBuffer;
 
+//! Class for output BitBuffer. It take bits as input and write Bytes
+//! in the specified ouput object.
 template<class T> class BitBuffer<Out, T> {
 private:
-  // Capacity of the internal buffer
+  //! Capacity of the internal buffer
   static const size_t capacity = 65536;
-  // The internal buffer
+  //! The internal buffer
   Byte buffer[capacity];
-  // Actual size of the buffer
+  //! Actual size of the buffer
   size_t size;
-  // Current byte in construction
+  //! Current byte in construction
   Byte current_byte;
-  // Head is a power 2^i where i is the next bit to set in current_byte
+  //! Head is a power 2^i where i is the next bit to set in current_byte
   Byte head;
-  // Output where we flush the internal buffer
+  //! Output where we flush the internal buffer
   T& output;
-  // Add the current byte to the internal buffer and flush the buffer if needed
+  //! Add the current byte to the internal buffer and flush the buffer if needed
   void write_byte();
 public:
-  // Create an BitBuffer<Out> with given output
+  //! Create an BitBuffer<Out> with given output object
   BitBuffer(T& output);
-  // Write a single bit
+  //! Write a single bit
+  //! \param b is the bit to write
   void write_bit(bool b);
-  // Write nb bits from the integer v
+  //! Write bits from a given integer
+  //! \param v an integer
+  //! \param nb number of first bits of v to write
   void write_int(size_t v, size_t nb);
   // Close the BitBuffer
   void close();
 };
 
+//! Class for input BitBuffer. It can read bits from an input object containing
+//! a stream of Bytes.
 template<class T> class BitBuffer<In, T> {
 private:
-  // Capacity of the internal buffer
+  //! Capacity of the internal buffer
   static const size_t capacity = 65536;
-  // The internal buffer
+  //! The internal buffer
   Byte buffer[capacity];
-  // Actual size of the buffer
+  //! Actual size of the buffer
   size_t size;
-  // Position of byte we read in the buffer
+  //! Position of byte we read in the buffer
   size_t pos;
-  // Byte we are actually reading
+  //! Byte we are actually reading
   Byte current_byte;
-  // Head is a power 2^i where i is the next bit to read in current_byte
+  //! Head is a power 2^i where i is the next bit to read in current_byte
   Byte head;
-  // Input from where we read byte
+  //! Input from where we read byte
   T& input;
-  // Read bytes from the input
+  //! Read bytes from the input object
   void read_bytes();
 public:
-  // Create a BitBuffer<In> with given input
+  //! Create a BitBuffer<In> with given input
   BitBuffer(T& input);
-  // Read a single bit
+  //! Read a single bit
   bool read_bit();
-  // Read an integer from nb bits
+  //! Read an integer from bits
+  //! \param nb number of bits to read
+  //! \return the integer whose binary decompositio corresponds of read bits
   size_t read_int(size_t nb);
-  // Close the BitBuffer
+  //! Close the BitBuffer
   void close();
 };
 

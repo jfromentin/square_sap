@@ -22,7 +22,6 @@
 
 #include <iostream>
 #include <list>
-
 #include <set>
 #include <stack>
 #include <initializer_list>

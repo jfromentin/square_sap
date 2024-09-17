@@ -24,6 +24,7 @@
 
 using namespace std;
 
+//! Maximal length for self avoinding polygons
 static const size_t max_length = 40;
 
 #endif
