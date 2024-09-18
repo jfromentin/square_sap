@@ -1,6 +1,7 @@
 SAPGEN 	= bin/sapgen
 CPP 	= g++
-CFLAGS 	= --std=c++11 -g -O3 -D_NODEBUG -I ./tclap/include
+CFLAGS 	= --std=c++11 -g -O3 -D_NODEBUG -I ./tclap/include 
+CFLAGS += -I /opt/homebrew/Cellar/xz/5.4.5/include # Mac brew path to lzma library
 LIBS	= -llzma
 EXE 	= $(SAPGEN)
 
