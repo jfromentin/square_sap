@@ -21,18 +21,27 @@
 
 GameBoard::GameBoard(size_t l) {
   length = l;
+  // Width of the gameboard
   width = l - 1;
+  // Height of the gameboard
   height = l / 2 + 2;
+  // x coordinate of the base cellx
   x_base = 1 + (l - 6) /2;
-  //y_base = 1;
+  // Initialise CellData of each cell of the gameboard
   for (size_t y = 0; y < height; ++ y) {
     for (size_t x = 0; x < width; ++ x) {
+      // Test if the cell is on the border
       if (on_border(x, y)) {
+	// If true, init cell data with t and d equal to 127 (~ +infty)
+	// REM we don't use 255 since we want add this value to another one and
+	// in this case the value of 255 raise to an overflo. 
 	tab[pos(x, y)] = init_cell_data(127, 127);
       }
       else {
+	// If not, compute Manhattan distance of the cell to the base cell
 	int dx = (x < x_base) ? x_base - x : x - x_base;
 	uint8_t sd = dx + (y - 1);
+	// Init the cell with this distance and t = 127 (~ +infty)
 	tab[pos(x, y)] = init_cell_data(sd, 127);
       }
     }

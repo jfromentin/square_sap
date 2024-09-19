@@ -76,17 +76,24 @@ private:
   size_t width;
   //! Actual heaight ot the considered GameBoard
   size_t height;
-  
+  //! x coordinate of the base cell
   size_t x_base;
+  //! y coordinate of the base cell, it is always equal to 1
   const size_t y_base = 1;
+  //! Give the index of the cell at position (x,y)
   size_t pos(size_t x, size_t y) const;
+  //! Test if the cell at cooridnate (x,y) is on the border of the gamboard
   bool on_border(size_t x, size_t y);
 public:
+  //! Construct a Gameboard
+  //! \param length length of the self avoidinf polygons we want to construct
   GameBoard(size_t length);
-  CellData& operator[](size_t size);
+  //! Return access to the CellData of the cell of index i  
+  CellData& operator[](size_t i);
+  //! Return CellData of the cell of index i
   const CellData& operator[](size_t size) const;
+  //! Return the index of the base cell
   size_t base_cell() const;
-
 };
 
 inline size_t GameBoard::pos(size_t x, size_t y) const {
