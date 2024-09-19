@@ -22,29 +22,6 @@
 #include "polygon_generator.hpp"
 #include "bit_buffer.hpp"
 #include "binary_file.hpp"
-#include "numbers_sap.hpp"
-
-/*int main() {
-  BinaryFile<Out> fout("toto.dat");
-  BitBuffer<Out, BinaryFile<Out>> bbout(fout);
-  //  bbout.set_flush(fbout.write);
-  for(int i = 0; i < 18; ++i ){
-    cout << i << endl;
-    bbout.write_bit(i% 2 == 0);
-  }
-  bbout.close();
-  fout.close();
-  cout << "-------" << endl;
-  BinaryFile<In> fin("toto.dat");
-  BitBuffer<In, BinaryFile<In>> bbin(fin);
-  for(int i = 0; i < 18; ++ i) {
-    bool b = bbin.read_bit();
-    if(b) cout << '1' << endl;
-    else cout << '0' << endl;
-  }
-  bbin.close();
-  fin.close();
-  }*/
 
 void generate(size_t l, string prefixs, string filename, size_t split) {
   PolygonGenerator gen(l);
@@ -57,7 +34,7 @@ int main(int argc, char** argv) {
   int split;
   string prefixs;
   string filename;
-  /*try {  
+  try {  
     TCLAP::CmdLine cmd("Produce self avoiding polygons of a given length with fixed prefix on the square latice.", ' ', "0.1");
     TCLAP::ValueArg<int> lengthArg("l", "length", "length of polygons", true, 16, "integer");
     TCLAP::ValueArg<string> prefixsArg("p", "prefix", "prefixs of self avoiding polygons seprated by _", false, "R", "string");
@@ -83,27 +60,7 @@ int main(int argc, char** argv) {
   }
   if (length < 2 or length > 40) {
     cerr << "Length must be in [2, 40]" << endl;
-    }*/
-  length = 20;
-  prefixs = "R";
-  split = 0;
-  generate(length, prefixs, filename, split);
-
-  //exit(0);
-  cout << "==== Read output file" << endl;
-  BinaryFile<In> input("test.data");
-  LzmaBuffer<In, BinaryFile<In>> lzma_input(input);
-  Polygon P;
-  P.set_length(length);
-  PolygonBuffer<In, LzmaBuffer<In, BinaryFile<In>>> polygon_buffer(lzma_input, length);
-  //char a;
-  for(int i = 0; i< 81826; ++i) {
-    //cout << "wait ..." << endl;
-			  //cin >> a;
-    cout << i << " : ";
-    polygon_buffer.read(P);
-    P.display();
-    cout << endl;
   }
+  generate(length, prefixs, filename, split);
   exit(0);
 }

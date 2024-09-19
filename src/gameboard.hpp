@@ -24,6 +24,7 @@
 #include <cstdint>
 #include <cassert>
 #include "config.hpp"
+#include "step.hpp"
 
 //! CellData is an 16 bits unsigned integer composed of two 8bits unsigned integer :
 //! - d which is the minimal number of steps needed to reach the base cell.
@@ -81,7 +82,7 @@ private:
   //! y coordinate of the base cell, it is always equal to 1
   const size_t y_base = 1;
   //! Give the index of the cell at position (x,y)
-  size_t pos(size_t x, size_t y) const;
+  static size_t pos(size_t x, size_t y);
   //! Test if the cell at cooridnate (x,y) is on the border of the gamboard
   bool on_border(size_t x, size_t y);
 public:
@@ -94,11 +95,14 @@ public:
   const CellData& operator[](size_t size) const;
   //! Return the index of the base cell
   size_t base_cell() const;
+
+  //! Return the index of the cell we reach after a move
+  //! \param c index of the cell we start with
+  //! \param s the step we perform from c
+  static size_t move(size_t c, Step s);
 };
 
-inline size_t GameBoard::pos(size_t x, size_t y) const {
-  return x + y *  max_width;
-}
+
 
 inline CellData& GameBoard::operator[](size_t c) {
   return tab[c];
@@ -111,5 +115,30 @@ inline const CellData& GameBoard::operator[](size_t c) const {
 inline size_t GameBoard::base_cell() const {
   return pos(x_base, y_base);
 }
+
+inline size_t GameBoard::pos(size_t x, size_t y) {
+  return x + y *  max_width;
+}
+
+inline size_t GameBoard::move(size_t c, Step s) {
+  switch(s) {
+  case Left :
+    return c - 1;
+    break;
+  case Right:
+    return c + 1;
+    break;
+  case Up:
+    return c + max_width;
+    break;
+  case Down:
+    return c - max_width;
+    break;
+  default:
+    assert(false);
+    break;
+  }
+}
+  
 
 #endif
