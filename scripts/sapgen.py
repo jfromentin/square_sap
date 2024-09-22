@@ -15,7 +15,7 @@ if __name__ == "__main__":
     print("------------------------------")
     print(" -> split number is", s)
     print(" -> constructiong arg files for GNU parallel")
-    dir = "output/" + repr(l)
+    dir = "../output/" + repr(l)
     os.system("rm -rf " + dir)
     os.makedirs(dir)
     file = open("sapgen.arg", 'w')
