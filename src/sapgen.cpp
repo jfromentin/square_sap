@@ -25,8 +25,7 @@
 
 void generate(size_t l, string prefixs, string filename, size_t split) {
   PolygonGenerator gen(l);
-  size_t n = gen.exec(prefixs, filename, split);
-  cout << n << endl;
+  gen.exec(prefixs, filename, split);
 }
 
 int main(int argc, char** argv) {

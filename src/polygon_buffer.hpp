@@ -32,7 +32,8 @@ private:
   Polygon last;
   BitBuffer<Out,T> buffer;
 public:
-  PolygonBuffer(T& ouput, size_t l);
+  PolygonBuffer();
+  void open(T* output, size_t l);
   void write(const Polygon& polygon);
   void close();
 };
@@ -44,12 +45,17 @@ private:
   Polygon last;
   BitBuffer<In, T> buffer;
 public:
-  PolygonBuffer(T& input, size_t length);
+  PolygonBuffer();
+  void open(T* input, size_t length);
   void read(Polygon& P);
   void close();
 };
 
-template<class T> inline PolygonBuffer<Out, T>::PolygonBuffer(T& output, size_t l):buffer(output) {
+template<class T> inline PolygonBuffer<Out, T>::PolygonBuffer() {
+}
+
+template<class T> inline void PolygonBuffer<Out, T>::open(T* output, size_t l) {
+  buffer.open(output);
   length = l;
   last.set_length(l);
 }
@@ -67,7 +73,11 @@ template<class T> inline void PolygonBuffer<Out, T>::close() {
   buffer.close();
 }
 
-template<class T> inline PolygonBuffer<In, T>::PolygonBuffer(T& input, size_t l):buffer(input) {
+template<class T> inline PolygonBuffer<In, T>::PolygonBuffer() {
+}
+
+template<class T> inline void PolygonBuffer<In, T>::open(T* input, size_t l) {
+  buffer.open(input);
   length = l;
   last.set_length(l);
 }

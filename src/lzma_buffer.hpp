@@ -31,26 +31,28 @@ template<IO D, class T> class LzmaBuffer;
 
 class Lzma{
 protected:
-  // Buffer capacity
+  //! Buffer capacity
   static const size_t capacity = 65536;
-  // Stream used by LZMA algoritm
+  //! Stream used by LZMA algoritm
   lzma_stream strm;
-  // Return error message associated to LZMA return value
+  //! Return error message associated to LZMA return value
   string message(lzma_ret ret) const;
 };
 
 template<class T> class LzmaBuffer<Out, T>:Lzma{
 private:
-  // Ouput buffer
+  //! Output buffer
   Byte output_buffer[capacity];
-  // Output where flush buffer
-  T& output;
+  //! Output where flush buffer
+  T* output;
 public:
-  // Initialise an LZMA defalte buffer flushing in output object
-  LzmaBuffer(T& output);
-  // Write data to deflate in the LZMA buffer
+  //! Empty constructor
+  LzmaBuffer();
+  //! Open the LZMA defalte buffer to flush in output object
+  void open(T* output);
+  //! Write data to deflate in the LZMA buffer
   void write(Byte* buffer, size_t size);
-  // Close the buffer
+  //! Close the buffer
   void close();
 };
 
@@ -59,19 +61,25 @@ private:
   // Input buffer
   Byte input_buffer[capacity];
   // Object where read data
-  T& input;
+  T* input;
   // LZMA action use by the LZMA algorithm
   lzma_action action = LZMA_RUN;
 public:
-  // Initialise an LZMA inflate defalte buffer which read from input object
-  LzmaBuffer(T& input);
+  //! Empty constructor
+  LzmaBuffer();
+  //! Open LZMA inflate buffer to read from input object
+  void open(T* input);
   // Read inflated data from input object
   size_t read(Byte* buffer, size_t size);
   // Close the buffer
   void close();
 };
 
-template<class T> LzmaBuffer<Out, T>::LzmaBuffer(T& o):output(o){
+template<class T> LzmaBuffer<Out, T>::LzmaBuffer() {
+}
+
+template<class T> void LzmaBuffer<Out, T>::open(T* o) {
+  output = o;
   // Initialising the internal LZMA encoder structure using default preset and 64 bit checksum
   strm = LZMA_STREAM_INIT;
   lzma_ret ret = lzma_easy_encoder(&strm, LZMA_PRESET_DEFAULT, LZMA_CHECK_CRC64);
@@ -97,11 +105,15 @@ template<class T> void LzmaBuffer<Out, T>::write(Byte* buffer, size_t size) {
     // Call lzma defalte algorithm
     lzma_ret ret = lzma_code(&strm, action);
     // Test if an error occured
-    if (ret != LZMA_OK) cerr << "[LZMA error] " << message(ret) << endl;
+    if (ret != LZMA_OK) {
+      cerr << "[LZMA error] " << message(ret) << endl;
+      exit(0);
+    }
+	   
     // Test if the ouput buffer is full
     if (strm.avail_out == 0) {
       // If it the case, flush the output buffer in output object
-      output.write(output_buffer, capacity);
+      output->write(output_buffer, capacity);
       // Reset the output buffer
       strm.next_out = output_buffer;
       strm.avail_out = capacity;
@@ -112,11 +124,15 @@ template<class T> void LzmaBuffer<Out, T>::write(Byte* buffer, size_t size) {
 template<class T> void LzmaBuffer<Out, T>::close() {
   // Write the remaining data
   lzma_ret ret = lzma_code(&strm, LZMA_FINISH);
-  output.write(output_buffer, capacity - strm.avail_out);
-  output.close();
+  output->write(output_buffer, capacity - strm.avail_out);
+  output->close();
 }
 
-template<class T> LzmaBuffer<In, T>::LzmaBuffer(T& i):input(i){
+template<class T> LzmaBuffer<In, T>::LzmaBuffer(){
+}
+
+template<class T> void LzmaBuffer<In, T>::open(T* i) {
+  input = i;
   // Initialising the interal LZMA decoder
   strm = LZMA_STREAM_INIT;
   lzma_ret ret = lzma_stream_decoder(&strm, UINT64_MAX, LZMA_CONCATENATED);
@@ -127,7 +143,7 @@ template<class T> LzmaBuffer<In, T>::LzmaBuffer(T& i):input(i){
   // Set action to run LZMA alogrithm until end of input buffer is reached
   action = LZMA_RUN;
 }
-
+						      
 template<class T> size_t LzmaBuffer<In, T>::read(Byte* buffer, size_t size) {
   // Set output buffer
   strm.next_out = buffer;
@@ -140,7 +156,7 @@ template<class T> size_t LzmaBuffer<In, T>::read(Byte* buffer, size_t size) {
     if(strm.avail_in == 0) {
       // If no, fill the input buffer
       strm.next_in = input_buffer;
-      strm.avail_in = input.read(input_buffer, capacity);
+      strm.avail_in = input->read(input_buffer, capacity);
       // Test is there is now available data in 
       if(strm.avail_in == 0) {
 	// If no, tell LZMA algorithm that we want to finish
@@ -156,7 +172,7 @@ template<class T> size_t LzmaBuffer<In, T>::read(Byte* buffer, size_t size) {
     }
     // Test if an error occured
     if (ret != LZMA_OK) {
-      cerr << "[LZMA error] (" << ret << ") " << message(ret) << endl;
+      cerr << "[LZMA error] " << message(ret) << endl;
       exit(0);
     }
   }
@@ -167,6 +183,7 @@ template<class T> size_t LzmaBuffer<In, T>::read(Byte* buffer, size_t size) {
 }
 
 template<class T> void LzmaBuffer<In, T>::close() {
+  input->close();
 }
 
 #endif

@@ -34,8 +34,6 @@
 
 using namespace std;
 
-
-
 using StackInfo = uint32_t;
 
 inline StackInfo init_stack_info(uint16_t c, uint8_t k, Step s) {
@@ -54,23 +52,45 @@ inline Step get_s(StackInfo s) {
   return (Step)(s >> 24);
 }
 
-static const size_t BUFFER_SIZE = 4096;
 class PolygonGenerator{
 private:
-  size_t l;
+  size_t length;
   GameBoard gameboard;
   Polygon word;
   size_t kappa[max_length];
   Stack<StackInfo> stack;
   StackInfo* current_stack_info;
+
+  //Output
+  ofstream output_data;
+  BinaryFile<Out> output_file;
+  LzmaBuffer<Out, BinaryFile<Out>> lzma_output;
+  PolygonBuffer<Out, LzmaBuffer<Out, BinaryFile<Out>>> polygon_buffer;
+  
+  //Data
+  string filename;
+  string prefixs;
+  size_t split;
+  size_t file_number;
+  size_t file_size;
+  size_t sap_number;
+
+  void write_sap();
+  
   uint8_t apply(uint16_t c, uint8_t k, Step s);
   void try_add(size_t c, size_t cn, size_t k, Step s);
   Array<string> split_prefixs(string prefixs);
+  void init_output();
+  void close_output();
+
+  void exec_prefix(string prefix);
+  
 public:
   PolygonGenerator(size_t length);
   ~PolygonGenerator();
   void init(string prefix);
   size_t exec(string prefixs, string filename, size_t split);
+  
   void compress(string filename);
   void decompress(string filename);
 };

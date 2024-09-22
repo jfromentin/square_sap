@@ -41,12 +41,14 @@ private:
   //! Head is a power 2^i where i is the next bit to set in current_byte
   Byte head;
   //! Output where we flush the internal buffer
-  T& output;
+  T* output;
   //! Add the current byte to the internal buffer and flush the buffer if needed
   void write_byte();
 public:
-  //! Create an BitBuffer<Out> with given output object
-  BitBuffer(T& output);
+  //! Empty constructor
+  BitBuffer();
+  //! Open a BitBuffer<Out> with given output object
+  void open(T* output);
   //! Write a single bit
   //! \param b is the bit to write
   void write_bit(bool b);
@@ -75,12 +77,14 @@ private:
   //! Head is a power 2^i where i is the next bit to read in current_byte
   Byte head;
   //! Input from where we read byte
-  T& input;
+  T* input;
   //! Read bytes from the input object
   void read_bytes();
 public:
-  //! Create a BitBuffer<In> with given input
-  BitBuffer(T& input);
+  //! Empty constructo
+  BitBuffer();
+  //! Open a BitBuffer<In> with given input
+  void open(T* input);
   //! Read a single bit
   bool read_bit();
   //! Read an integer from bits
@@ -91,13 +95,17 @@ public:
   void close();
 };
 
-template<class T> inline BitBuffer<Out, T>::BitBuffer(T& o):output(o){
+template<class T> inline BitBuffer<Out, T>::BitBuffer(){
   // The internal buffer is empty
   size = 0;
   // Current byte is initialised to 0
   current_byte  = 0;
   // The next bit to set is this as position, and so head = 2^0 = 1
   head = 1;
+}
+
+template<class T> inline void BitBuffer<Out, T>::open(T* o) {
+  output = o;
 }
 
 template<class T> inline void BitBuffer<Out, T>::write_bit(bool b) {
@@ -119,7 +127,7 @@ template<class T> inline void BitBuffer<Out, T>::write_byte() {
   if (size == capacity) {
 
     // Flush current buffer to output object
-    output.write(buffer, size);
+    output->write(buffer, size);
     size = 0;
   }
 }
@@ -139,19 +147,23 @@ template<class T> inline void BitBuffer<Out, T>::close() {
   // If s is equal to capcity, wryte_byte writes the buffer
   // Otherwise, we do it now
   if (size < capacity) {
-    output.write(buffer, size);
+    output->write(buffer, size);
   }
 
   // Close the output object
-  output.close();
+  output->close();
 }
 
-template<class T> inline BitBuffer<In, T>::BitBuffer(T& i):input(i){
+template<class T> inline BitBuffer<In, T>::BitBuffer(){
   // Internal buffer is empty
   size = 0;
   pos = 0;
   // Head is set to be 0 to force the reading of bytes from the input
   head = 0;
+}
+
+template<class T> inline void BitBuffer<In, T>::open(T* i) {
+  i = input;
 }
 
 template<class T> inline bool BitBuffer<In, T>::read_bit() {
@@ -183,7 +195,7 @@ template<class T> inline bool BitBuffer<In, T>::read_bit() {
 template<class T> inline void BitBuffer<In, T>::read_bytes() {
   // Try to fill the internal buffer with capacity bytes read from the input
   // the actual number of bytes read is stored in size
-  size = input.read(buffer, capacity);
+  size = input->read(buffer, capacity);
   // We point to the first byte of the internal buffer
   pos = 0;
 }
@@ -197,6 +209,7 @@ template<class T> inline size_t BitBuffer<In, T>::read_int(size_t nb) {
 }
 
 template<class T> inline void BitBuffer<In, T>::close() {
+  input->close();
 }
 
 #endif

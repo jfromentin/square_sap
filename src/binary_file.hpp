@@ -34,9 +34,11 @@ private:
   //! Output file stream
   ofstream file;
 public:
-  //! Construct an output BinaryFil efrom a filenbale
+  //! Empty constructor
+  BinaryFile();
+  //! Open the output BinaryFile from a filename
   //! \param filename name of the file to open
-  BinaryFile(const string filename);
+  void open(const string filename);
   //! Write Bytes in the output BinaryFile from a buffer
   //! \param the source buffer
   //! \param size number of bytes to write
@@ -53,6 +55,12 @@ private:
   //! Input file stream
   ifstream file;
 public:
+  //! Empty constructor
+  BinaryFile();
+  //! Open the input BinaryFile from a filename
+  //! \param filename name of the file to open
+  void open(const string filename);
+  //! Write Bytes in the output Binary
   //! Construct an input BinaryFile
   //! \param filename  name of the file to open
   BinaryFile(const string filename);
@@ -65,8 +73,12 @@ public:
   void close();
 };
 
+inline BinaryFile<Out>::BinaryFile() {
+}
 
-inline BinaryFile<Out>::BinaryFile(const string filename) {
+inline void BinaryFile<Out>::open(const string filename) {
+  cout << "Open output file" << filename << endl;
+  assert(!file.is_open());
   file.open(filename.c_str(), ios::binary | ios::trunc);
   assert(file.is_open());
 }
