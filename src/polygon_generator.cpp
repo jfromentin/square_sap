@@ -85,8 +85,7 @@ void PolygonGenerator::write_sap() {
     polygon_buffer.close();
     ++ file_number;
     output_file.open(filename + '_' + to_string(file_number) + ".sap");
-    lzma_output.open(&output_file);
-    polygon_buffer.open(&lzma_output, length);
+    lzma_output.clear();
     sap_number += file_size;
     output_data << file_number << '\t' << file_size << '\t' << sap_number << endl;
     file_size = 0;

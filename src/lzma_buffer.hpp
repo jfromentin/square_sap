@@ -54,6 +54,8 @@ public:
   void write(Byte* buffer, size_t size);
   //! Close the buffer
   void close();
+  //! Clear all internal data
+  void clear();
 };
 
 template<class T> class LzmaBuffer<In, T>:Lzma{
@@ -92,6 +94,16 @@ template<class T> void LzmaBuffer<Out, T>::open(T* o) {
   }
 }
 
+template<class T> void LzmaBuffer<Out,T>::clear() {
+  lzma_ret ret = lzma_easy_encoder(&strm, LZMA_PRESET_DEFAULT, LZMA_CHECK_CRC64);
+  // Set output buffer for inflated data
+  strm.next_out = output_buffer;
+  strm.avail_out = capacity;
+  // Check if an error occured
+  if (ret != LZMA_OK) {
+    cerr << "[LZMA error (1)] " << message(ret) << endl;
+  }
+}
 template<class T> void LzmaBuffer<Out, T>::write(Byte* buffer, size_t size) {
   // We assume that size is less than the input buffer capacity
   assert(size <= capacity);
