@@ -42,12 +42,13 @@ PolygonGenerator::PolygonGenerator(size_t l): gameboard(l), stack(3 * l) {
 }
 
 void PolygonGenerator::init(string prefix) {
+  assert(stack.is_empty());
   size_t c = gameboard.base_cell();
   size_t k;
   for (k = 0; k < prefix.size() - 1; ++ k) {
     Step s = char_to_step(prefix[k]);
     apply(c, k, s);
-    c += gameboard.move(c, s);
+    c = gameboard.move(c, s);
   }
   current_stack_info = new StackInfo;
   StackInfo* stack_info = stack.next();
@@ -72,7 +73,7 @@ void PolygonGenerator::init_output() {
 
 void PolygonGenerator::close_output() {
   sap_number += file_size;
-  output_data << file_size << '\t' << sap_number << endl;
+  output_data << file_number << '\t' << file_size << '\t' << sap_number << endl;
   output_data.close();
   polygon_buffer.close();
 }
@@ -101,6 +102,7 @@ void PolygonGenerator::exec_prefix(string prefix) {
     if(k == length - 2) {
       word[k] = get_s(cur);
       write_sap();
+
     }
     else {
       uint16_t c = get_c(cur);

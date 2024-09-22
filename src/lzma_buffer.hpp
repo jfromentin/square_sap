@@ -88,7 +88,7 @@ template<class T> void LzmaBuffer<Out, T>::open(T* o) {
   strm.avail_out = capacity;
   // Check if an error occured
   if (ret != LZMA_OK) {
-    cerr << "[LZMA error] " << message(ret) << endl;
+    cerr << "[LZMA error (1)] " << message(ret) << endl;
   }
 }
 
@@ -106,10 +106,9 @@ template<class T> void LzmaBuffer<Out, T>::write(Byte* buffer, size_t size) {
     lzma_ret ret = lzma_code(&strm, action);
     // Test if an error occured
     if (ret != LZMA_OK) {
-      cerr << "[LZMA error] " << message(ret) << endl;
+      cerr << "[LZMA error (2)] " << message(ret) << endl;
       exit(0);
-    }
-	   
+    }   
     // Test if the ouput buffer is full
     if (strm.avail_out == 0) {
       // If it the case, flush the output buffer in output object
@@ -124,6 +123,10 @@ template<class T> void LzmaBuffer<Out, T>::write(Byte* buffer, size_t size) {
 template<class T> void LzmaBuffer<Out, T>::close() {
   // Write the remaining data
   lzma_ret ret = lzma_code(&strm, LZMA_FINISH);
+  if (ret != LZMA_OK and ret != LZMA_STREAM_END) {
+    cerr << "[LZMA error (3)] " << message(ret) << endl;
+    exit(0);
+  }
   output->write(output_buffer, capacity - strm.avail_out);
   output->close();
 }
@@ -172,7 +175,7 @@ template<class T> size_t LzmaBuffer<In, T>::read(Byte* buffer, size_t size) {
     }
     // Test if an error occured
     if (ret != LZMA_OK) {
-      cerr << "[LZMA error] " << message(ret) << endl;
+      cerr << "[LZMA error (1)] " << message(ret) << endl;
       exit(0);
     }
   }

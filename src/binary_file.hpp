@@ -77,7 +77,6 @@ inline BinaryFile<Out>::BinaryFile() {
 }
 
 inline void BinaryFile<Out>::open(const string filename) {
-  cout << "Open output file" << filename << endl;
   assert(!file.is_open());
   file.open(filename.c_str(), ios::binary | ios::trunc);
   assert(file.is_open());
@@ -88,6 +87,7 @@ inline void BinaryFile<Out>::close() {
 }
 
 inline void BinaryFile<Out>::write(Byte* buffer, size_t size) {
+  assert(file.is_open());
   file.write((const char*)buffer, size);
 }
 

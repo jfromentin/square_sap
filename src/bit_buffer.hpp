@@ -149,8 +149,7 @@ template<class T> inline void BitBuffer<Out, T>::close() {
   if (size < capacity) {
     output->write(buffer, size);
   }
-
-  // Close the output object
+   // Close the output object
   output->close();
 }
 

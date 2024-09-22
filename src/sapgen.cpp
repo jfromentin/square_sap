@@ -48,6 +48,10 @@ int main(int argc, char** argv) {
     prefixs = prefixsArg.getValue();
     filename = outputArg.getValue();
     split = splitArg.getValue();
+    /*cout << "Length = " << length << endl;
+    cout << "Prefixs = " << prefixs << endl;
+    cout << "Filename = " << filename << endl;
+    cout << "Split = " << split << endl;*/
   }
   catch (TCLAP::ArgException &e){
     cerr <<"[Error] "<<e.error()<<" for arg "<<e.argId()<<endl;
