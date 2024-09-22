@@ -83,11 +83,11 @@ void PolygonGenerator::write_sap() {
   ++ file_size;
   if (split !=0 and (file_size % split) == 0) {
     polygon_buffer.close();
-    ++ file_number;
     output_file.open(filename + '_' + to_string(file_number) + ".sap");
     lzma_output.clear();
     sap_number += file_size;
     output_data << file_number << '\t' << file_size << '\t' << sap_number << endl;
+    ++ file_number;
     file_size = 0;
   }
 }
