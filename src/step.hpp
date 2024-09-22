@@ -1,6 +1,11 @@
 #ifndef STEP_HPP
 #define STEP_HPP
 
+#include <cstdint>
+#include <cassert>
+
+using namespace std;
+
 enum Step:uint8_t {Left = 0, Right = 1, Up = 2, Down = 3};
 
 char step_to_char(Step s);

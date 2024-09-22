@@ -20,8 +20,8 @@
 #include <iostream>
 #include <tclap/CmdLine.h>
 #include "polygon_generator.hpp"
-#include "bit_buffer.hpp"
-#include "binary_file.hpp"
+//#include "bit_buffer.hpp"
+//#include "binary_file.hpp"
 
 void generate(size_t l, string prefixs, string filename, size_t split) {
   PolygonGenerator gen(l);

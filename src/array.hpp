@@ -27,6 +27,7 @@
 #include <initializer_list>
 #include <string.h>
 #include <cassert>
+#include <cstdint>
 
 using namespace std;
 

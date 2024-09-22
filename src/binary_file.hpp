@@ -43,6 +43,7 @@ public:
   //! \param the source buffer
   //! \param size number of bytes to write
   void write(Byte* buffer, size_t size);
+  void clear();
   //! Close the  BinaryFile
   void close();
 };
@@ -69,6 +70,7 @@ public:
   //! \param size maximum number of bytes to read
   //! \return the actual number ob Bytes read
   size_t read(Byte* buffer, size_t size);
+  void clear();
   //! Close the BinaryFile
   void close();
 };
@@ -82,6 +84,9 @@ inline void BinaryFile<Out>::open(const string filename) {
   assert(file.is_open());
 }
 
+inline void BinaryFile<Out>::clear() {
+}
+
 inline void BinaryFile<Out>::close() {
   file.close();
 }
@@ -91,10 +96,15 @@ inline void BinaryFile<Out>::write(Byte* buffer, size_t size) {
   file.write((const char*)buffer, size);
 }
 
-inline BinaryFile<In>::BinaryFile(const string filename) {
+inline BinaryFile<In>::BinaryFile() {
+}
+
+inline void BinaryFile<In>::open(const string filename) {
   file.open(filename.c_str(), ios::binary);
 }
 
+inline void BinaryFile<In>::clear() {
+}
 inline void BinaryFile<In>::close() {
   file.close();
 }

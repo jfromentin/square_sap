@@ -56,6 +56,8 @@ public:
   //! \param v an integer
   //! \param nb number of first bits of v to write
   void write_int(size_t v, size_t nb);
+
+  void clear();
   // Close the BitBuffer
   void close();
 };
@@ -91,6 +93,9 @@ public:
   //! \param nb number of bits to read
   //! \return the integer whose binary decompositio corresponds of read bits
   size_t read_int(size_t nb);
+
+  void clear();
+  
   //! Close the BitBuffer
   void close();
 };
@@ -139,6 +144,16 @@ template<class T> inline void BitBuffer<Out, T>::write_int(size_t v, size_t nb) 
   }
 }
 
+template<class T> inline void BitBuffer<Out, T>::clear() {
+    // The internal buffer is empty
+  size = 0;
+  // Current byte is initialised to 0
+  current_byte  = 0;
+  // The next bit to set is this as position, and so head = 2^0 = 1
+  head = 1;
+  output -> clear();
+}
+
 template<class T> inline void BitBuffer<Out, T>::close() {
   // If head is not equal to 1, we must add bit '0' to complete the current byte
   while (head != 1) {
@@ -162,7 +177,7 @@ template<class T> inline BitBuffer<In, T>::BitBuffer(){
 }
 
 template<class T> inline void BitBuffer<In, T>::open(T* i) {
-  i = input;
+  input = i;
 }
 
 template<class T> inline bool BitBuffer<In, T>::read_bit() {
@@ -205,6 +220,16 @@ template<class T> inline size_t BitBuffer<In, T>::read_int(size_t nb) {
     if (read_bit()) res += (1 << i); 
   }
   return res;
+}
+
+template<class T> inline void BitBuffer<In, T>::clear() {
+  // Internal buffer is empty
+  size = 0;
+  pos = 0;
+  // Head is set to be 0 to force the reading of bytes from the input
+  head = 0;
+  
+  input -> clear();
 }
 
 template<class T> inline void BitBuffer<In, T>::close() {

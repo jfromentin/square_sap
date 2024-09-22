@@ -20,10 +20,6 @@
 #ifndef POLYGON_GENERATOR_HPP
 #define POLYGON_GENERATOR_HPP
 
-#include <cassert>
-#include <cstdint>
-#include <iostream>
-#include <lzma.h>
 #include "array.hpp"
 #include "gameboard.hpp"
 #include "polygon.hpp"

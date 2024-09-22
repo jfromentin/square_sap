@@ -35,6 +35,7 @@ public:
   PolygonBuffer();
   void open(T* output, size_t l);
   void write(const Polygon& polygon);
+  void clear();
   void close();
 };
 
@@ -48,6 +49,7 @@ public:
   PolygonBuffer();
   void open(T* input, size_t length);
   void read(Polygon& P);
+  void clear();
   void close();
 };
 
@@ -69,6 +71,11 @@ template<class T> inline void PolygonBuffer<Out, T>::write(const Polygon& p) {
   last = p;
 }
 
+template<class T> inline void PolygonBuffer<Out, T>::clear() {
+  last.set_length(length);
+  buffer.clear();
+}
+
 template<class T> inline void PolygonBuffer<Out, T>::close() {
   buffer.close();
 }
@@ -79,7 +86,7 @@ template<class T> inline PolygonBuffer<In, T>::PolygonBuffer() {
 template<class T> inline void PolygonBuffer<In, T>::open(T* input, size_t l) {
   buffer.open(input);
   length = l;
-  last.set_length(l);
+  last.set_length(length);
 }
 
 
@@ -90,6 +97,11 @@ template<class T> inline void PolygonBuffer<In, T>::read(Polygon& P) {
     P[i] = (Step)buffer.read_int(2);
   }
   last = P;
+}
+
+template<class T> inline void PolygonBuffer<In, T>::clear() {
+  last.set_length(length);
+  buffer.clear();
 }
 
 template<class T> inline void PolygonBuffer<In, T>::close() {
