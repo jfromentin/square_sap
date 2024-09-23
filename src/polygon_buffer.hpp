@@ -39,7 +39,6 @@ public:
   void close();
 };
 
-
 template<class T> class PolygonBuffer<In, T>{
 private:
   size_t length;

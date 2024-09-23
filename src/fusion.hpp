@@ -21,6 +21,7 @@ private:
   void run_on_prefix(size_t i);
   void read_data_file();
   size_t get_number_sap(string line);
+  size_t n_total;
 public:
   Fusion(size_t length, string input, string output);
   void run();

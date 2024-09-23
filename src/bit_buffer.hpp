@@ -114,6 +114,7 @@ template<class T> inline void BitBuffer<Out, T>::open(T* o) {
 }
 
 template<class T> inline void BitBuffer<Out, T>::write_bit(bool b) {
+  
   // We add the value of head to current_byte if b is true
   if(b) current_byte |= head;
   // We multiply the head by 2, to design the next bit positoin
@@ -130,7 +131,6 @@ template<class T> inline void BitBuffer<Out, T>::write_byte() {
   head = 1;
   // If the capacity of buffer is reached, we write it to output
   if (size == capacity) {
-
     // Flush current buffer to output object
     output->write(buffer, size);
     size = 0;
@@ -145,7 +145,7 @@ template<class T> inline void BitBuffer<Out, T>::write_int(size_t v, size_t nb) 
 }
 
 template<class T> inline void BitBuffer<Out, T>::clear() {
-    // The internal buffer is empty
+  // The internal buffer is empty
   size = 0;
   // Current byte is initialised to 0
   current_byte  = 0;
@@ -159,11 +159,7 @@ template<class T> inline void BitBuffer<Out, T>::close() {
   while (head != 1) {
     write_bit(false);
   }
-  // If s is equal to capcity, wryte_byte writes the buffer
-  // Otherwise, we do it now
-  if (size < capacity) {
-    output->write(buffer, size);
-  }
+  if (size != 0) output->write(buffer, size);
    // Close the output object
   output->close();
 }
@@ -228,7 +224,6 @@ template<class T> inline void BitBuffer<In, T>::clear() {
   pos = 0;
   // Head is set to be 0 to force the reading of bytes from the input
   head = 0;
-  
   input -> clear();
 }
 

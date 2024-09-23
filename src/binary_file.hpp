@@ -105,13 +105,15 @@ inline void BinaryFile<In>::open(const string filename) {
 
 inline void BinaryFile<In>::clear() {
 }
+
 inline void BinaryFile<In>::close() {
   file.close();
 }
 
 inline size_t BinaryFile<In>::read(Byte* buffer, size_t size) {
   file.read((char*)buffer, size);
-  return  file.gcount();
+  size_t s = file.gcount();
+  return s;
 }
 
 #endif

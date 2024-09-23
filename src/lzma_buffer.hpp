@@ -96,7 +96,7 @@ template<class T> void LzmaBuffer<Out,T>::clear() {
   strm.avail_out = capacity;
   // Check if an error occured
   if (ret != LZMA_OK) {
-    cerr << "[LZMA error (1)] " << message(ret) << endl;
+    cerr << "[LZMA error] " << message(ret) << endl;
   }
 }
 template<class T> void LzmaBuffer<Out, T>::write(Byte* buffer, size_t size) {
@@ -113,13 +113,13 @@ template<class T> void LzmaBuffer<Out, T>::write(Byte* buffer, size_t size) {
     lzma_ret ret = lzma_code(&strm, action);
     // Test if an error occured
     if (ret != LZMA_OK) {
-      cerr << "[LZMA error (2)] " << message(ret) << endl;
+      cerr << "[LZMA error] " << message(ret) << endl;
       exit(0);
     }   
     // Test if the ouput buffer is full
     if (strm.avail_out == 0) {
       // If it the case, flush the output buffer in output object
-      output->write(output_buffer, capacity);
+      output -> write(output_buffer, capacity);
       // Reset the output buffer
       strm.next_out = output_buffer;
       strm.avail_out = capacity;
@@ -128,14 +128,20 @@ template<class T> void LzmaBuffer<Out, T>::write(Byte* buffer, size_t size) {
 }
 
 template<class T> void LzmaBuffer<Out, T>::close() {
+  assert(strm.avail_in == 0);
   // Write the remaining data
-  lzma_ret ret = lzma_code(&strm, LZMA_FINISH);
-  if (ret != LZMA_OK and ret != LZMA_STREAM_END) {
-    cerr << "[LZMA error (3)] " << message(ret) << endl;
-    exit(0);
-  }
-  output->write(output_buffer, capacity - strm.avail_out);
-  output->close();
+  output -> write(output_buffer, capacity - strm.avail_out);
+  strm.next_out = output_buffer;
+  strm.avail_out = capacity;
+  lzma_ret ret;
+  do {
+    ret = lzma_code(&strm, LZMA_FINISH);
+    if (ret != LZMA_OK and ret != LZMA_STREAM_END) {
+      cerr << "[LZMA error] " << message(ret) << endl;
+    }
+    output -> write(output_buffer, capacity - strm.avail_out);
+  } while(ret != LZMA_STREAM_END);
+  output -> close();
 }
 
 template<class T> LzmaBuffer<In, T>::LzmaBuffer(){
@@ -152,9 +158,7 @@ template<class T> void LzmaBuffer<In, T>::clear() {
   // Initialising the interal LZMA decoder
   lzma_ret ret = lzma_stream_decoder(&strm, UINT64_MAX, LZMA_CONCATENATED);
   // Check if an error occured
-  if (ret != LZMA_OK) {
-    cerr << "[LZMA error (4)] " << message(ret) << endl;
-  }
+  if (ret != LZMA_OK) cerr << "[LZMA error] " << message(ret) << endl;
   // Set action to run LZMA alogrithm until end of input buffer is reached
   action = LZMA_RUN;
 }
@@ -163,10 +167,8 @@ template<class T> size_t LzmaBuffer<In, T>::read(Byte* buffer, size_t size) {
   // Set output buffer
   strm.next_out = buffer;
   strm.avail_out = size;
-
   // Loop until we can add data to output buffer
   while(strm.avail_out > 0) {
-
     // Test is there is available data in input buffer
     if(strm.avail_in == 0) {
       // If no, fill the input buffer
@@ -174,7 +176,6 @@ template<class T> size_t LzmaBuffer<In, T>::read(Byte* buffer, size_t size) {
       strm.avail_in = input->read(input_buffer, capacity);
       // Test is there is now available data in
       if(strm.avail_in == 0) {
-	cout << "Finish " << endl;
 	// If no, tell LZMA algorithm that we want to finish
 	action = LZMA_FINISH;
       }
@@ -182,20 +183,17 @@ template<class T> size_t LzmaBuffer<In, T>::read(Byte* buffer, size_t size) {
     // Call the LZMA algoritm
     lzma_ret ret = lzma_code(&strm, action);
     // Check if an error occured
-    if (ret == LZMA_STREAM_END) {
+    if (ret == LZMA_STREAM_END ) {
       // Enf of the input stream reached, quit the loop
       break;
     }
     if (ret == LZMA_BUF_ERROR) {
-      char a;
-      cin >> a;
-      cout << "It remains " << strm.avail_in << " bytes in the buffer" << endl;
+      break;
     }
     
     // Test if an error occured
-    if (ret != LZMA_OK and ret != LZMA_BUF_ERROR) {
-      cerr << "[LZMA error (5)] " << message(ret) << endl;
-      exit(0);
+    if (ret != LZMA_OK ) {//and ret != LZMA_BUF_ERROR) {
+      cerr << "[LZMA error] " << message(ret) << endl;
     }
   }
   // Compute the number of bytes actually added in output uffer

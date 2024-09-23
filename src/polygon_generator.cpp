@@ -101,7 +101,6 @@ void PolygonGenerator::exec_prefix(string prefix) {
     if(k == length - 2) {
       word[k] = get_s(cur);
       write_sap();
-
     }
     else {
       uint16_t c = get_c(cur);
