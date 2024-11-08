@@ -17,17 +17,37 @@
 //  with SquareSAP. If not, see <https://www.gnu.org/licenses/>.              //
 //****************************************************************************//
 
-#ifndef CONFIG_HPP
-#define CONFIG_HPP
+#include "fp_calculator.hpp"
 
-#include <cstddef>
+Reel FpCalculator::operator()(const Polygon& P) {
+  compute_graph(P);
+  return 0;
+  
+}
 
-using namespace std;
-
-//! Maximal length for self avoinding polygons
-static const size_t max_length = 40;
-
-//! Type
-typedef double Reel;
-typedef __int128 Int;
-#endif
+void FpCalculator::compute_graph(const Polygon& P) {
+  size_t cell = grid.base_cell();
+  size_t ne = 0;
+  nv = 0;
+  B.clear();
+  grid.fill(-1);
+  explore_cell(cell);
+  for (size_t i = 0; i < length; ++ i) {
+    size_t down = grid.move(cell, Down);
+    size_t left = grid.move(cell, Left);
+    size_t right = grid.move(cell, Right);
+    size_t up = grid.move(cell, Up);
+    explore_cell(down);
+    explore_cell(left);
+    explore_cell(right);
+    explore_cell(up);
+    // Update B matrix
+    size_t v = grid[cell];
+    add_edge(v, grid[down]);
+    add_edge(v, grid[left]);
+    add_edge(v, grid[right]);
+    add_edge(v, grid[up]);
+    cell = grid.move(cell, P[i]);
+  }
+  cout << "Number of vertices = " << nv << endl;
+}

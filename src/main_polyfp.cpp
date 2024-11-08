@@ -19,41 +19,49 @@
 
 #include <iostream>
 #include <tclap/CmdLine.h>
-#include "polygon_generator.hpp"
-//#include "bit_buffer.hpp"
-//#include "binary_file.hpp"
-
-void generate(size_t l, string prefixs, string filename, size_t split) {
-  PolygonGenerator gen(l);
-  gen.exec(prefixs, filename, split);
-}
+#include "read_sap_file.hpp"
+#include "fp_calculator.hpp"
 
 int main(int argc, char** argv) {
-  int length;
-  int split;
-  string prefixs;
-  string filename;
-  try {  
-    TCLAP::CmdLine cmd("Produce self avoiding polygons of a given length with fixed prefix on the square latice.", ' ', "0.1");
+  Polygon P;
+  P.set_length(8);
+  P[0] = Right;
+  P[1] = Up;
+  P[2] = Up;
+  P[3] = Left;
+  P[4] = Left;
+  P[5] = Down;
+  P[6] = Right;
+  P[7] = Down;
+  P.display();
+  cout << endl;
+  FpCalculator fp(8);
+  fp(P);
+  /* int length;
+  int frequency;
+  size_t number;
+  
+  string input, output;
+   try {  
+    TCLAP::CmdLine cmd("Compute somme of Fp for multiple self avoiding polygons", ' ', "0.1");
     TCLAP::ValueArg<int> lengthArg("l", "length", "length of polygons", true, 16, "integer");
-    TCLAP::ValueArg<string> prefixsArg("p", "prefix", "prefixs of self avoiding polygons seprated by _", false, "R", "string");
-    TCLAP::ValueArg<string> outputArg("o", "output", "base output filename to store output", true, "polygons", "string");
-    TCLAP::ValueArg<int> splitArg("s", "split", "maximal number of self avoiding polygons in a file", false, 0, "integer");
-    cmd.add(lengthArg);
-    cmd.add(prefixsArg);
+    TCLAP::ValueArg<size_t> numberArg("n", "number", "number of polygons in input file", true, 0, "integer"); 
+    TCLAP::ValueArg<string> inputArg("i", "input", "file conaitinng self avoinding polygons", true, "", "string");
+    TCLAP::ValueArg<string> outputArg("o", "output", "filename of output file", true, "", "string");
+    TCLAP::ValueArg<size_t> frequencyArg("f", "frequency", "frequency to record polygon on the corresponding fp", true, 0, "integer");
     cmd.add(outputArg);
-    cmd.add(splitArg);
+    cmd.add(inputArg);
+    cmd.add(lengthArg);
+    cmd.add(frequencyArg);
+    cmd.add(numberArg);
     cmd.parse(argc, argv);
     length = lengthArg.getValue();
-    prefixs = prefixsArg.getValue();
-    filename = outputArg.getValue();
-    split = splitArg.getValue();
-    /*cout << "Length = " << length << endl;
-    cout << "Prefixs = " << prefixs << endl;
-    cout << "Filename = " << filename << endl;
-    cout << "Split = " << split << endl;*/
+    frequency = frequencyArg.getValue();
+    number = numberArg.getValue();
+    input = inputArg.getValue();
+    output = outputArg.getValue();
   }
-  catch (TCLAP::ArgException &e){
+   catch (TCLAP::ArgException &e){
     cerr <<"[Error] "<<e.error()<<" for arg "<<e.argId()<<endl;
     return -1;
   }
@@ -64,6 +72,19 @@ int main(int argc, char** argv) {
   if (length < 4 or length > 40) {
     cerr << "Length must be in [4, 40]" << endl;
   }
-  generate(length, prefixs, filename, split);
-  exit(0);
+  cout << "Input = " << input << endl;
+  cout << "Output = " << output << endl;
+  cout << "Length = " << length << endl;
+  cout << "Number = " << number << endl;
+  cout << "Frequency = " << frequency << endl;
+  ReadSapFile reader(length, input, number);
+  size_t temp = 0;
+  for (size_t i = 0; i < number; ++ i){
+    const Polygon& P = reader.read_polygon();
+    //temp += (size_t)P[10];
+        cout << i << " : ";
+    P.display();
+    cout << endl; 
+  }
+  cout << temp << endl;*/
 }

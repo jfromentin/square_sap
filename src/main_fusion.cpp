@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
   string input, output;
   try {  
     TCLAP::CmdLine cmd("Fusion self avoiding polygons from multiple files in a unique file", ' ', "0.1");    TCLAP::ValueArg<int> lengthArg("l", "length", "length of polygons", true, 16, "integer");
-    TCLAP::ValueArg<string> inputArg("i", "input", "prefix of .dat filenames to fusion (ex : sap, for dap_0.sap, ...)", true, "", "string");
+    TCLAP::ValueArg<string> inputArg("i", "input", "prefix of .dat filenames to fusion (ex : sap, for sap_0.sap, ...)", true, "", "string");
     TCLAP::ValueArg<string> outputArg("o", "output", "filename of the unique output file", true, "", "string");
 
     cmd.add(outputArg);
@@ -46,8 +46,8 @@ int main(int argc, char** argv) {
     cerr << "Length must be even." << endl;
     exit(-1);
   }
-  if (length < 2 or length > 40) {
-    cerr << "Length must be in [2, 40]" << endl;
+  if (length < 4 or length > 40) {
+    cerr << "Length must be in [4, 40]" << endl;
   }
   Fusion fusion(length, input, output);
   fusion.run();

@@ -17,17 +17,52 @@
 //  with SquareSAP. If not, see <https://www.gnu.org/licenses/>.              //
 //****************************************************************************//
 
-#ifndef CONFIG_HPP
-#define CONFIG_HPP
+#ifndef COEFFICIENTS_HPP
+#define COEFFICIENTS_HPP
 
-#include <cstddef>
+#include "config.hpp"
+#include "rationnal.hpp"
 
-using namespace std;
+//**********************
+//* Coefficients C_m,n *
+//**********************
 
-//! Maximal length for self avoinding polygons
-static const size_t max_length = 40;
+//! Maximal coefficient index
+static const size_t max_index_coefficients = max_length / 2 + 2;
 
-//! Type
-typedef double Reel;
-typedef __int128 Int;
+//! Number of coefficients
+static const size_t number_coefficients = ((max_index_coefficients + 1) * (max_index_coefficients + 2)) / 2;
+
+//! Array of coefficients
+extern Reel coefficients[number_coefficients];
+
+//! Return the indice of coefficient C_{i,j}
+size_t pos(size_t i, size_t j);
+
+//! Return an approximation of coefficient C_{i,j}
+Reel get_coefficient(size_t i, size_t j);
+
+//! Compute all the coefficients
+void compute_coefficients();
+
+//! Represent an analytic coefficient
+struct CoefficentAnalytic{
+  //! The coefficient is a-4b/pi
+  Rationnal a,b;
+};
+
+//********************
+//* Inline functions *
+//********************
+
+inline size_t
+pos(size_t i, size_t j){
+  return (j * (j + 1)) / 2 + i;
+}
+
+inline Reel
+get_coeff(size_t i, size_t j){
+  return i < j ? coeffs[pos(i, j)] : coeffs[pos(j, i)];
+}
+
 #endif

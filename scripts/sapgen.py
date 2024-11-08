@@ -6,7 +6,7 @@ prefixs = ["RRRRRR", "RRRRRUR_RRRRRUL", "RRRRRUU", "RRRRUR", "RRRRUL", "RRRRUUR_
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage : python sapgen.py l s")
-        print(" where l is an aven integer in [2, 40] and s is the plsit number")
+        print(" where l is an aven integer in [2, 40] and s is the split number")
         exit(0)
     l = int(sys.argv[1])
     s = int(sys.argv[2])

@@ -17,17 +17,50 @@
 //  with SquareSAP. If not, see <https://www.gnu.org/licenses/>.              //
 //****************************************************************************//
 
-#ifndef CONFIG_HPP
-#define CONFIG_HPP
+#ifndef FPCALCULATOR_HPP
+#define FPCALCULATOR_HPP
 
-#include <cstddef>
+#include "avx_matrix.hpp"
+#include "grid.hpp"
+#include "polygon.hpp"
 
-using namespace std;
+static const size_t max_number_vertices = 3 * max_length;
 
-//! Maximal length for self avoinding polygons
-static const size_t max_length = 40;
+class FpCalculator{
+private:
+  size_t length;
+  Grid grid;
+  size_t nv;
+  size_t ne;
+  int vx[max_number_vertices];
+  int vy[max_number_vertices];
+  AvxMatrix B;
+  AvxMatrix C;
+  void explore_cell(size_t cell);
+  void add_edge(size_t v, size_t w);
+  void compute_graph(const Polygon& P);
+  
+  //void compute_matrices();
+public:
+  FpCalculator(size_t length);
+  Reel operator()(const Polygon& P);
+};
 
-//! Type
-typedef double Reel;
-typedef __int128 Int;
+inline FpCalculator::FpCalculator(size_t l) : length(l), grid(l) {
+}
+
+inline void FpCalculator::explore_cell(size_t cell) {
+  if (grid[cell] == 65535) {
+    grid[cell] = nv;
+    vx[nv] = cell % max_width;
+    vy[nv] = cell / max_width;
+    cout << "Add vertice " << nv << " at (" << vx[nv] << ", " << vy[nv] << ")" << endl;
+    ++ nv;
+  }
+}
+
+inline void FpCalculator::add_edge(size_t v, size_t w) {
+  B.get(v, w) = 1;
+  B.get(w, v) = 1;
+}
 #endif
