@@ -46,9 +46,9 @@ Reel get_coefficient(size_t i, size_t j);
 void compute_coefficients();
 
 //! Represent an analytic coefficient
-struct CoefficentAnalytic{
+struct CoefficientAnalytic{
   //! The coefficient is a-4b/pi
-  Rationnal a,b;
+  Rationnal a, b;
 };
 
 //********************
@@ -62,7 +62,7 @@ pos(size_t i, size_t j){
 
 inline Reel
 get_coeff(size_t i, size_t j){
-  return i < j ? coeffs[pos(i, j)] : coeffs[pos(j, i)];
+  return i < j ? coefficients[pos(i, j)] : coefficients[pos(j, i)];
 }
 
 #endif

@@ -17,7 +17,7 @@
 //  with SquareSAP. If not, see <https://www.gnu.org/licenses/>.              //
 //****************************************************************************//
 
-#include "coeffs.hpp"
+#include "coefficients.hpp"
 
 //*****************************
 //* Defintion of externs data *
@@ -59,7 +59,7 @@ void compute_coefficients(){
     for (size_t i = 0; i <= j; ++ i) {
       size_t ind = pos(i, j);
       Rationnal f = ca[ind].a + fpii * ca[ind].b;
-      coeffs[pos(i, j)] = (Reel)f + (Reel)ca[ind].b * epii;
+      coefficients[pos(i, j)] = (Reel)f + (Reel)ca[ind].b * epii;
     }
   }
 }

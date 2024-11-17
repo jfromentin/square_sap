@@ -147,8 +147,8 @@ Rationnal::operator Reel() const {
 inline void
 Rationnal::normalize() {
   Int d = gcd((num < 0) ? -num : num, den);
-  num / = d;
-  den / = d;
+  num /= d;
+  den /= d;
 }
 
 inline Rationnal

@@ -23,19 +23,23 @@
 #include "fp_calculator.hpp"
 
 int main(int argc, char** argv) {
+
   Polygon P;
   P.set_length(8);
   P[0] = Right;
   P[1] = Up;
-  P[2] = Up;
+  P[2] = Left;
+  P[3] = Down;
+  /* P[2] = Up;
   P[3] = Left;
   P[4] = Left;
   P[5] = Down;
   P[6] = Right;
-  P[7] = Down;
+  P[7] = Down;*/
   P.display();
   cout << endl;
-  FpCalculator fp(8);
+  //FpCalculator fp(8);
+  FpCalculator fp(4);
   fp(P);
   /* int length;
   int frequency;

@@ -24,7 +24,7 @@ $(SAPGEN): obj/gameboard.o obj/polygon_generator.o obj/lzma_buffer.o src/main_sa
 $(FUSION): obj/lzma_buffer.o obj/fusion.o src/main_fusion.cpp
 	$(CPP) $(CFLAGS) $^ -o $@ $(LIBS)
 
-$(POLYFP): obj/lzma_buffer.o src/avx_matrix.cpp src/main_polyfp.cpp src/fp_calculator.cpp
+$(POLYFP): obj/lzma_buffer.o obj/avx_matrix.o obj/rationnal.o obj/coefficients.o obj/fp_calculator.o src/main_polyfp.cpp
 	$(CPP) $(CFLAGS) $^ -o $@ $(LIBS)	
 
 clean:

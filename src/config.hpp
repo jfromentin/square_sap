@@ -21,6 +21,7 @@
 #define CONFIG_HPP
 
 #include <cstddef>
+#include <cstdint>
 
 using namespace std;
 
@@ -29,5 +30,6 @@ static const size_t max_length = 40;
 
 //! Type
 typedef double Reel;
-typedef __int128 Int;
+//typedef __int128 Int;
+typedef int64_t Int;
 #endif
