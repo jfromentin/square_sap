@@ -36,7 +36,7 @@ public:
   void set_length(size_t length);
   Step& operator[](size_t i);
   Step operator[](size_t i) const;
-  void display() const;
+  void display(ostream& os = cout) const;
   size_t common_prefix(const Polygon& p) const;
 };
 
@@ -74,9 +74,9 @@ inline Step Polygon::operator[](size_t i) const {
   return steps[i];
 }
 
-inline void Polygon::display() const {
+inline void Polygon::display(ostream& os) const {
   for (size_t i = 0; i < length; ++ i) {
-    cout << step_to_char(steps[i]);
+    os << step_to_char(steps[i]);
   }
 }
 

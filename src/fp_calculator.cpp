@@ -21,7 +21,19 @@
 
 Reel FpCalculator::operator()(const Polygon& P) {
   compute_graph(P);
-  return 0;
+  AvxMatrix M;
+  
+  M.clear();
+  M.from_C_B(C, B, nv);
+  Reel det = M.Gauss(nv, nv + 1);
+  
+  Reel res = 0;
+  for (size_t i = 0; i < nv; ++ i) {
+    res += B.get_diag_square_sym(i, nv) * M.get(i, nv);
+  }
+  res *= (det * 0.25);
+  
+  return res;
 }
 
 void FpCalculator::compute_graph(const Polygon& P) {
@@ -48,30 +60,25 @@ void FpCalculator::compute_graph(const Polygon& P) {
     add_edge(v, grid[right]);
     add_edge(v, grid[up]);
     cell = grid.move(cell, P[i]);
-  }
-  cout << "Nv = " << nv << endl;
+  } 
+}
 
-  cout << "Matrix B " << endl;
-  B.display(nv, nv);
-  cout << "Matrix C " << endl;
-  C.display(nv, nv);
-  AvxMatrix M;
-  
-  M.clear();
-  M.from_C_B(C, B, nv);
-  cout << "Matrix M " << endl;
-  M.display(nv, nv + 1);
-  Reel det = M.Gauss(nv, nv + 1);
-  cout << "Det = " << det << endl;
-  
-  Reel res = 0;
-  for (size_t i = 0; i < nv; ++ i) {
-    res += B.get_diag_square_sym(i, nv) * M.get(i, nv);
+inline void FpCalculator::explore_cell(size_t cell) {
+  if (grid[cell] == 65535) {
+    grid[cell] = nv;
+    int x = cell % max_width;
+    vx[nv] = x;
+    int y =  cell / max_width;
+    vy[nv] = y;
+    ++ nv;
+    for (size_t i = 0 ; i < nv ; ++ i) {
+      int64_t dx = x - vx[i];
+      dx = (dx < 0) ? -dx : dx;
+      int64_t dy = y - vy[i];
+      dy = (dy < 0) ? -dy : dy;
+      Reel c = get_coeff(dx, dy);
+      C.get(i, nv - 1) = c;
+      C.get(nv - 1, i) = c;
+    }
   }
-  res *= (det * 0.25);
-  cout << "Fp =  " << res << endl;
-  //return res;
-  
-  //cout << "Number of vertices = " << nv << endl;
-  //B.display(nv,nv);
 }

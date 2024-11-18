@@ -51,30 +51,7 @@ inline FpCalculator::FpCalculator(size_t l) : length(l), grid(l) {
   compute_coefficients();
 }
 
-inline void FpCalculator::explore_cell(size_t cell) {
-  if (grid[cell] == 65535) {
-    grid[cell] = nv;
-    int x = cell % max_width;
-    vx[nv] = x;
-    int y =  cell / max_width;
-    vy[nv] = y;
-    // Add new vertex
-    cout << "Add vertice " << nv << " at (" << vx[nv] << ", " << vy[nv] << ")" << endl;
-    ++ nv;
-    // Update C matrix
-   
-    for (size_t i = 0 ; i < nv ; ++ i) {
-      int64_t dx = x - vx[i];
-      dx = (dx < 0) ? -dx : dx;
-      int64_t dy = y - vy[i];
-      dy = (dy < 0) ? -dy : dy;
-      Reel c = get_coeff(dx, dy);
-      C.get(i, nv - 1) = c;
-      C.get(nv - 1, i) = c;
-    }
 
-  }
-}
 
 inline void FpCalculator::add_edge(size_t v, size_t w) {
   B.get(v, w) = 1;

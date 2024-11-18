@@ -24,24 +24,7 @@
 
 int main(int argc, char** argv) {
 
-  Polygon P;
-  P.set_length(8);
-  P[0] = Right;
-  P[1] = Up;
-  P[2] = Left;
-  P[3] = Down;
-  /* P[2] = Up;
-  P[3] = Left;
-  P[4] = Left;
-  P[5] = Down;
-  P[6] = Right;
-  P[7] = Down;*/
-  P.display();
-  cout << endl;
-  //FpCalculator fp(8);
-  FpCalculator fp(4);
-  fp(P);
-  /* int length;
+  int length;
   int frequency;
   size_t number;
   
@@ -76,19 +59,34 @@ int main(int argc, char** argv) {
   if (length < 4 or length > 40) {
     cerr << "Length must be in [4, 40]" << endl;
   }
-  cout << "Input = " << input << endl;
-  cout << "Output = " << output << endl;
-  cout << "Length = " << length << endl;
-  cout << "Number = " << number << endl;
-  cout << "Frequency = " << frequency << endl;
+  //cout << "Input: " << input << endl;
+  ofstream file_info(output + ".info", ios::out | ios::trunc);
+  ofstream file_data(output + ".fp", ios::binary | ios::out | ios::trunc);
+  file_info << std::setprecision(20);
   ReadSapFile reader(length, input, number);
-  size_t temp = 0;
+  FpCalculator fp_calculator(length);
+  Reel sum_fp = 0;
   for (size_t i = 0; i < number; ++ i){
     const Polygon& P = reader.read_polygon();
-    //temp += (size_t)P[10];
-        cout << i << " : ";
-    P.display();
-    cout << endl; 
+    //cout << i << ": ";
+    //P.display();
+    
+    Reel fp = fp_calculator(P);
+    //cout << " : " << fp << endl;
+    sum_fp += fp;
+    if (i % frequency == 0) {
+      P.display(file_info);
+      file_info << ": " << fp << endl;
+    }		   			 
   }
-  cout << temp << endl;*/
+  file_data.write((const char*)&sum_fp, sizeof(Reel));
+  file_info << "Sum of fp: " << sum_fp << endl;
+  Reel proba = sum_fp * 2 * length;
+  for (int i = 0; i < length; ++ i) {
+    proba = proba / 4;
+  }
+  file_data.write((const char*)&proba, sizeof(Reel));
+  file_info << "Probability: " << proba << endl;
+  
+  
 }

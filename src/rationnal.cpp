@@ -19,6 +19,6 @@ Int gcd(Int a, Int b) {
 // operator<<
 //------------
 ostream& operator<<(ostream& os,const Rationnal& r){
-  if (r.denominator() == 1) return os << r.numerator();
-  return os << r.numerator() << '/' << r.denominator();
+  if (r.denominator() == 1) return os << (long int) r.numerator();
+  return os << (long int)r.numerator() << '/' << (long int)r.denominator();
 }
