@@ -61,9 +61,9 @@ string Lzma::message(lzma_ret error) const {
   case LZMA_PROG_ERROR:
     return "Programming error";
     break;
-  case LZMA_SEEK_NEEDED:
+    /*  case LZMA_SEEK_NEEDED:
     return "Request to change the input file position";
-    break;
+    break;*/
   default:
     return  "Unknown error";
     break;
