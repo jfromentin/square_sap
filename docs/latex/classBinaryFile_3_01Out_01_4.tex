@@ -2,41 +2,85 @@
 \hypertarget{classBinaryFile_3_01Out_01_4}{}\label{classBinaryFile_3_01Out_01_4}\index{BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}}
 
 
+Class for output binary file. It allow us to have a Buffer\textquotesingle{}s like interface.  
+
+
+
+
 {\ttfamily \#include $<$binary\+\_\+file.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classBinaryFile_3_01Out_01_4_a76654b20185b29f6287a32dcda68535b}{Binary\+File}} (const string filename)
-\item 
-void \mbox{\hyperlink{classBinaryFile_3_01Out_01_4_a06a8e6ea6e84ac552b6c3338b2195bac}{close}} ()
+\mbox{\hyperlink{classBinaryFile_3_01Out_01_4_ae39218ccc077bd173ae932f7ab4245a1}{Binary\+File}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBinaryFile_3_01Out_01_4_a1d320c61569dfa509bc41e1cc4bf6a0a}{open}} (const string filename)
 \item 
 void \mbox{\hyperlink{classBinaryFile_3_01Out_01_4_a07d342383ebf9679825806c3e0dff845}{write}} (\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}} \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size)
-\end{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBinaryFile_3_01Out_01_4_a1f52c0ac99f3fc72e558bd13f9b69ef3}{clear}} ()
+\item 
+void \mbox{\hyperlink{classBinaryFile_3_01Out_01_4_a06a8e6ea6e84ac552b6c3338b2195bac}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the \doxylink{classBinaryFile}{Binary\+File}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class for output binary file. It allow us to have a Buffer\textquotesingle{}s like interface. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classBinaryFile_3_01Out_01_4_a76654b20185b29f6287a32dcda68535b}\index{BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}!BinaryFile@{BinaryFile}}
+\Hypertarget{classBinaryFile_3_01Out_01_4_ae39218ccc077bd173ae932f7ab4245a1}\index{BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}!BinaryFile@{BinaryFile}}
 \index{BinaryFile@{BinaryFile}!BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}}
 \doxysubsubsection{\texorpdfstring{BinaryFile()}{BinaryFile()}}
-{\footnotesize\ttfamily \label{classBinaryFile_3_01Out_01_4_a76654b20185b29f6287a32dcda68535b} 
-\mbox{\hyperlink{classBinaryFile}{Binary\+File}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}} $>$\mbox{\hyperlink{classBinaryFile}{\+::\+Binary\+File}} (\begin{DoxyParamCaption}\item[{const string}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classBinaryFile_3_01Out_01_4_ae39218ccc077bd173ae932f7ab4245a1} 
+\mbox{\hyperlink{classBinaryFile}{Binary\+File}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}} $>$\mbox{\hyperlink{classBinaryFile}{\+::\+Binary\+File}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructor. 
 
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classBinaryFile_3_01Out_01_4_a1f52c0ac99f3fc72e558bd13f9b69ef3}\index{BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}!clear@{clear}}
+\index{clear@{clear}!BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{classBinaryFile_3_01Out_01_4_a1f52c0ac99f3fc72e558bd13f9b69ef3} 
+void \mbox{\hyperlink{classBinaryFile}{Binary\+File}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}} $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \Hypertarget{classBinaryFile_3_01Out_01_4_a06a8e6ea6e84ac552b6c3338b2195bac}\index{BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}!close@{close}}
 \index{close@{close}!BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}}
 \doxysubsubsection{\texorpdfstring{close()}{close()}}
 {\footnotesize\ttfamily \label{classBinaryFile_3_01Out_01_4_a06a8e6ea6e84ac552b6c3338b2195bac} 
 void \mbox{\hyperlink{classBinaryFile}{Binary\+File}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}} $>$\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Close the \doxylink{classBinaryFile}{Binary\+File}. 
+
+\Hypertarget{classBinaryFile_3_01Out_01_4_a1d320c61569dfa509bc41e1cc4bf6a0a}\index{BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}!open@{open}}
+\index{open@{open}!BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \label{classBinaryFile_3_01Out_01_4_a1d320c61569dfa509bc41e1cc4bf6a0a} 
+void \mbox{\hyperlink{classBinaryFile}{Binary\+File}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}} $>$\+::open (\begin{DoxyParamCaption}\item[{const string}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Open the output \doxylink{classBinaryFile}{Binary\+File} from a filename 
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of the file to open \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classBinaryFile_3_01Out_01_4_a07d342383ebf9679825806c3e0dff845}\index{BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}!write@{write}}
 \index{write@{write}!BinaryFile$<$ Out $>$@{BinaryFile$<$ Out $>$}}
 \doxysubsubsection{\texorpdfstring{write()}{write()}}
 {\footnotesize\ttfamily \label{classBinaryFile_3_01Out_01_4_a07d342383ebf9679825806c3e0dff845} 
 void \mbox{\hyperlink{classBinaryFile}{Binary\+File}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}} $>$\+::write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}} \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Write Bytes in the output \doxylink{classBinaryFile}{Binary\+File} from a buffer 
+\begin{DoxyParams}{Parameters}
+{\em the} & source buffer \\
+\hline
+{\em size} & number of bytes to write \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

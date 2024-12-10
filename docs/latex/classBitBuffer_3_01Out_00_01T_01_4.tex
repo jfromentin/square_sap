@@ -7,33 +7,64 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classBitBuffer_3_01Out_00_01T_01_4_afc441f89dff616fe3807f27db7ed0378}{Bit\+Buffer}} (T \&output)
-\item 
+\mbox{\hyperlink{classBitBuffer_3_01Out_00_01T_01_4_a36a7eca869d18a31adc115b84585ace0}{Bit\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBitBuffer_3_01Out_00_01T_01_4_afd13bb5522862ecbc8e8bfd8c8917682}{open}} (T \texorpdfstring{$\ast$}{*}output)
+\begin{DoxyCompactList}\small\item\em Open a Bit\+Buffer$<$\+Out$>$ with given output object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classBitBuffer_3_01Out_00_01T_01_4_a58162f45477ab70b177a047c14ed455b}{write\+\_\+bit}} (bool b)
 \item 
 void \mbox{\hyperlink{classBitBuffer_3_01Out_00_01T_01_4_a62b95b68ccaf5ef47b576fe5cfc21d82}{write\+\_\+int}} (size\+\_\+t v, size\+\_\+t nb)
+\item 
+void \mbox{\hyperlink{classBitBuffer_3_01Out_00_01T_01_4_a1a028863503b1f022177b22ffdb8bec9}{clear}} ()
 \item 
 void \mbox{\hyperlink{classBitBuffer_3_01Out_00_01T_01_4_a85e9325e9db69e81fe840c80b9bbb36e}{close}} ()
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Bit\+Buffer$<$ Out, T $>$}
+Class for output \doxylink{classBitBuffer}{Bit\+Buffer}. It take bits as input and write Bytes in the specified ouput object. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classBitBuffer_3_01Out_00_01T_01_4_afc441f89dff616fe3807f27db7ed0378}\index{BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}!BitBuffer@{BitBuffer}}
+\Hypertarget{classBitBuffer_3_01Out_00_01T_01_4_a36a7eca869d18a31adc115b84585ace0}\index{BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}!BitBuffer@{BitBuffer}}
 \index{BitBuffer@{BitBuffer}!BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}}
 \doxysubsubsection{\texorpdfstring{BitBuffer()}{BitBuffer()}}
-{\footnotesize\ttfamily \label{classBitBuffer_3_01Out_00_01T_01_4_afc441f89dff616fe3807f27db7ed0378} 
+{\footnotesize\ttfamily \label{classBitBuffer_3_01Out_00_01T_01_4_a36a7eca869d18a31adc115b84585ace0} 
 template$<$class T $>$ \\
-\mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}}, T $>$\mbox{\hyperlink{classBitBuffer}{\+::\+Bit\+Buffer}} (\begin{DoxyParamCaption}\item[{T \&}]{output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}}, T $>$\mbox{\hyperlink{classBitBuffer}{\+::\+Bit\+Buffer}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructor. 
 
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classBitBuffer_3_01Out_00_01T_01_4_a1a028863503b1f022177b22ffdb8bec9}\index{BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}!clear@{clear}}
+\index{clear@{clear}!BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{classBitBuffer_3_01Out_00_01T_01_4_a1a028863503b1f022177b22ffdb8bec9} 
+template$<$class T $>$ \\
+void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}}, T $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \Hypertarget{classBitBuffer_3_01Out_00_01T_01_4_a85e9325e9db69e81fe840c80b9bbb36e}\index{BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}!close@{close}}
 \index{close@{close}!BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}}
 \doxysubsubsection{\texorpdfstring{close()}{close()}}
 {\footnotesize\ttfamily \label{classBitBuffer_3_01Out_00_01T_01_4_a85e9325e9db69e81fe840c80b9bbb36e} 
 template$<$class T $>$ \\
 void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}}, T $>$\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classBitBuffer_3_01Out_00_01T_01_4_afd13bb5522862ecbc8e8bfd8c8917682}\index{BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}!open@{open}}
+\index{open@{open}!BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \label{classBitBuffer_3_01Out_00_01T_01_4_afd13bb5522862ecbc8e8bfd8c8917682} 
+template$<$class T $>$ \\
+void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}}, T $>$\+::open (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Open a Bit\+Buffer$<$\+Out$>$ with given output object. 
 
 \Hypertarget{classBitBuffer_3_01Out_00_01T_01_4_a58162f45477ab70b177a047c14ed455b}\index{BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}!write\_bit@{write\_bit}}
 \index{write\_bit@{write\_bit}!BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}}
@@ -42,6 +73,11 @@ void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8
 template$<$class T $>$ \\
 void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}}, T $>$\+::write\+\_\+bit (\begin{DoxyParamCaption}\item[{bool}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Write a single bit 
+\begin{DoxyParams}{Parameters}
+{\em b} & is the bit to write \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classBitBuffer_3_01Out_00_01T_01_4_a62b95b68ccaf5ef47b576fe5cfc21d82}\index{BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}!write\_int@{write\_int}}
 \index{write\_int@{write\_int}!BitBuffer$<$ Out, T $>$@{BitBuffer$<$ Out, T $>$}}
 \doxysubsubsection{\texorpdfstring{write\_int()}{write\_int()}}
@@ -49,6 +85,13 @@ void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8
 template$<$class T $>$ \\
 void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}}, T $>$\+::write\+\_\+int (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{v}{, }\item[{size\+\_\+t}]{nb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Write bits from a given integer 
+\begin{DoxyParams}{Parameters}
+{\em v} & an integer \\
+\hline
+{\em nb} & number of first bits of v to write \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

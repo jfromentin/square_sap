@@ -3,12 +3,12 @@
 //                                                                            //
 //  This file is part of SquareSAP <https://github.com/jfromentin/square_sap> //
 //                                                                            //
-//  HP-Combi is free software: you can redistribute it and/or modify it       //
+//  SquareSAP is free software: you can redistribute it and/or modify it      //
 //  under the terms of the GNU General Public License as published by the     //
 //  Free Software Foundation, either version 3 of the License, or             //
 //  (at your option) any later version.                                       //
 //                                                                            //
-//  HP-Combi is distributed in the hope that it will be useful, but WITHOUT   //
+//  SquareSap is distributed in the hope that it will be useful, but WITHOUT  //
 //  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     //
 //  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License      //
 //  for  more details.                                                        //
@@ -67,12 +67,8 @@ int main(int argc, char** argv) {
   FpCalculator fp_calculator(length);
   Reel sum_fp = 0;
   for (size_t i = 0; i < number; ++ i){
-    const Polygon& P = reader.read_polygon();
-    //cout << i << ": ";
-    //P.display();
-    
+    const Polygon& P = reader.read_polygon();  
     Reel fp = fp_calculator(P);
-    //cout << " : " << fp << endl;
     sum_fp += fp;
     if (i % frequency == 0) {
       P.display(file_info);

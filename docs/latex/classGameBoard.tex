@@ -2,6 +2,11 @@
 \hypertarget{classGameBoard}{}\label{classGameBoard}\index{GameBoard@{GameBoard}}
 
 
+Class for the Gameboard where self avoiding polygons will be contructed.  
+
+
+
+
 {\ttfamily \#include $<$gameboard.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
@@ -9,13 +14,22 @@
 \item 
 \mbox{\hyperlink{classGameBoard_ad437d09a131a917f48ee1e2348a18234}{Game\+Board}} (size\+\_\+t length)
 \item 
-\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \& \mbox{\hyperlink{classGameBoard_a49d352a02fe13ebb84ed117a03d7c6b4}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t size)
-\item 
-const \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \& \mbox{\hyperlink{classGameBoard_a62641678e3d3447f637bae18cd262de5}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t size) const
-\item 
+\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} \& \mbox{\hyperlink{classGameBoard_a5206b347699c5dee8aaf6a961bd74b79}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em Return access to the Cell\+Data of the cell of index i ~\newline
+ \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} \& \mbox{\hyperlink{classGameBoard_a62641678e3d3447f637bae18cd262de5}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t size) const
+\begin{DoxyCompactList}\small\item\em Return Cell\+Data of the cell of index i. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classGameBoard_afc0cf7d7c9a22fb7c17391d513379c31}{base\+\_\+cell}} () const
+\begin{DoxyCompactList}\small\item\em Return the index of the base cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \mbox{\hyperlink{classGameBoard_a3f0d81c41fb4f8da9a9cbad6bdf811da}{move}} (size\+\_\+t c, \mbox{\hyperlink{step_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}} s)
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class for the Gameboard where self avoiding polygons will be contructed. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classGameBoard_ad437d09a131a917f48ee1e2348a18234}\index{GameBoard@{GameBoard}!GameBoard@{GameBoard}}
@@ -24,6 +38,11 @@ size\+\_\+t \mbox{\hyperlink{classGameBoard_afc0cf7d7c9a22fb7c17391d513379c31}{b
 {\footnotesize\ttfamily \label{classGameBoard_ad437d09a131a917f48ee1e2348a18234} 
 Game\+Board\+::\+Game\+Board (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{length}{}\end{DoxyParamCaption})}
 
+Construct a Gameboard 
+\begin{DoxyParams}{Parameters}
+{\em length} & length of the self avoidinf polygons we want to construct \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -33,17 +52,43 @@ Game\+Board\+::\+Game\+Board (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{lengt
 {\footnotesize\ttfamily \label{classGameBoard_afc0cf7d7c9a22fb7c17391d513379c31} 
 size\+\_\+t Game\+Board\+::base\+\_\+cell (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classGameBoard_a49d352a02fe13ebb84ed117a03d7c6b4}\index{GameBoard@{GameBoard}!operator\mbox{[}\mbox{]}@{operator[]}}
+
+
+Return the index of the base cell. 
+
+\Hypertarget{classGameBoard_a3f0d81c41fb4f8da9a9cbad6bdf811da}\index{GameBoard@{GameBoard}!move@{move}}
+\index{move@{move}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{classGameBoard_a3f0d81c41fb4f8da9a9cbad6bdf811da} 
+size\+\_\+t Game\+Board\+::move (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{c}{, }\item[{\mbox{\hyperlink{step_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Return the index of the cell we reach after a move 
+\begin{DoxyParams}{Parameters}
+{\em c} & index of the cell we start with \\
+\hline
+{\em s} & the step we perform from c \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGameBoard_a5206b347699c5dee8aaf6a961bd74b79}\index{GameBoard@{GameBoard}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!GameBoard@{GameBoard}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{classGameBoard_a49d352a02fe13ebb84ed117a03d7c6b4} 
-\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \& Game\+Board\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classGameBoard_a5206b347699c5dee8aaf6a961bd74b79} 
+\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} \& Game\+Board\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return access to the Cell\+Data of the cell of index i ~\newline
+ 
 
 \Hypertarget{classGameBoard_a62641678e3d3447f637bae18cd262de5}\index{GameBoard@{GameBoard}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!GameBoard@{GameBoard}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{classGameBoard_a62641678e3d3447f637bae18cd262de5} 
-const \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \& Game\+Board\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+const \mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} \& Game\+Board\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return Cell\+Data of the cell of index i. 
 
 
 

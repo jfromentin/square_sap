@@ -3,12 +3,12 @@
 //                                                                            //
 //  This file is part of SquareSAP <https://github.com/jfromentin/square_sap> //
 //                                                                            //
-//  HP-Combi is free software: you can redistribute it and/or modify it       //
+//  SquareSAP is free software: you can redistribute it and/or modify it      //
 //  under the terms of the GNU General Public License as published by the     //
 //  Free Software Foundation, either version 3 of the License, or             //
 //  (at your option) any later version.                                       //
 //                                                                            //
-//  HP-Combi is distributed in the hope that it will be useful, but WITHOUT   //
+//  SquareSap is distributed in the hope that it will be useful, but WITHOUT  //
 //  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     //
 //  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License      //
 //  for  more details.                                                        //
@@ -20,8 +20,6 @@
 #include <iostream>
 #include <tclap/CmdLine.h>
 #include "polygon_generator.hpp"
-//#include "bit_buffer.hpp"
-//#include "binary_file.hpp"
 
 void generate(size_t l, string prefixs, string filename, size_t split) {
   PolygonGenerator gen(l);
@@ -48,10 +46,6 @@ int main(int argc, char** argv) {
     prefixs = prefixsArg.getValue();
     filename = outputArg.getValue();
     split = splitArg.getValue();
-    /*cout << "Length = " << length << endl;
-    cout << "Prefixs = " << prefixs << endl;
-    cout << "Filename = " << filename << endl;
-    cout << "Split = " << split << endl;*/
   }
   catch (TCLAP::ArgException &e){
     cerr <<"[Error] "<<e.error()<<" for arg "<<e.argId()<<endl;

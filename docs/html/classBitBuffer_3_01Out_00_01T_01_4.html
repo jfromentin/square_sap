@@ -95,18 +95,27 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afc441f89dff616fe3807f27db7ed0378" id="r_afc441f89dff616fe3807f27db7ed0378"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc441f89dff616fe3807f27db7ed0378">BitBuffer</a> (T &amp;output)</td></tr>
-<tr class="separator:afc441f89dff616fe3807f27db7ed0378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36a7eca869d18a31adc115b84585ace0" id="r_a36a7eca869d18a31adc115b84585ace0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36a7eca869d18a31adc115b84585ace0">BitBuffer</a> ()</td></tr>
+<tr class="memdesc:a36a7eca869d18a31adc115b84585ace0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty constructor.  <br /></td></tr>
+<tr class="separator:a36a7eca869d18a31adc115b84585ace0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd13bb5522862ecbc8e8bfd8c8917682" id="r_afd13bb5522862ecbc8e8bfd8c8917682"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd13bb5522862ecbc8e8bfd8c8917682">open</a> (T *output)</td></tr>
+<tr class="memdesc:afd13bb5522862ecbc8e8bfd8c8917682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a BitBuffer&lt;Out&gt; with given output object.  <br /></td></tr>
+<tr class="separator:afd13bb5522862ecbc8e8bfd8c8917682"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58162f45477ab70b177a047c14ed455b" id="r_a58162f45477ab70b177a047c14ed455b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58162f45477ab70b177a047c14ed455b">write_bit</a> (bool b)</td></tr>
 <tr class="separator:a58162f45477ab70b177a047c14ed455b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62b95b68ccaf5ef47b576fe5cfc21d82" id="r_a62b95b68ccaf5ef47b576fe5cfc21d82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62b95b68ccaf5ef47b576fe5cfc21d82">write_int</a> (size_t v, size_t nb)</td></tr>
 <tr class="separator:a62b95b68ccaf5ef47b576fe5cfc21d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a028863503b1f022177b22ffdb8bec9" id="r_a1a028863503b1f022177b22ffdb8bec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a028863503b1f022177b22ffdb8bec9">clear</a> ()</td></tr>
+<tr class="separator:a1a028863503b1f022177b22ffdb8bec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e9325e9db69e81fe840c80b9bbb36e" id="r_a85e9325e9db69e81fe840c80b9bbb36e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85e9325e9db69e81fe840c80b9bbb36e">close</a> ()</td></tr>
 <tr class="separator:a85e9325e9db69e81fe840c80b9bbb36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afc441f89dff616fe3807f27db7ed0378" name="afc441f89dff616fe3807f27db7ed0378"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc441f89dff616fe3807f27db7ed0378">&#9670;&#160;</a></span>BitBuffer()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class BitBuffer&lt; Out, T &gt;</div><p>Class for output <a class="el" href="classBitBuffer.html">BitBuffer</a>. It take bits as input and write Bytes in the specified ouput object. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a36a7eca869d18a31adc115b84585ace0" name="a36a7eca869d18a31adc115b84585ace0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36a7eca869d18a31adc115b84585ace0">&#9670;&#160;</a></span>BitBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,7 +128,37 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classBitBuffer.html">BitBuffer</a>&lt; <a class="el" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a>, T &gt;<a class="el" href="classBitBuffer.html">::BitBuffer</a> </td>
           <td>(</td>
-          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Empty constructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1a028863503b1f022177b22ffdb8bec9" name="a1a028863503b1f022177b22ffdb8bec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a028863503b1f022177b22ffdb8bec9">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classBitBuffer.html">BitBuffer</a>&lt; <a class="el" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a>, T &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -132,7 +171,6 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a85e9325e9db69e81fe840c80b9bbb36e" name="a85e9325e9db69e81fe840c80b9bbb36e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85e9325e9db69e81fe840c80b9bbb36e">&#9670;&#160;</a></span>close()</h2>
 
@@ -160,6 +198,35 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="afd13bb5522862ecbc8e8bfd8c8917682" name="afd13bb5522862ecbc8e8bfd8c8917682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd13bb5522862ecbc8e8bfd8c8917682">&#9670;&#160;</a></span>open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classBitBuffer.html">BitBuffer</a>&lt; <a class="el" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a>, T &gt;::open </td>
+          <td>(</td>
+          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open a BitBuffer&lt;Out&gt; with given output object. </p>
+
+</div>
+</div>
 <a id="a58162f45477ab70b177a047c14ed455b" name="a58162f45477ab70b177a047c14ed455b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58162f45477ab70b177a047c14ed455b">&#9670;&#160;</a></span>write_bit()</h2>
 
@@ -184,6 +251,12 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Write a single bit </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>is the bit to write </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -215,6 +288,13 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Write bits from a given integer </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>an integer </td></tr>
+    <tr><td class="paramname">nb</td><td>number of first bits of v to write </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

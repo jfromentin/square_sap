@@ -3,12 +3,12 @@
 //                                                                            //
 //  This file is part of SquareSAP <https://github.com/jfromentin/square_sap> //
 //                                                                            //
-//  HP-Combi is free software: you can redistribute it and/or modify it       //
+//  SquareSAP is free software: you can redistribute it and/or modify it      //
 //  under the terms of the GNU General Public License as published by the     //
 //  Free Software Foundation, either version 3 of the License, or             //
 //  (at your option) any later version.                                       //
 //                                                                            //
-//  HP-Combi is distributed in the hope that it will be useful, but WITHOUT   //
+//  SquareSap is distributed in the hope that it will be useful, but WITHOUT  //
 //  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     //
 //  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License      //
 //  for  more details.                                                        //
@@ -20,7 +20,7 @@
 #include "lzma_buffer.hpp"
 
 string Lzma::message(lzma_ret error) const {
-  //P possible errors are documented in
+  // possible errors are documented in
   // lzma/container.h (src/liblzma/api/lzma/container.h in the source
   // package or e.g. /usr/include/lzma/container.h depending on the
   // install prefix).

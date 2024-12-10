@@ -4,60 +4,87 @@
 {\ttfamily \#include $<$cstdint$>$}\newline
 {\ttfamily \#include $<$cassert$>$}\newline
 {\ttfamily \#include "{}config.\+hpp"{}}\newline
+{\ttfamily \#include "{}step.\+hpp"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classGameBoard}{Game\+Board}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Class for the Gameboard where self avoiding polygons will be contructed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} = uint16\+\_\+t
+using \mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} = uint16\+\_\+t
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \mbox{\hyperlink{gameboard_8hpp_a43b0e6a46d45401f8459488c5a48c955}{init\+\_\+cell\+\_\+data}} (uint8\+\_\+t a, uint8\+\_\+t b)
+\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} \mbox{\hyperlink{gameboard_8hpp_a757780f3ce2da627346763af281a1dc2}{init\+\_\+cell\+\_\+data}} (uint8\+\_\+t d, uint8\+\_\+t t)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{gameboard_8hpp_a08804bf7f39eff5573d91d63f24bde37}{get\+\_\+d}} (\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} c)
+uint8\+\_\+t \mbox{\hyperlink{gameboard_8hpp_a08804bf7f39eff5573d91d63f24bde37}{get\+\_\+d}} (\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} c)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{gameboard_8hpp_ae96501490e057e77d213555ee0c82cef}{get\+\_\+t}} (\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} c)
+uint8\+\_\+t \mbox{\hyperlink{gameboard_8hpp_ae96501490e057e77d213555ee0c82cef}{get\+\_\+t}} (\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} c)
 \item 
-void \mbox{\hyperlink{gameboard_8hpp_a2e06c7eae0fffed39df6ef674f837d6a}{set\+\_\+t}} (\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \&c, uint8\+\_\+t b)
+void \mbox{\hyperlink{gameboard_8hpp_aced0ff1430d5034b3dd827130eafb4cc}{set\+\_\+t}} (\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} \&c, uint8\+\_\+t t)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
-\Hypertarget{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}\index{gameboard.hpp@{gameboard.hpp}!CellData@{CellData}}
+\Hypertarget{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}\index{gameboard.hpp@{gameboard.hpp}!CellData@{CellData}}
 \index{CellData@{CellData}!gameboard.hpp@{gameboard.hpp}}
 \doxysubsubsection{\texorpdfstring{CellData}{CellData}}
-{\footnotesize\ttfamily \label{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53} 
-using \mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} = uint16\+\_\+t}
+{\footnotesize\ttfamily \label{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90} 
+typedef uint16\+\_\+t \mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} = uint16\+\_\+t}
 
-
+Cell\+Data is an 16 bits unsigned integer composed of two 8bits unsigned integer \+:
+\begin{DoxyItemize}
+\item d which is the minimal number of steps needed to reach the base cell.
+\item t which is the position, in the path, of the step that reach the cell 
+\end{DoxyItemize}
 
 \doxysubsection{Function Documentation}
 \Hypertarget{gameboard_8hpp_a08804bf7f39eff5573d91d63f24bde37}\index{gameboard.hpp@{gameboard.hpp}!get\_d@{get\_d}}
 \index{get\_d@{get\_d}!gameboard.hpp@{gameboard.hpp}}
 \doxysubsubsection{\texorpdfstring{get\_d()}{get\_d()}}
 {\footnotesize\ttfamily \label{gameboard_8hpp_a08804bf7f39eff5573d91d63f24bde37} 
-uint8\+\_\+t get\+\_\+d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+uint8\+\_\+t get\+\_\+d (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Return the value d of a given Cell\+Data 
+\begin{DoxyParams}{Parameters}
+{\em c} & a Cell\+Data \\
+\hline
+\end{DoxyParams}
 \Hypertarget{gameboard_8hpp_ae96501490e057e77d213555ee0c82cef}\index{gameboard.hpp@{gameboard.hpp}!get\_t@{get\_t}}
 \index{get\_t@{get\_t}!gameboard.hpp@{gameboard.hpp}}
 \doxysubsubsection{\texorpdfstring{get\_t()}{get\_t()}}
 {\footnotesize\ttfamily \label{gameboard_8hpp_ae96501490e057e77d213555ee0c82cef} 
-uint8\+\_\+t get\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+uint8\+\_\+t get\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{gameboard_8hpp_a43b0e6a46d45401f8459488c5a48c955}\index{gameboard.hpp@{gameboard.hpp}!init\_cell\_data@{init\_cell\_data}}
+Return the value t of a given Cell\+Data 
+\begin{DoxyParams}{Parameters}
+{\em c} & a Cell\+Data \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameboard_8hpp_a757780f3ce2da627346763af281a1dc2}\index{gameboard.hpp@{gameboard.hpp}!init\_cell\_data@{init\_cell\_data}}
 \index{init\_cell\_data@{init\_cell\_data}!gameboard.hpp@{gameboard.hpp}}
 \doxysubsubsection{\texorpdfstring{init\_cell\_data()}{init\_cell\_data()}}
-{\footnotesize\ttfamily \label{gameboard_8hpp_a43b0e6a46d45401f8459488c5a48c955} 
-\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} init\+\_\+cell\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{a}{, }\item[{uint8\+\_\+t}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{gameboard_8hpp_a757780f3ce2da627346763af281a1dc2} 
+\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} init\+\_\+cell\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{d}{, }\item[{uint8\+\_\+t}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{gameboard_8hpp_a2e06c7eae0fffed39df6ef674f837d6a}\index{gameboard.hpp@{gameboard.hpp}!set\_t@{set\_t}}
+Construct a Cell\+Data from the values d and t 
+\begin{DoxyParams}{Parameters}
+{\em d} & minimal number of steps needed to reach the base cell \\
+\hline
+{\em t} & time when the curent path reach that cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameboard_8hpp_aced0ff1430d5034b3dd827130eafb4cc}\index{gameboard.hpp@{gameboard.hpp}!set\_t@{set\_t}}
 \index{set\_t@{set\_t}!gameboard.hpp@{gameboard.hpp}}
 \doxysubsubsection{\texorpdfstring{set\_t()}{set\_t()}}
-{\footnotesize\ttfamily \label{gameboard_8hpp_a2e06c7eae0fffed39df6ef674f837d6a} 
-void set\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gameboard_8hpp_a61f37df146c50fd5c3b098283e28cc53}{Cell\+Data}} \&}]{c}{, }\item[{uint8\+\_\+t}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{gameboard_8hpp_aced0ff1430d5034b3dd827130eafb4cc} 
+void set\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gameboard_8hpp_a1f3e1389093ff3e9ea5abc0293579d90}{Cell\+Data}} \&}]{c}{, }\item[{uint8\+\_\+t}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Set the value t of a given Cell\+Data 
+\begin{DoxyParams}{Parameters}
+{\em c} & a Cell\+Data \textbackslash{}parma t the value to set \\
+\hline
+\end{DoxyParams}

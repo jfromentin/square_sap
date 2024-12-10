@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['left_0',['Left',['../polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb',1,'polygon.hpp']]],
-  ['lzma_1',['Lzma',['../classLzma.html',1,'']]],
-  ['lzma_5fbuffer_2ecpp_2',['lzma_buffer.cpp',['../lzma__buffer_8cpp.html',1,'']]],
-  ['lzma_5fbuffer_2ehpp_3',['lzma_buffer.hpp',['../lzma__buffer_8hpp.html',1,'']]],
-  ['lzma_5fcompress_4',['lzma_compress',['../polygon__generator_8cpp.html#a1e99c0242316610070578d04c45dbc2b',1,'polygon_generator.cpp']]],
-  ['lzmabuffer_5',['LzmaBuffer',['../classLzmaBuffer.html',1,'LzmaBuffer&lt; D, T &gt;'],['../classLzmaBuffer_3_01Out_00_01T_01_4.html#a33927546429478b54e48f5f06d75d745',1,'LzmaBuffer&lt; Out, T &gt;::LzmaBuffer()'],['../classLzmaBuffer_3_01In_00_01T_01_4.html#a4f5c85581b903370894ed4560bb58f0f',1,'LzmaBuffer&lt; In, T &gt;::LzmaBuffer()']]],
-  ['lzmabuffer_3c_20in_2c_20t_20_3e_6',['LzmaBuffer&lt; In, T &gt;',['../classLzmaBuffer_3_01In_00_01T_01_4.html',1,'']]],
-  ['lzmabuffer_3c_20out_2c_20t_20_3e_7',['LzmaBuffer&lt; Out, T &gt;',['../classLzmaBuffer_3_01Out_00_01T_01_4.html',1,'']]]
+  ['in_0',['In',['../buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975',1,'buffer.hpp']]],
+  ['init_1',['init',['../classPolygonGenerator.html#af53de3deb42d8c258b311c614f473701',1,'PolygonGenerator']]],
+  ['init_5fcell_5fdata_2',['init_cell_data',['../gameboard_8hpp.html#a757780f3ce2da627346763af281a1dc2',1,'gameboard.hpp']]],
+  ['init_5fstack_5finfo_3',['init_stack_info',['../polygon__generator_8hpp.html#aeec0fbe2ae6076dcf735c6c0871bd0db',1,'polygon_generator.hpp']]],
+  ['int_4',['Int',['../config_8hpp.html#ae1e57977766223f60b2f2694887cbae9',1,'config.hpp']]],
+  ['io_5',['IO',['../buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3a',1,'buffer.hpp']]],
+  ['is_5fempty_6',['is_empty',['../classArray.html#afe058cf9881ee98e15f4f0e9c16cce3e',1,'Array::is_empty()'],['../classStack.html#ae667e7ba22b4abd3158996ec17a712a4',1,'Stack::is_empty()']]]
 ];

@@ -96,12 +96,12 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                                                                            //</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  This file is part of SquareSAP &lt;https://github.com/jfromentin/square_sap&gt; //</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//                                                                            //</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  HP-Combi is free software: you can redistribute it and/or modify it       //</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  SquareSAP is free software: you can redistribute it and/or modify it      //</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  under the terms of the GNU General Public License as published by the     //</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  Free Software Foundation, either version 3 of the License, or             //</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  (at your option) any later version.                                       //</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//                                                                            //</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  HP-Combi is distributed in the hope that it will be useful, but WITHOUT   //</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  SquareSap is distributed in the hope that it will be useful, but WITHOUT  //</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     //</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License      //</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//  for  more details.                                                        //</span></div>
@@ -115,142 +115,103 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="config_8hpp.html">config.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27">   28</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a>:uint8_t {<a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb">Left</a> = 0, <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66">Right</a> = 1, <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2">Up</a> = 2, <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27">Down</a> = 3};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">char</span> <a class="code hl_function" href="polygon_8hpp.html#a560f29558d24ac396fb53cb81921da15">step_to_char</a>(<a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> s);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> <a class="code hl_function" href="polygon_8hpp.html#ae026ec90d1a4edbcad92f3f00935d64f">char_to_step</a>(<span class="keywordtype">char</span> c);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classPolygon.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="classPolygon.html">Polygon</a>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">size_t</span> length;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> steps[max_length];</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_function" href="classPolygon.html#ac183e712f8be1e13f1c9d5b4d4512ead">Polygon</a>();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; <a class="code hl_function" href="classPolygon.html#afa6c4ee147650491a3685c645430b992">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; p);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPolygon.html#a78e8feed35695d02772bc637d0901805">set_length</a>(<span class="keywordtype">size_t</span> length);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a>&amp; <a class="code hl_function" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">operator[]</a>(<span class="keywordtype">size_t</span> i);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> <a class="code hl_function" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">operator[]</a>(<span class="keywordtype">size_t</span> i) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPolygon.html#a7d2bfb42148113157e387ac1f319a46e">display</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">common_prefix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; p) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="step_8hpp.html">step.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classPolygon.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="classPolygon.html">Polygon</a>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordtype">size_t</span> length;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_enumeration" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> steps[max_length];</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_function" href="classPolygon.html#ac183e712f8be1e13f1c9d5b4d4512ead">Polygon</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; <a class="code hl_function" href="classPolygon.html#afa6c4ee147650491a3685c645430b992">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; p);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPolygon.html#a78e8feed35695d02772bc637d0901805">set_length</a>(<span class="keywordtype">size_t</span> length);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_enumeration" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a>&amp; <a class="code hl_function" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">operator[]</a>(<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_enumeration" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> <a class="code hl_function" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">operator[]</a>(<span class="keywordtype">size_t</span> i) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPolygon.html#aa109c5be48abb735f1ce00bb898c8d70">display</a>(ostream&amp; os = cout) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">common_prefix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; p) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classPolygon.html#ac183e712f8be1e13f1c9d5b4d4512ead">   44</a></span><span class="keyword">inline</span> <a class="code hl_function" href="classPolygon.html#ac183e712f8be1e13f1c9d5b4d4512ead">Polygon::Polygon</a>() {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
 </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="polygon_8hpp.html#a560f29558d24ac396fb53cb81921da15">   47</a></span><span class="keyword">inline</span> <span class="keywordtype">char</span> <a class="code hl_function" href="polygon_8hpp.html#a560f29558d24ac396fb53cb81921da15">step_to_char</a>(<a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> s) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordflow">switch</span>(s){</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb">Left</a>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> <span class="charliteral">&#39;L&#39;</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66">Right</a>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> <span class="charliteral">&#39;R&#39;</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2">Up</a>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> <span class="charliteral">&#39;U&#39;</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27">Down</a>:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span> <span class="charliteral">&#39;D&#39;</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> <span class="charliteral">&#39;?&#39;</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  };</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classPolygon.html#afa6c4ee147650491a3685c645430b992">   47</a></span><span class="keyword">inline</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; <a class="code hl_function" href="classPolygon.html#afa6c4ee147650491a3685c645430b992">Polygon::operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; P) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  length = P.length;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; length; ++ i) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    steps[i] = P.steps[i];</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 </div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="polygon_8hpp.html#ae026ec90d1a4edbcad92f3f00935d64f">   62</a></span><span class="keyword">inline</span> <a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> <a class="code hl_function" href="polygon_8hpp.html#ae026ec90d1a4edbcad92f3f00935d64f">char_to_step</a>(<span class="keywordtype">char</span> c) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">switch</span>(c){</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;L&#39;</span>:</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb">Left</a>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66">Right</a>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;U&#39;</span>:</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2">Up</a>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;D&#39;</span>:</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27">Down</a>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    assert(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  };</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66">Right</a>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classPolygon.html#a78e8feed35695d02772bc637d0901805">   55</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classPolygon.html#a78e8feed35695d02772bc637d0901805">Polygon::set_length</a>(<span class="keywordtype">size_t</span> l) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  length = l;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; l / 2 - 1; ++ i) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    steps[i] = <a class="code hl_enumvalue" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66">Right</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    steps[i + l / 2] = <a class="code hl_enumvalue" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb">Left</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  steps[l / 2 - 1] = <a class="code hl_enumvalue" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2">Up</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  steps[l - 1] = <a class="code hl_enumvalue" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27">Down</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classPolygon.html#ac183e712f8be1e13f1c9d5b4d4512ead">   79</a></span><span class="keyword">inline</span> <a class="code hl_function" href="classPolygon.html#ac183e712f8be1e13f1c9d5b4d4512ead">Polygon::Polygon</a>() {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">   65</a></span><span class="keyword">inline</span> <a class="code hl_enumeration" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a>&amp; <a class="code hl_function" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">Polygon::operator[]</a>(<span class="keywordtype">size_t</span> i) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  assert(0 &lt;= i);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  assert(i&lt; length);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordflow">return</span> steps[i];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classPolygon.html#afa6c4ee147650491a3685c645430b992">   82</a></span><span class="keyword">inline</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; <a class="code hl_function" href="classPolygon.html#afa6c4ee147650491a3685c645430b992">Polygon::operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; P) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  length = P.length;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; length; ++ i) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    steps[i] = P.steps[i];</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classPolygon.html#a4bcdf01e4b493c94f6f1b8f08bc9bd1d">   71</a></span><span class="keyword">inline</span> <a class="code hl_enumeration" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> <a class="code hl_function" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">Polygon::operator[]</a>(<span class="keywordtype">size_t</span> i)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  assert(0 &lt;= i);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  assert(i&lt; length);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">return</span> steps[i];</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
 </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classPolygon.html#a78e8feed35695d02772bc637d0901805">   90</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classPolygon.html#a78e8feed35695d02772bc637d0901805">Polygon::set_length</a>(<span class="keywordtype">size_t</span> l) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  length = l;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; l / 2 - 1; ++ i) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    steps[i] = <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66">Right</a>;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    steps[i + l / 2] = <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb">Left</a>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  steps[l / 2 - 1] = <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2">Up</a>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  steps[l - 1] = <a class="code hl_enumvalue" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27">Down</a>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classPolygon.html#aa109c5be48abb735f1ce00bb898c8d70">   77</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classPolygon.html#aa109c5be48abb735f1ce00bb898c8d70">Polygon::display</a>(ostream&amp; os)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; length; ++ i) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    os &lt;&lt; <a class="code hl_function" href="step_8hpp.html#a560f29558d24ac396fb53cb81921da15">step_to_char</a>(steps[i]);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
 </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">  100</a></span><span class="keyword">inline</span> <a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a>&amp; <a class="code hl_function" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">Polygon::operator[]</a>(<span class="keywordtype">size_t</span> i) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  assert(0 &lt;= i);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  assert(i&lt; length);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordflow">return</span> steps[i];</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">   83</a></span><span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">Polygon::common_prefix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; P)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">size_t</span> i;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordflow">for</span> (i = 0; i &lt; length; ++ i){</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (steps[i] != P.steps[i]) <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
 </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classPolygon.html#a4bcdf01e4b493c94f6f1b8f08bc9bd1d">  106</a></span><span class="keyword">inline</span> <a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> <a class="code hl_function" href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">Polygon::operator[]</a>(<span class="keywordtype">size_t</span> i)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  assert(0 &lt;= i);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  assert(i&lt; length);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordflow">return</span> steps[i];</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
-</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classPolygon.html#a7d2bfb42148113157e387ac1f319a46e">  112</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classPolygon.html#a7d2bfb42148113157e387ac1f319a46e">Polygon::display</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; length; ++ i) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    cout &lt;&lt; <a class="code hl_function" href="polygon_8hpp.html#a560f29558d24ac396fb53cb81921da15">step_to_char</a>(steps[i]);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
-</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">  118</a></span><span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">Polygon::common_prefix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; P)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">size_t</span> i;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordflow">for</span> (i = 0; i &lt; length; ++ i){</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">if</span> (steps[i] != P.steps[i]) <span class="keywordflow">return</span> i;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">return</span> i;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
-</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassPolygon_html"><div class="ttname"><a href="classPolygon.html">Polygon</a></div><div class="ttdef"><b>Definition</b> polygon.hpp:33</div></div>
-<div class="ttc" id="aclassPolygon_html_a3fac72ee0350975ed24c4f69749d32c6"><div class="ttname"><a href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">Polygon::common_prefix</a></div><div class="ttdeci">size_t common_prefix(const Polygon &amp;p) const</div><div class="ttdef"><b>Definition</b> polygon.hpp:118</div></div>
-<div class="ttc" id="aclassPolygon_html_a78e8feed35695d02772bc637d0901805"><div class="ttname"><a href="classPolygon.html#a78e8feed35695d02772bc637d0901805">Polygon::set_length</a></div><div class="ttdeci">void set_length(size_t length)</div><div class="ttdef"><b>Definition</b> polygon.hpp:90</div></div>
-<div class="ttc" id="aclassPolygon_html_a7d2bfb42148113157e387ac1f319a46e"><div class="ttname"><a href="classPolygon.html#a7d2bfb42148113157e387ac1f319a46e">Polygon::display</a></div><div class="ttdeci">void display() const</div><div class="ttdef"><b>Definition</b> polygon.hpp:112</div></div>
-<div class="ttc" id="aclassPolygon_html_ac183e712f8be1e13f1c9d5b4d4512ead"><div class="ttname"><a href="classPolygon.html#ac183e712f8be1e13f1c9d5b4d4512ead">Polygon::Polygon</a></div><div class="ttdeci">Polygon()</div><div class="ttdef"><b>Definition</b> polygon.hpp:79</div></div>
-<div class="ttc" id="aclassPolygon_html_ae24f646c19f4a6e059be06e111dac32c"><div class="ttname"><a href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">Polygon::operator[]</a></div><div class="ttdeci">Step &amp; operator[](size_t i)</div><div class="ttdef"><b>Definition</b> polygon.hpp:100</div></div>
-<div class="ttc" id="aclassPolygon_html_afa6c4ee147650491a3685c645430b992"><div class="ttname"><a href="classPolygon.html#afa6c4ee147650491a3685c645430b992">Polygon::operator=</a></div><div class="ttdeci">Polygon &amp; operator=(const Polygon &amp;p)</div><div class="ttdef"><b>Definition</b> polygon.hpp:82</div></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassPolygon_html"><div class="ttname"><a href="classPolygon.html">Polygon</a></div><div class="ttdef"><b>Definition</b> polygon.hpp:29</div></div>
+<div class="ttc" id="aclassPolygon_html_a3fac72ee0350975ed24c4f69749d32c6"><div class="ttname"><a href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">Polygon::common_prefix</a></div><div class="ttdeci">size_t common_prefix(const Polygon &amp;p) const</div><div class="ttdef"><b>Definition</b> polygon.hpp:83</div></div>
+<div class="ttc" id="aclassPolygon_html_a78e8feed35695d02772bc637d0901805"><div class="ttname"><a href="classPolygon.html#a78e8feed35695d02772bc637d0901805">Polygon::set_length</a></div><div class="ttdeci">void set_length(size_t length)</div><div class="ttdef"><b>Definition</b> polygon.hpp:55</div></div>
+<div class="ttc" id="aclassPolygon_html_aa109c5be48abb735f1ce00bb898c8d70"><div class="ttname"><a href="classPolygon.html#aa109c5be48abb735f1ce00bb898c8d70">Polygon::display</a></div><div class="ttdeci">void display(ostream &amp;os=cout) const</div><div class="ttdef"><b>Definition</b> polygon.hpp:77</div></div>
+<div class="ttc" id="aclassPolygon_html_ac183e712f8be1e13f1c9d5b4d4512ead"><div class="ttname"><a href="classPolygon.html#ac183e712f8be1e13f1c9d5b4d4512ead">Polygon::Polygon</a></div><div class="ttdeci">Polygon()</div><div class="ttdef"><b>Definition</b> polygon.hpp:44</div></div>
+<div class="ttc" id="aclassPolygon_html_ae24f646c19f4a6e059be06e111dac32c"><div class="ttname"><a href="classPolygon.html#ae24f646c19f4a6e059be06e111dac32c">Polygon::operator[]</a></div><div class="ttdeci">Step &amp; operator[](size_t i)</div><div class="ttdef"><b>Definition</b> polygon.hpp:65</div></div>
+<div class="ttc" id="aclassPolygon_html_afa6c4ee147650491a3685c645430b992"><div class="ttname"><a href="classPolygon.html#afa6c4ee147650491a3685c645430b992">Polygon::operator=</a></div><div class="ttdeci">Polygon &amp; operator=(const Polygon &amp;p)</div><div class="ttdef"><b>Definition</b> polygon.hpp:47</div></div>
 <div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
-<div class="ttc" id="apolygon_8hpp_html_a560f29558d24ac396fb53cb81921da15"><div class="ttname"><a href="polygon_8hpp.html#a560f29558d24ac396fb53cb81921da15">step_to_char</a></div><div class="ttdeci">char step_to_char(Step s)</div><div class="ttdef"><b>Definition</b> polygon.hpp:47</div></div>
-<div class="ttc" id="apolygon_8hpp_html_a7551b44b443633567069e7f1de6fac65"><div class="ttname"><a href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a></div><div class="ttdeci">Step</div><div class="ttdef"><b>Definition</b> polygon.hpp:28</div></div>
-<div class="ttc" id="apolygon_8hpp_html_a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2"><div class="ttname"><a href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2">Up</a></div><div class="ttdeci">@ Up</div><div class="ttdef"><b>Definition</b> polygon.hpp:28</div></div>
-<div class="ttc" id="apolygon_8hpp_html_a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb"><div class="ttname"><a href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb">Left</a></div><div class="ttdeci">@ Left</div><div class="ttdef"><b>Definition</b> polygon.hpp:28</div></div>
-<div class="ttc" id="apolygon_8hpp_html_a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27"><div class="ttname"><a href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27">Down</a></div><div class="ttdeci">@ Down</div><div class="ttdef"><b>Definition</b> polygon.hpp:28</div></div>
-<div class="ttc" id="apolygon_8hpp_html_a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66"><div class="ttname"><a href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66">Right</a></div><div class="ttdeci">@ Right</div><div class="ttdef"><b>Definition</b> polygon.hpp:28</div></div>
-<div class="ttc" id="apolygon_8hpp_html_ae026ec90d1a4edbcad92f3f00935d64f"><div class="ttname"><a href="polygon_8hpp.html#ae026ec90d1a4edbcad92f3f00935d64f">char_to_step</a></div><div class="ttdeci">Step char_to_step(char c)</div><div class="ttdef"><b>Definition</b> polygon.hpp:62</div></div>
+<div class="ttc" id="astep_8hpp_html"><div class="ttname"><a href="step_8hpp.html">step.hpp</a></div></div>
+<div class="ttc" id="astep_8hpp_html_a560f29558d24ac396fb53cb81921da15"><div class="ttname"><a href="step_8hpp.html#a560f29558d24ac396fb53cb81921da15">step_to_char</a></div><div class="ttdeci">char step_to_char(Step s)</div><div class="ttdef"><b>Definition</b> step.hpp:33</div></div>
+<div class="ttc" id="astep_8hpp_html_a7551b44b443633567069e7f1de6fac65"><div class="ttname"><a href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a></div><div class="ttdeci">Step</div><div class="ttdef"><b>Definition</b> step.hpp:28</div></div>
+<div class="ttc" id="astep_8hpp_html_a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2"><div class="ttname"><a href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65a57a7edcbc04d6175683383cad5c3e0a2">Up</a></div><div class="ttdeci">@ Up</div><div class="ttdef"><b>Definition</b> step.hpp:28</div></div>
+<div class="ttc" id="astep_8hpp_html_a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb"><div class="ttname"><a href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65a9d4d8b0b72fc2659da772d761a3c5ecb">Left</a></div><div class="ttdeci">@ Left</div><div class="ttdef"><b>Definition</b> step.hpp:28</div></div>
+<div class="ttc" id="astep_8hpp_html_a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27"><div class="ttname"><a href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65abcf8c79e9a5f5f9d606fb35645a0fb27">Down</a></div><div class="ttdeci">@ Down</div><div class="ttdef"><b>Definition</b> step.hpp:28</div></div>
+<div class="ttc" id="astep_8hpp_html_a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66"><div class="ttname"><a href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65ad48f7af8c070184f3774c8e85854eb66">Right</a></div><div class="ttdeci">@ Right</div><div class="ttdef"><b>Definition</b> step.hpp:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -96,12 +96,12 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                                                                            //</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  This file is part of SquareSAP &lt;https://github.com/jfromentin/square_sap&gt; //</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//                                                                            //</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  HP-Combi is free software: you can redistribute it and/or modify it       //</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  SquareSAP is free software: you can redistribute it and/or modify it      //</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  under the terms of the GNU General Public License as published by the     //</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  Free Software Foundation, either version 3 of the License, or             //</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  (at your option) any later version.                                       //</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//                                                                            //</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  HP-Combi is distributed in the hope that it will be useful, but WITHOUT   //</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  SquareSap is distributed in the hope that it will be useful, but WITHOUT  //</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     //</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License      //</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//  for  more details.                                                        //</span></div>
@@ -114,12 +114,18 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define CONFIG_HPP</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_length = 40;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_length = 40;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="config_8hpp.html#acbfc1984921915607d8d5b2e5d66f685">   32</a></span><span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code hl_typedef" href="config_8hpp.html#acbfc1984921915607d8d5b2e5d66f685">Reel</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="config_8hpp.html#ae1e57977766223f60b2f2694887cbae9">   33</a></span><span class="keyword">typedef</span> __int128 <a class="code hl_typedef" href="config_8hpp.html#ae1e57977766223f60b2f2694887cbae9">Int</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//typedef int64_t Int;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfig_8hpp_html_acbfc1984921915607d8d5b2e5d66f685"><div class="ttname"><a href="config_8hpp.html#acbfc1984921915607d8d5b2e5d66f685">Reel</a></div><div class="ttdeci">double Reel</div><div class="ttdoc">Type.</div><div class="ttdef"><b>Definition</b> config.hpp:32</div></div>
+<div class="ttc" id="aconfig_8hpp_html_ae1e57977766223f60b2f2694887cbae9"><div class="ttname"><a href="config_8hpp.html#ae1e57977766223f60b2f2694887cbae9">Int</a></div><div class="ttdeci">__int128 Int</div><div class="ttdef"><b>Definition</b> config.hpp:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

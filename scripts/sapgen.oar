@@ -1,9 +1,0 @@
-#OAR -n sapgen
-#OAR -l /core=1,walltime=30:00:00
-#OAR --array-param-file /nfs/home/lmpa/jfromentin/git/square_sap/scripts/sapgen.arg
-#OAR -t besteffort
-#OAR -t idempotent
-#OAR -O oar/sapgen.%jobid%.out
-#OAR -E oar/sapgen.%jobid%.err
-
-/nfs/home/lmpa/jfromentin/git/square_sap/scripts/sapgen_oar.sh "$@"

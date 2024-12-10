@@ -7,12 +7,12 @@
 \DoxyCodeLine{00003\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00004\ \textcolor{comment}{//\ \ This\ file\ is\ part\ of\ SquareSAP\ <https://github.com/jfromentin/square\_sap>\ //}}
 \DoxyCodeLine{00005\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
-\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ SquareSAP\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ //}}
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ \ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ the\ \ \ \ \ //}}
 \DoxyCodeLine{00008\ \textcolor{comment}{//\ \ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or\ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00009\ \textcolor{comment}{//\ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00010\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
-\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ \ //}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ SquareSap\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ //}}
 \DoxyCodeLine{00012\ \textcolor{comment}{//\ \ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or\ \ \ \ \ //}}
 \DoxyCodeLine{00013\ \textcolor{comment}{//\ \ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ //}}
 \DoxyCodeLine{00014\ \textcolor{comment}{//\ \ for\ \ more\ details.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
@@ -20,61 +20,80 @@
 \DoxyCodeLine{00016\ \textcolor{comment}{//\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ along\ \ \ //}}
 \DoxyCodeLine{00017\ \textcolor{comment}{//\ \ with\ SquareSAP.\ If\ not,\ see\ <https://www.gnu.org/licenses/>.\ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00018\ \textcolor{comment}{//****************************************************************************//}}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ FILE\_BUFFER\_HPP}}
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ FILE\_BUFFER\_HPP}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{buffer_8hpp}{buffer.hpp}}"{}}}
-\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ FILE\_BUFFER\_HPP}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ FILE\_BUFFER\_HPP}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{buffer_8hpp}{buffer.hpp}}"{}}}
+\DoxyCodeLine{00024\ }
 \DoxyCodeLine{00026\ \textcolor{keyword}{template}<IO\ D>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBinaryFile}{BinaryFile}};}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBinaryFile}{BinaryFile}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}}>\{}
-\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{string}\ filename;}
-\DoxyCodeLine{00031\ \ \ ofstream\ file;}
-\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classBinaryFile}{BinaryFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ filename);}
-\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ close();}
-\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ write(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
-\DoxyCodeLine{00036\ \};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBinaryFile}{BinaryFile}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}}>\{}
-\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{string}\ filename;}
-\DoxyCodeLine{00041\ \ \ ifstream\ file;}
-\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classBinaryFile}{BinaryFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ filename);}
-\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ close();}
-\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{size\_t}\ read(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
-\DoxyCodeLine{00046\ \};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<Out>::BinaryFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ filename)\ \{}
-\DoxyCodeLine{00049\ \ \ file.open(filename.c\_str(),\ ios::binary\ |\ ios::trunc);}
-\DoxyCodeLine{00050\ \ \ assert(file.is\_open());}
-\DoxyCodeLine{00051\ \}}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<Out>::close}}()\ \{}
-\DoxyCodeLine{00054\ \ \ file.close();}
-\DoxyCodeLine{00055\ \}}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<Out>::write}}(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
-\DoxyCodeLine{00058\ \ \ file.write((\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*)buffer,\ size);}
-\DoxyCodeLine{00059\ \}}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<In>::BinaryFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ filename)\ \{}
-\DoxyCodeLine{00062\ \ \ file.open(filename.c\_str(),\ ios::binary);}
-\DoxyCodeLine{00063\ \}}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<In>::close}}()\ \{}
-\DoxyCodeLine{00066\ \ \ file.close();}
-\DoxyCodeLine{00067\ \}}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<In>::read}}(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
-\DoxyCodeLine{00070\ \ \ file.read((\textcolor{keywordtype}{char}*)buffer,\ size);}
-\DoxyCodeLine{00071\ \ \ \textcolor{keywordflow}{return}\ \ file.gcount();}
-\DoxyCodeLine{00072\ \}}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBinaryFile}{BinaryFile}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}}>\{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{string}\ filename;}
+\DoxyCodeLine{00034\ \ \ ofstream\ file;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classBinaryFile}{BinaryFile}}();}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ open(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ filename);}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ write(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBinaryFile}{BinaryFile}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}}>\{}
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{string}\ filename;}
+\DoxyCodeLine{00056\ \ \ ifstream\ file;}
+\DoxyCodeLine{00057\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{classBinaryFile}{BinaryFile}}();}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ open(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ filename);}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{classBinaryFile_3_01In_01_4_a7b75ccbc958f92d95a93880f0fae8265}{BinaryFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ filename);}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{size\_t}\ read(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<Out>::BinaryFile}}()\ \{}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<Out>::open}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ filename)\ \{}
+\DoxyCodeLine{00081\ \ \ assert(!file.is\_open());}
+\DoxyCodeLine{00082\ \ \ file.open(filename.c\_str(),\ ios::binary\ |\ ios::trunc);}
+\DoxyCodeLine{00083\ \ \ assert(file.is\_open());}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<Out>::clear}}()\ \{}
+\DoxyCodeLine{00087\ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<Out>::close}}()\ \{}
+\DoxyCodeLine{00090\ \ \ file.close();}
+\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<Out>::write}}(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
+\DoxyCodeLine{00094\ \ \ assert(file.is\_open());}
+\DoxyCodeLine{00095\ \ \ file.write((\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*)buffer,\ size);}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<In>::BinaryFile}}()\ \{}
+\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<In>::open}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ filename)\ \{}
+\DoxyCodeLine{00102\ \ \ file.open(filename.c\_str(),\ ios::binary);}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<In>::clear}}()\ \{}
+\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<In>::close}}()\ \{}
+\DoxyCodeLine{00109\ \ \ file.close();}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classBinaryFile}{BinaryFile<In>::read}}(\mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
+\DoxyCodeLine{00113\ \ \ file.read((\textcolor{keywordtype}{char}*)buffer,\ size);}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{size\_t}\ s\ =\ file.gcount();}
+\DoxyCodeLine{00115\ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -99,42 +99,48 @@ $(function(){ initResizable(false); });
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &quot;<a class="el" href="config_8hpp_source.html">config.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="step_8hpp_source.html">step.hpp</a>&quot;</code><br />
 </div>
 <p><a href="gameboard_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameBoard.html">GameBoard</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for the Gameboard where self avoiding polygons will be contructed.  <a href="classGameBoard.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a61f37df146c50fd5c3b098283e28cc53" id="r_a61f37df146c50fd5c3b098283e28cc53"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a> = uint16_t</td></tr>
-<tr class="separator:a61f37df146c50fd5c3b098283e28cc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f3e1389093ff3e9ea5abc0293579d90" id="r_a1f3e1389093ff3e9ea5abc0293579d90"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> = uint16_t</td></tr>
+<tr class="separator:a1f3e1389093ff3e9ea5abc0293579d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a43b0e6a46d45401f8459488c5a48c955" id="r_a43b0e6a46d45401f8459488c5a48c955"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43b0e6a46d45401f8459488c5a48c955">init_cell_data</a> (uint8_t a, uint8_t b)</td></tr>
-<tr class="separator:a43b0e6a46d45401f8459488c5a48c955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08804bf7f39eff5573d91d63f24bde37" id="r_a08804bf7f39eff5573d91d63f24bde37"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08804bf7f39eff5573d91d63f24bde37">get_d</a> (<a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a> c)</td></tr>
+<tr class="memitem:a757780f3ce2da627346763af281a1dc2" id="r_a757780f3ce2da627346763af281a1dc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a757780f3ce2da627346763af281a1dc2">init_cell_data</a> (uint8_t d, uint8_t t)</td></tr>
+<tr class="separator:a757780f3ce2da627346763af281a1dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08804bf7f39eff5573d91d63f24bde37" id="r_a08804bf7f39eff5573d91d63f24bde37"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08804bf7f39eff5573d91d63f24bde37">get_d</a> (<a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> c)</td></tr>
 <tr class="separator:a08804bf7f39eff5573d91d63f24bde37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae96501490e057e77d213555ee0c82cef" id="r_ae96501490e057e77d213555ee0c82cef"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae96501490e057e77d213555ee0c82cef">get_t</a> (<a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a> c)</td></tr>
+<tr class="memitem:ae96501490e057e77d213555ee0c82cef" id="r_ae96501490e057e77d213555ee0c82cef"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae96501490e057e77d213555ee0c82cef">get_t</a> (<a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> c)</td></tr>
 <tr class="separator:ae96501490e057e77d213555ee0c82cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e06c7eae0fffed39df6ef674f837d6a" id="r_a2e06c7eae0fffed39df6ef674f837d6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e06c7eae0fffed39df6ef674f837d6a">set_t</a> (<a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a> &amp;c, uint8_t b)</td></tr>
-<tr class="separator:a2e06c7eae0fffed39df6ef674f837d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced0ff1430d5034b3dd827130eafb4cc" id="r_aced0ff1430d5034b3dd827130eafb4cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aced0ff1430d5034b3dd827130eafb4cc">set_t</a> (<a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> &amp;c, uint8_t t)</td></tr>
+<tr class="separator:aced0ff1430d5034b3dd827130eafb4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="a61f37df146c50fd5c3b098283e28cc53" name="a61f37df146c50fd5c3b098283e28cc53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61f37df146c50fd5c3b098283e28cc53">&#9670;&#160;</a></span>CellData</h2>
+<a id="a1f3e1389093ff3e9ea5abc0293579d90" name="a1f3e1389093ff3e9ea5abc0293579d90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f3e1389093ff3e9ea5abc0293579d90">&#9670;&#160;</a></span>CellData</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a> = uint16_t</td>
+          <td class="memname">typedef uint16_t <a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> = uint16_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>CellData is an 16 bits unsigned integer composed of two 8bits unsigned integer :</p><ul>
+<li>d which is the minimal number of steps needed to reach the base cell.</li>
+<li>t which is the position, in the path, of the step that reach the cell </li>
+</ul>
 
 </div>
 </div>
@@ -151,7 +157,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">uint8_t get_d </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -161,6 +167,12 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Return the value d of a given CellData </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>a CellData </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -176,7 +188,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">uint8_t get_t </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -186,11 +198,17 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Return the value t of a given CellData </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>a CellData </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a43b0e6a46d45401f8459488c5a48c955" name="a43b0e6a46d45401f8459488c5a48c955"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43b0e6a46d45401f8459488c5a48c955">&#9670;&#160;</a></span>init_cell_data()</h2>
+<a id="a757780f3ce2da627346763af281a1dc2" name="a757780f3ce2da627346763af281a1dc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a757780f3ce2da627346763af281a1dc2">&#9670;&#160;</a></span>init_cell_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,14 +217,14 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a> init_cell_data </td>
+          <td class="memname"><a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> init_cell_data </td>
           <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -215,11 +233,18 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Construct a CellData from the values d and t </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>minimal number of steps needed to reach the base cell </td></tr>
+    <tr><td class="paramname">t</td><td>time when the curent path reach that cell. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a2e06c7eae0fffed39df6ef674f837d6a" name="a2e06c7eae0fffed39df6ef674f837d6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e06c7eae0fffed39df6ef674f837d6a">&#9670;&#160;</a></span>set_t()</h2>
+<a id="aced0ff1430d5034b3dd827130eafb4cc" name="aced0ff1430d5034b3dd827130eafb4cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced0ff1430d5034b3dd827130eafb4cc">&#9670;&#160;</a></span>set_t()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,12 +255,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void set_t </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a61f37df146c50fd5c3b098283e28cc53">CellData</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -244,6 +269,12 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set the value t of a given CellData </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>a CellData \parma t the value to set </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

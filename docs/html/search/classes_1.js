@@ -5,5 +5,6 @@ var searchData=
   ['binaryfile_3c_20out_20_3e_2',['BinaryFile&lt; Out &gt;',['../classBinaryFile_3_01Out_01_4.html',1,'']]],
   ['bitbuffer_3',['BitBuffer',['../classBitBuffer.html',1,'']]],
   ['bitbuffer_3c_20in_2c_20t_20_3e_4',['BitBuffer&lt; In, T &gt;',['../classBitBuffer_3_01In_00_01T_01_4.html',1,'']]],
-  ['bitbuffer_3c_20out_2c_20t_20_3e_5',['BitBuffer&lt; Out, T &gt;',['../classBitBuffer_3_01Out_00_01T_01_4.html',1,'']]]
+  ['bitbuffer_3c_20out_2c_20t_20_3e_5',['BitBuffer&lt; Out, T &gt;',['../classBitBuffer_3_01Out_00_01T_01_4.html',1,'']]],
+  ['block_6',['Block',['../unionBlock.html',1,'']]]
 ];

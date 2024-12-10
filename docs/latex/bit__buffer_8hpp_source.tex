@@ -7,12 +7,12 @@
 \DoxyCodeLine{00003\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00004\ \textcolor{comment}{//\ \ This\ file\ is\ part\ of\ SquareSAP\ <https://github.com/jfromentin/square\_sap>\ //}}
 \DoxyCodeLine{00005\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
-\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ SquareSAP\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ //}}
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ \ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ the\ \ \ \ \ //}}
 \DoxyCodeLine{00008\ \textcolor{comment}{//\ \ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or\ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00009\ \textcolor{comment}{//\ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00010\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
-\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ \ //}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ SquareSap\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ //}}
 \DoxyCodeLine{00012\ \textcolor{comment}{//\ \ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or\ \ \ \ \ //}}
 \DoxyCodeLine{00013\ \textcolor{comment}{//\ \ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ //}}
 \DoxyCodeLine{00014\ \textcolor{comment}{//\ \ for\ \ more\ details.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
@@ -26,172 +26,180 @@
 \DoxyCodeLine{00022\ }
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{buffer_8hpp}{buffer.hpp}}"{}}}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{template}<IO\ D,\ \textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBitBuffer}{BitBuffer}};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBitBuffer}{BitBuffer}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}},\ T>\ \{}
-\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//\ Capacity\ of\ the\ internal\ buffer}}
-\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ capacity\ =\ 65536;}
-\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ The\ internal\ buffer}}
-\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ buffer[capacity];}
-\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ Actual\ size\ of\ the\ buffer}}
-\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{size\_t}\ size;}
-\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ Current\ byte\ in\ construction}}
-\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ current\_byte;}
-\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ Head\ is\ a\ power\ 2\string^i\ where\ i\ is\ the\ next\ bit\ to\ set\ in\ current\_byte}}
-\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ head;}
-\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ Output\ where\ we\ flush\ the\ internal\ buffer}}
-\DoxyCodeLine{00040\ \ \ T\&\ output;}
-\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ Add\ the\ current\ byte\ to\ the\ internal\ buffer\ and\ flush\ the\ buffer\ if\ needed}}
-\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ write\_byte();}
-\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ Create\ an\ BitBuffer<Out>\ with\ given\ output}}
-\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classBitBuffer}{BitBuffer}}(T\&\ output);}
-\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ Write\ a\ single\ bit}}
-\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ write\_bit(\textcolor{keywordtype}{bool}\ b);}
-\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ Write\ nb\ bits\ from\ the\ integer\ v}}
-\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ write\_int(\textcolor{keywordtype}{size\_t}\ v,\ \textcolor{keywordtype}{size\_t}\ nb);}
-\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ Close\ the\ BitBuffer}}
-\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ close();}
-\DoxyCodeLine{00052\ \};}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBitBuffer}{BitBuffer}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}},\ T>\ \{}
-\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ Capacity\ of\ the\ internal\ buffer}}
-\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ capacity\ =\ 65536;}
-\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ The\ internal\ buffer}}
-\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ buffer[capacity];}
-\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ Actual\ size\ of\ the\ buffer}}
-\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{size\_t}\ size;}
-\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//\ Position\ of\ byte\ we\ read\ in\ the\ buffer}}
-\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{size\_t}\ pos;}
-\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ Byte\ we\ are\ actually\ reading}}
-\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ current\_byte;}
-\DoxyCodeLine{00066\ \ \ \textcolor{comment}{//\ Head\ is\ a\ power\ 2\string^i\ where\ i\ is\ the\ next\ bit\ to\ read\ in\ current\_byte}}
-\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ head;}
-\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ Input\ from\ where\ we\ read\ byte}}
-\DoxyCodeLine{00069\ \ \ T\&\ input;}
-\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ Read\ bytes\ from\ the\ input}}
-\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{void}\ read\_bytes();}
-\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ Create\ a\ BitBuffer<In>\ with\ given\ input}}
-\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{classBitBuffer}{BitBuffer}}(T\&\ input);}
-\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ Read\ a\ single\ bit}}
-\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{bool}\ read\_bit();}
-\DoxyCodeLine{00077\ \ \ \textcolor{comment}{//\ Read\ an\ integer\ from\ nb\ bits}}
-\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{size\_t}\ read\_int(\textcolor{keywordtype}{size\_t}\ nb);}
-\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//\ Close\ the\ BitBuffer}}
-\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{void}\ close();}
-\DoxyCodeLine{00081\ \};}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::BitBuffer}}(T\&\ o):output(o)\{}
-\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//\ The\ internal\ buffer\ is\ empty}}
-\DoxyCodeLine{00085\ \ \ size\ =\ 0;}
-\DoxyCodeLine{00086\ \ \ \textcolor{comment}{//\ Current\ byte\ is\ initialised\ to\ 0}}
-\DoxyCodeLine{00087\ \ \ current\_byte\ \ =\ 0;}
-\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ The\ next\ bit\ to\ set\ is\ this\ as\ position,\ and\ so\ head\ =\ 2\string^0\ =\ 1}}
-\DoxyCodeLine{00089\ \ \ head\ =\ 1;}
-\DoxyCodeLine{00090\ \}}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::write\_bit}}(\textcolor{keywordtype}{bool}\ b)\ \{}
-\DoxyCodeLine{00093\ \ \ \textcolor{comment}{//\ We\ add\ the\ value\ of\ head\ to\ current\_byte\ if\ b\ is\ true}}
-\DoxyCodeLine{00094\ \ \ \textcolor{keywordflow}{if}(b)\ current\_byte\ |=\ head;}
-\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ We\ multiply\ the\ head\ by\ 2,\ to\ design\ the\ next\ bit\ positoin}}
-\DoxyCodeLine{00096\ \ \ head\ <<=\ 1;}
-\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//\ If\ head\ =\ 0\ =\ 2\string^8,\ we\ exceed\ the\ capacity\ of\ a\ byte\ and\ we\ call\ add\_byte}}
-\DoxyCodeLine{00098\ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ 0)\ write\_byte();}
-\DoxyCodeLine{00099\ \}}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::write\_byte}}()\ \{}
-\DoxyCodeLine{00102\ \ \ \textcolor{comment}{//\ Write\ Byte\ v\ in\ the\ next\ available\ place\ in\ buffer}}
-\DoxyCodeLine{00103\ \ \ buffer[size\ ++]\ =\ current\_byte;}
-\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ Initialise\ v\ and\ head}}
-\DoxyCodeLine{00105\ \ \ current\_byte\ =\ 0;}
-\DoxyCodeLine{00106\ \ \ head\ =\ 1;}
-\DoxyCodeLine{00107\ \ \ \textcolor{comment}{//\ If\ the\ capacity\ of\ buffer\ is\ reached,\ we\ write\ it\ to\ output}}
-\DoxyCodeLine{00108\ \ \ \textcolor{keywordflow}{if}\ (size\ ==\ capacity)\ \{}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ Flush\ current\ buffer\ to\ output\ object}}
-\DoxyCodeLine{00111\ \ \ \ \ output.write(buffer,\ size);}
-\DoxyCodeLine{00112\ \ \ \ \ size\ =\ 0;}
-\DoxyCodeLine{00113\ \ \ \}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{template}<IO\ D,\ \textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBitBuffer}{BitBuffer}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBitBuffer}{BitBuffer}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871}{Out}},\ T>\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ capacity\ =\ 65536;}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ buffer[capacity];}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ current\_byte;}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ head;}
+\DoxyCodeLine{00044\ \ \ T*\ output;}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ write\_byte();}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classBitBuffer}{BitBuffer}}();}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ open(T*\ output);}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ write\_bit(\textcolor{keywordtype}{bool}\ b);}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ write\_int(\textcolor{keywordtype}{size\_t}\ v,\ \textcolor{keywordtype}{size\_t}\ nb);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ Close\ the\ BitBuffer}}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBitBuffer}{BitBuffer}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}},\ T>\ \{}
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ capacity\ =\ 65536;}
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ buffer[capacity];}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{coefficients_8hpp_acfc068efa8d3f0b762f8d72cd0428073}{pos}};}
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ current\_byte;}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{buffer_8hpp_a4598833cddd0ea684d351ebd793b5bb7}{Byte}}\ head;}
+\DoxyCodeLine{00082\ \ \ T*\ input;}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ read\_bytes();}
+\DoxyCodeLine{00085\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{classBitBuffer}{BitBuffer}}();}
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{void}\ open(T*\ input);}
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{bool}\ read\_bit();}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{size\_t}\ read\_int(\textcolor{keywordtype}{size\_t}\ nb);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00098\ \ \ }
+\DoxyCodeLine{00100\ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::BitBuffer}}()\{}
+\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ The\ internal\ buffer\ is\ empty}}
+\DoxyCodeLine{00105\ \ \ size\ =\ 0;}
+\DoxyCodeLine{00106\ \ \ \textcolor{comment}{//\ Current\ byte\ is\ initialised\ to\ 0}}
+\DoxyCodeLine{00107\ \ \ current\_byte\ \ =\ 0;}
+\DoxyCodeLine{00108\ \ \ \textcolor{comment}{//\ The\ next\ bit\ to\ set\ is\ this\ as\ position,\ and\ so\ head\ =\ 2\string^0\ =\ 1}}
+\DoxyCodeLine{00109\ \ \ head\ =\ 1;}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::open}}(T*\ o)\ \{}
+\DoxyCodeLine{00113\ \ \ output\ =\ o;}
 \DoxyCodeLine{00114\ \}}
 \DoxyCodeLine{00115\ }
-\DoxyCodeLine{00116\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::write\_int}}(\textcolor{keywordtype}{size\_t}\ v,\ \textcolor{keywordtype}{size\_t}\ nb)\ \{}
-\DoxyCodeLine{00117\ \ \ \textcolor{comment}{//\ Write\ nb\ bits\ accordinglyto\ the\ value\ of\ v}}
-\DoxyCodeLine{00118\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<\ nb;\ ++\ i)\ \{}
-\DoxyCodeLine{00119\ \ \ \ \ write\_bit(v\ \&\ (1\ <<\ i));}
-\DoxyCodeLine{00120\ \ \ \}}
-\DoxyCodeLine{00121\ \}}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::close}}()\ \{}
-\DoxyCodeLine{00124\ \ \ \textcolor{comment}{//\ If\ head\ is\ not\ equal\ to\ 1,\ we\ must\ add\ bit\ '0'\ to\ complete\ the\ current\ byte}}
-\DoxyCodeLine{00125\ \ \ \textcolor{keywordflow}{while}\ (head\ !=\ 1)\ \{}
-\DoxyCodeLine{00126\ \ \ \ \ write\_bit(\textcolor{keyword}{false});}
-\DoxyCodeLine{00127\ \ \ \}}
-\DoxyCodeLine{00128\ \ \ \textcolor{comment}{//\ If\ s\ is\ equal\ to\ capcity,\ wryte\_byte\ writes\ the\ buffer}}
-\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ Otherwise,\ we\ do\ it\ now}}
-\DoxyCodeLine{00130\ \ \ \textcolor{keywordflow}{if}\ (size\ <\ capacity)\ \{}
-\DoxyCodeLine{00131\ \ \ \ \ output.write(buffer,\ size);}
-\DoxyCodeLine{00132\ \ \ \}}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//\ Close\ the\ output\ object}}
-\DoxyCodeLine{00135\ \ \ output.close();}
-\DoxyCodeLine{00136\ \}}
-\DoxyCodeLine{00137\ }
-\DoxyCodeLine{00138\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::BitBuffer}}(T\&\ i):input(i)\{}
-\DoxyCodeLine{00139\ \ \ \textcolor{comment}{//\ Internal\ buffer\ is\ empty}}
-\DoxyCodeLine{00140\ \ \ size\ =\ 0;}
-\DoxyCodeLine{00141\ \ \ pos\ =\ 0;}
-\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ Head\ is\ set\ to\ be\ 0\ to\ force\ the\ reading\ of\ bytes\ from\ the\ input}}
-\DoxyCodeLine{00143\ \ \ head\ =\ 0;}
-\DoxyCodeLine{00144\ \}}
-\DoxyCodeLine{00145\ }
-\DoxyCodeLine{00146\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::read\_bit}}()\ \{}
-\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//\ If\ we\ can\ read\ nothing\ more\ in\ current\_byte,\ head\ is\ 0\ =\ 2\string^8}}
-\DoxyCodeLine{00148\ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ 0)\ \{}
-\DoxyCodeLine{00149\ \ \ \ \ \textcolor{comment}{//\ We\ want\ rad\ the\ next\ byte\ in\ the\ internal\ buffer}}
-\DoxyCodeLine{00150\ \ \ \ \ ++\ pos;}
-\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ If\ it\ is\ not\ \ possible}}
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ >=\ size)\ \{}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \textcolor{comment}{//\ Fill\ the\ internal\ buffer\ with\ at\ most\ capacity\ bytes\ from\ the\ input}}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \textcolor{comment}{//\ size\ if\ then\ set\ to\ number\ of\ bytes\ actually\ read\ and\ pos\ is\ set\ to\ 0}}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ read\_bytes();}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ we\ have\ read\ something}}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ assert(size\ !=\ 0);}
-\DoxyCodeLine{00158\ \ \ \ \ \}}
-\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{//\ Set\ current\_byte\ to\ the\ new\ pointed\ byte\ in\ the\ internal\ buffer}}
-\DoxyCodeLine{00160\ \ \ \ \ current\_byte\ =\ buffer[pos];}
-\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//\ Next\ bit\ to\ read\ is\ at\ position\ 0\ and\ we\ set\ haed\ to\ 2\string^0\ =\ 1}}
-\DoxyCodeLine{00162\ \ \ \ \ head\ =\ 1;}
-\DoxyCodeLine{00163\ \ \ \}}
-\DoxyCodeLine{00164\ \ \ \textcolor{comment}{//\ Read\ the\ value\ of\ the\ bit\ given\ by\ head}}
-\DoxyCodeLine{00165\ \ \ \textcolor{keywordtype}{bool}\ b\ =\ (head\ \&\ current\_byte);}
-\DoxyCodeLine{00166\ \ \ \textcolor{comment}{//\ Shift\ the\ head\ (multiply\ it\ by\ 2)}}
-\DoxyCodeLine{00167\ \ \ head\ <<=\ 1;}
-\DoxyCodeLine{00168\ \ \ \textcolor{comment}{//\ Return\ the\ read\ bit}}
-\DoxyCodeLine{00169\ \ \ \textcolor{keywordflow}{return}\ b;}
-\DoxyCodeLine{00170\ \}}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::read\_bytes}}()\ \{}
-\DoxyCodeLine{00173\ \ \ \textcolor{comment}{//\ Try\ to\ fill\ the\ internal\ buffer\ with\ capacity\ bytes\ read\ from\ the\ input}}
-\DoxyCodeLine{00174\ \ \ \textcolor{comment}{//\ the\ actual\ number\ of\ bytes\ read\ is\ stored\ in\ size}}
-\DoxyCodeLine{00175\ \ \ size\ =\ input.read(buffer,\ capacity);}
-\DoxyCodeLine{00176\ \ \ \textcolor{comment}{//\ We\ point\ to\ the\ first\ byte\ of\ the\ internal\ buffer}}
-\DoxyCodeLine{00177\ \ \ pos\ =\ 0;}
-\DoxyCodeLine{00178\ \}}
-\DoxyCodeLine{00179\ }
-\DoxyCodeLine{00180\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::read\_int}}(\textcolor{keywordtype}{size\_t}\ nb)\ \{}
-\DoxyCodeLine{00181\ \ \ \textcolor{keywordtype}{size\_t}\ res\ =\ 0;}
-\DoxyCodeLine{00182\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nb;\ ++\ i)\ \{}
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{if}\ (read\_bit())\ res\ +=\ (1\ <<\ i);\ }
-\DoxyCodeLine{00184\ \ \ \}}
-\DoxyCodeLine{00185\ \ \ \textcolor{keywordflow}{return}\ res;}
-\DoxyCodeLine{00186\ \}}
-\DoxyCodeLine{00187\ }
-\DoxyCodeLine{00188\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::close}}()\ \{}
-\DoxyCodeLine{00189\ \}}
-\DoxyCodeLine{00190\ }
-\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00116\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::write\_bit}}(\textcolor{keywordtype}{bool}\ b)\ \{}
+\DoxyCodeLine{00117\ \ \ }
+\DoxyCodeLine{00118\ \ \ \textcolor{comment}{//\ We\ add\ the\ value\ of\ head\ to\ current\_byte\ if\ b\ is\ true}}
+\DoxyCodeLine{00119\ \ \ \textcolor{keywordflow}{if}(b)\ current\_byte\ |=\ head;}
+\DoxyCodeLine{00120\ \ \ \textcolor{comment}{//\ We\ multiply\ the\ head\ by\ 2,\ to\ design\ the\ next\ bit\ positoin}}
+\DoxyCodeLine{00121\ \ \ head\ <<=\ 1;}
+\DoxyCodeLine{00122\ \ \ \textcolor{comment}{//\ If\ head\ =\ 0\ =\ 2\string^8,\ we\ exceed\ the\ capacity\ of\ a\ byte\ and\ we\ call\ add\_byte}}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ 0)\ write\_byte();}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::write\_byte}}()\ \{}
+\DoxyCodeLine{00127\ \ \ \textcolor{comment}{//\ Write\ Byte\ v\ in\ the\ next\ available\ place\ in\ buffer}}
+\DoxyCodeLine{00128\ \ \ buffer[size\ ++]\ =\ current\_byte;}
+\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ Initialise\ v\ and\ head}}
+\DoxyCodeLine{00130\ \ \ current\_byte\ =\ 0;}
+\DoxyCodeLine{00131\ \ \ head\ =\ 1;}
+\DoxyCodeLine{00132\ \ \ \textcolor{comment}{//\ If\ the\ capacity\ of\ buffer\ is\ reached,\ we\ write\ it\ to\ output}}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordflow}{if}\ (size\ ==\ capacity)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ Flush\ current\ buffer\ to\ output\ object}}
+\DoxyCodeLine{00135\ \ \ \ \ output-\/>write(buffer,\ size);}
+\DoxyCodeLine{00136\ \ \ \ \ size\ =\ 0;}
+\DoxyCodeLine{00137\ \ \ \}}
+\DoxyCodeLine{00138\ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::write\_int}}(\textcolor{keywordtype}{size\_t}\ v,\ \textcolor{keywordtype}{size\_t}\ nb)\ \{}
+\DoxyCodeLine{00141\ \ \ \textcolor{comment}{//\ Write\ nb\ bits\ accordinglyto\ the\ value\ of\ v}}
+\DoxyCodeLine{00142\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<\ nb;\ ++\ i)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ write\_bit(v\ \&\ (1\ <<\ i));}
+\DoxyCodeLine{00144\ \ \ \}}
+\DoxyCodeLine{00145\ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::clear}}()\ \{}
+\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ The\ internal\ buffer\ is\ empty}}
+\DoxyCodeLine{00149\ \ \ size\ =\ 0;}
+\DoxyCodeLine{00150\ \ \ \textcolor{comment}{//\ Current\ byte\ is\ initialised\ to\ 0}}
+\DoxyCodeLine{00151\ \ \ current\_byte\ \ =\ 0;}
+\DoxyCodeLine{00152\ \ \ \textcolor{comment}{//\ The\ next\ bit\ to\ set\ is\ this\ as\ position,\ and\ so\ head\ =\ 2\string^0\ =\ 1}}
+\DoxyCodeLine{00153\ \ \ head\ =\ 1;}
+\DoxyCodeLine{00154\ \ \ output\ -\/>\ clear();}
+\DoxyCodeLine{00155\ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,\ T>::close}}()\ \{}
+\DoxyCodeLine{00158\ \ \ \textcolor{comment}{//\ If\ head\ is\ not\ equal\ to\ 1,\ we\ must\ add\ bit\ '0'\ to\ complete\ the\ current\ byte}}
+\DoxyCodeLine{00159\ \ \ \textcolor{keywordflow}{while}\ (head\ !=\ 1)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ write\_bit(\textcolor{keyword}{false});}
+\DoxyCodeLine{00161\ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \textcolor{keywordflow}{if}\ (size\ !=\ 0)\ output-\/>write(buffer,\ size);}
+\DoxyCodeLine{00163\ \ \ \ \textcolor{comment}{//\ Close\ the\ output\ object}}
+\DoxyCodeLine{00164\ \ \ output-\/>close();}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::BitBuffer}}()\{}
+\DoxyCodeLine{00168\ \ \ \textcolor{comment}{//\ Internal\ buffer\ is\ empty}}
+\DoxyCodeLine{00169\ \ \ size\ =\ 0;}
+\DoxyCodeLine{00170\ \ \ \mbox{\hyperlink{coefficients_8hpp_acfc068efa8d3f0b762f8d72cd0428073}{pos}}\ =\ 0;}
+\DoxyCodeLine{00171\ \ \ \textcolor{comment}{//\ Head\ is\ set\ to\ be\ 0\ to\ force\ the\ reading\ of\ bytes\ from\ the\ input}}
+\DoxyCodeLine{00172\ \ \ head\ =\ 0;}
+\DoxyCodeLine{00173\ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::open}}(T*\ i)\ \{}
+\DoxyCodeLine{00176\ \ \ input\ =\ i;}
+\DoxyCodeLine{00177\ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::read\_bit}}()\ \{}
+\DoxyCodeLine{00180\ \ \ \textcolor{comment}{//\ If\ we\ can\ read\ nothing\ more\ in\ current\_byte,\ head\ is\ 0\ =\ 2\string^8}}
+\DoxyCodeLine{00181\ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ 0)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//\ We\ want\ rad\ the\ next\ byte\ in\ the\ internal\ buffer}}
+\DoxyCodeLine{00183\ \ \ \ \ ++\ \mbox{\hyperlink{coefficients_8hpp_acfc068efa8d3f0b762f8d72cd0428073}{pos}};}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{comment}{//\ If\ it\ is\ not\ \ possible}}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{coefficients_8hpp_acfc068efa8d3f0b762f8d72cd0428073}{pos}}\ >=\ size)\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{comment}{//\ Fill\ the\ internal\ buffer\ with\ at\ most\ capacity\ bytes\ from\ the\ input}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \textcolor{comment}{//\ size\ if\ then\ set\ to\ number\ of\ bytes\ actually\ read\ and\ pos\ is\ set\ to\ 0}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ read\_bytes();}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ we\ have\ read\ something}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ assert(size\ !=\ 0);}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{comment}{//\ Set\ current\_byte\ to\ the\ new\ pointed\ byte\ in\ the\ internal\ buffer}}
+\DoxyCodeLine{00193\ \ \ \ \ current\_byte\ =\ buffer[\mbox{\hyperlink{coefficients_8hpp_acfc068efa8d3f0b762f8d72cd0428073}{pos}}];}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{comment}{//\ Next\ bit\ to\ read\ is\ at\ position\ 0\ and\ we\ set\ haed\ to\ 2\string^0\ =\ 1}}
+\DoxyCodeLine{00195\ \ \ \ \ head\ =\ 1;}
+\DoxyCodeLine{00196\ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \textcolor{comment}{//\ Read\ the\ value\ of\ the\ bit\ given\ by\ head}}
+\DoxyCodeLine{00198\ \ \ \textcolor{keywordtype}{bool}\ b\ =\ (head\ \&\ current\_byte);}
+\DoxyCodeLine{00199\ \ \ \textcolor{comment}{//\ Shift\ the\ head\ (multiply\ it\ by\ 2)}}
+\DoxyCodeLine{00200\ \ \ head\ <<=\ 1;}
+\DoxyCodeLine{00201\ \ \ \textcolor{comment}{//\ Return\ the\ read\ bit}}
+\DoxyCodeLine{00202\ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00203\ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::read\_bytes}}()\ \{}
+\DoxyCodeLine{00206\ \ \ \textcolor{comment}{//\ Try\ to\ fill\ the\ internal\ buffer\ with\ capacity\ bytes\ read\ from\ the\ input}}
+\DoxyCodeLine{00207\ \ \ \textcolor{comment}{//\ the\ actual\ number\ of\ bytes\ read\ is\ stored\ in\ size}}
+\DoxyCodeLine{00208\ \ \ size\ =\ input-\/>read(buffer,\ capacity);}
+\DoxyCodeLine{00209\ \ \ \textcolor{comment}{//\ We\ point\ to\ the\ first\ byte\ of\ the\ internal\ buffer}}
+\DoxyCodeLine{00210\ \ \ \mbox{\hyperlink{coefficients_8hpp_acfc068efa8d3f0b762f8d72cd0428073}{pos}}\ =\ 0;}
+\DoxyCodeLine{00211\ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::read\_int}}(\textcolor{keywordtype}{size\_t}\ nb)\ \{}
+\DoxyCodeLine{00214\ \ \ \textcolor{keywordtype}{size\_t}\ res\ =\ 0;}
+\DoxyCodeLine{00215\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nb;\ ++\ i)\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{if}\ (read\_bit())\ res\ +=\ (1\ <<\ i);\ }
+\DoxyCodeLine{00217\ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00219\ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::clear}}()\ \{}
+\DoxyCodeLine{00222\ \ \ \textcolor{comment}{//\ Internal\ buffer\ is\ empty}}
+\DoxyCodeLine{00223\ \ \ size\ =\ 0;}
+\DoxyCodeLine{00224\ \ \ \mbox{\hyperlink{coefficients_8hpp_acfc068efa8d3f0b762f8d72cd0428073}{pos}}\ =\ 0;}
+\DoxyCodeLine{00225\ \ \ \textcolor{comment}{//\ Head\ is\ set\ to\ be\ 0\ to\ force\ the\ reading\ of\ bytes\ from\ the\ input}}
+\DoxyCodeLine{00226\ \ \ head\ =\ 0;}
+\DoxyCodeLine{00227\ \ \ input\ -\/>\ clear();}
+\DoxyCodeLine{00228\ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>::close}}()\ \{}
+\DoxyCodeLine{00231\ \ \ input-\/>close();}
+\DoxyCodeLine{00232\ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

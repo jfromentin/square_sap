@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gameboard_0',['GameBoard',['../classGameBoard.html',1,'']]]
+  ['coefficientanalytic_0',['CoefficientAnalytic',['../structCoefficientAnalytic.html',1,'']]]
 ];

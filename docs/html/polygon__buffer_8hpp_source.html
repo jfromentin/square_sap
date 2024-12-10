@@ -96,12 +96,12 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                                                                            //</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  This file is part of SquareSAP &lt;https://github.com/jfromentin/square_sap&gt; //</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//                                                                            //</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  HP-Combi is free software: you can redistribute it and/or modify it       //</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  SquareSAP is free software: you can redistribute it and/or modify it      //</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  under the terms of the GNU General Public License as published by the     //</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  Free Software Foundation, either version 3 of the License, or             //</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  (at your option) any later version.                                       //</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//                                                                            //</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  HP-Combi is distributed in the hope that it will be useful, but WITHOUT   //</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  SquareSap is distributed in the hope that it will be useful, but WITHOUT  //</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     //</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License      //</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//  for  more details.                                                        //</span></div>
@@ -126,85 +126,114 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_class" href="classPolygon.html">Polygon</a> last;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_class" href="classBitBuffer.html">BitBuffer&lt;Out,T&gt;</a> buffer;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer</a>(T&amp; ouput, <span class="keywordtype">size_t</span> l);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">void</span> write(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; polygon);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> close();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">void</span> open(T* output, <span class="keywordtype">size_t</span> l);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> write(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; polygon);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">void</span> clear();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">void</span> close();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
 </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html">   41</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer</a>&lt;<a class="code hl_enumvalue" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975">In</a>, T&gt;{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">size_t</span> length;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_class" href="classPolygon.html">Polygon</a> last;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_class" href="classBitBuffer.html">BitBuffer&lt;In, T&gt;</a> buffer;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer</a>(T&amp; input, <span class="keywordtype">size_t</span> length);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> read(<a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; P);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> close();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html">   42</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer</a>&lt;<a class="code hl_enumvalue" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975">In</a>, T&gt;{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">size_t</span> length;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_class" href="classPolygon.html">Polygon</a> last;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_class" href="classBitBuffer.html">BitBuffer&lt;In, T&gt;</a> buffer;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> open(T* input, <span class="keywordtype">size_t</span> length);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">void</span> read(<a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; P);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> clear();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordtype">void</span> close();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01Out_00_01T_01_4.html#a3b9629acd7a73127dafdde2a70a23762">   52</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;Out, T&gt;::PolygonBuffer</a>(T&amp; output, <span class="keywordtype">size_t</span> l):buffer(output) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  length = l;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  last.set_length(l);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01Out_00_01T_01_4.html#a061a82758e66368209c54e6aa71b5df2">   55</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;Out, T&gt;::PolygonBuffer</a>() {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01Out_00_01T_01_4.html#a8b515343218d088f9f475827d581bc21">   57</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;Out, T&gt;::write</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; p) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">size_t</span> lp = p.<a class="code hl_function" href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">common_prefix</a>(last);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  buffer.write_int(lp, 6);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = lp; i &lt; length - 1; ++ i) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    buffer.write_int(p[i], 2);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  last = p;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01Out_00_01T_01_4.html#ac7269203e496508c9c30f5d7434eb2fd">   58</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;Out, T&gt;::open</a>(T* output, <span class="keywordtype">size_t</span> l) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  buffer.open(output);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  length = l;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  last.set_length(l);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01Out_00_01T_01_4.html#aeea98031f3ca3a8f0eb20c3822a3a356">   66</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;Out, T&gt;::close</a>() {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  buffer.close();</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01Out_00_01T_01_4.html#a8b515343218d088f9f475827d581bc21">   64</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;Out, T&gt;::write</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; p) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">size_t</span> lp = p.<a class="code hl_function" href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">common_prefix</a>(last);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  buffer.write_int(lp, 6);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = lp; i &lt; length - 1; ++ i) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    buffer.write_int(p[i], 2);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  last = p;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html#a0fd48c8c05a7fd9a196b6c054e6ed0e6">   70</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;In, T&gt;::PolygonBuffer</a>(T&amp; input, <span class="keywordtype">size_t</span> l):buffer(input) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  length = l;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  last.set_length(l);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01Out_00_01T_01_4.html#a1a08978ab2ec24af455b7df5bc930a80">   73</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;Out, T&gt;::clear</a>() {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  last.set_length(length);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  buffer.clear();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html#aff2160693b1827b01edfd820908e32d7">   76</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;In, T&gt;::read</a>(<a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; P) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  P = last;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">size_t</span> lp = buffer.read_int(6);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = lp; i &lt; length - 1; ++ i) {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    P[i] = (<a class="code hl_enumeration" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a>)buffer.read_int(2);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  last = P;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01Out_00_01T_01_4.html#aeea98031f3ca3a8f0eb20c3822a3a356">   78</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;Out, T&gt;::close</a>() {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  buffer.close();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html#a09d9eb4b532bcac4a5bca17dda65ade2">   82</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;In, T&gt;::PolygonBuffer</a>() {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
 </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
 <div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html#a1e3e9cb572af43a6db1ef6ad44b06dde">   85</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;In, T&gt;::close</a>() {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  buffer.close();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html#a60351d98dad1d9f2c74b481897934e50">   85</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;In, T&gt;::open</a>(T* input, <span class="keywordtype">size_t</span> l) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  buffer.open(input);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  length = l;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  last.set_length(length);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html#aff2160693b1827b01edfd820908e32d7">   92</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;In, T&gt;::read</a>(<a class="code hl_class" href="classPolygon.html">Polygon</a>&amp; P) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  P = last;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">size_t</span> lp = buffer.read_int(6);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = lp; i &lt; length - 1; ++ i) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    P[i] = (<a class="code hl_enumeration" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a>)buffer.read_int(2);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  last = P;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html#a29ebf707dea9946c0ce0a5b9be134f11">  101</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;In, T&gt;::clear</a>() {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  last.set_length(length);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  buffer.clear();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classPolygonBuffer_3_01In_00_01T_01_4.html#a1e3e9cb572af43a6db1ef6ad44b06dde">  106</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classPolygonBuffer.html">PolygonBuffer&lt;In, T&gt;::close</a>() {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  buffer.close();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="abit__buffer_8hpp_html"><div class="ttname"><a href="bit__buffer_8hpp.html">bit_buffer.hpp</a></div></div>
-<div class="ttc" id="abuffer_8hpp_html_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871"><div class="ttname"><a href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a></div><div class="ttdeci">@ Out</div><div class="ttdef"><b>Definition</b> buffer.hpp:6</div></div>
-<div class="ttc" id="abuffer_8hpp_html_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975"><div class="ttname"><a href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975">In</a></div><div class="ttdeci">@ In</div><div class="ttdef"><b>Definition</b> buffer.hpp:6</div></div>
-<div class="ttc" id="aclassBitBuffer_html"><div class="ttname"><a href="classBitBuffer.html">BitBuffer</a></div><div class="ttdef"><b>Definition</b> bit_buffer.hpp:25</div></div>
+<div class="ttc" id="abuffer_8hpp_html_a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871"><div class="ttname"><a href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a></div><div class="ttdeci">@ Out</div><div class="ttdef"><b>Definition</b> buffer.hpp:31</div></div>
+<div class="ttc" id="abuffer_8hpp_html_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975"><div class="ttname"><a href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975">In</a></div><div class="ttdeci">@ In</div><div class="ttdef"><b>Definition</b> buffer.hpp:31</div></div>
+<div class="ttc" id="aclassBitBuffer_html"><div class="ttname"><a href="classBitBuffer.html">BitBuffer</a></div><div class="ttdef"><b>Definition</b> bit_buffer.hpp:27</div></div>
 <div class="ttc" id="aclassPolygonBuffer_html"><div class="ttname"><a href="classPolygonBuffer.html">PolygonBuffer</a></div><div class="ttdef"><b>Definition</b> polygon_buffer.hpp:26</div></div>
-<div class="ttc" id="aclassPolygon_html"><div class="ttname"><a href="classPolygon.html">Polygon</a></div><div class="ttdef"><b>Definition</b> polygon.hpp:33</div></div>
-<div class="ttc" id="aclassPolygon_html_a3fac72ee0350975ed24c4f69749d32c6"><div class="ttname"><a href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">Polygon::common_prefix</a></div><div class="ttdeci">size_t common_prefix(const Polygon &amp;p) const</div><div class="ttdef"><b>Definition</b> polygon.hpp:118</div></div>
+<div class="ttc" id="aclassPolygon_html"><div class="ttname"><a href="classPolygon.html">Polygon</a></div><div class="ttdef"><b>Definition</b> polygon.hpp:29</div></div>
+<div class="ttc" id="aclassPolygon_html_a3fac72ee0350975ed24c4f69749d32c6"><div class="ttname"><a href="classPolygon.html#a3fac72ee0350975ed24c4f69749d32c6">Polygon::common_prefix</a></div><div class="ttdeci">size_t common_prefix(const Polygon &amp;p) const</div><div class="ttdef"><b>Definition</b> polygon.hpp:83</div></div>
 <div class="ttc" id="apolygon_8hpp_html"><div class="ttname"><a href="polygon_8hpp.html">polygon.hpp</a></div></div>
-<div class="ttc" id="apolygon_8hpp_html_a7551b44b443633567069e7f1de6fac65"><div class="ttname"><a href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a></div><div class="ttdeci">Step</div><div class="ttdef"><b>Definition</b> polygon.hpp:28</div></div>
+<div class="ttc" id="astep_8hpp_html_a7551b44b443633567069e7f1de6fac65"><div class="ttname"><a href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a></div><div class="ttdeci">Step</div><div class="ttdef"><b>Definition</b> step.hpp:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

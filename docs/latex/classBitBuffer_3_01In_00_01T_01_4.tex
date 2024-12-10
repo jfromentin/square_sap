@@ -7,33 +7,68 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classBitBuffer_3_01In_00_01T_01_4_aaf3b023246c73d5fbc8f8663b5a960bb}{Bit\+Buffer}} (T \&input)
-\item 
+\mbox{\hyperlink{classBitBuffer_3_01In_00_01T_01_4_ae4b05245883e890b2fa59a04be392468}{Bit\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBitBuffer_3_01In_00_01T_01_4_a13df154a33a940944037080cb48ef8f0}{open}} (T \texorpdfstring{$\ast$}{*}input)
+\begin{DoxyCompactList}\small\item\em Open a Bit\+Buffer$<$\+In$>$ with given input. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classBitBuffer_3_01In_00_01T_01_4_aa11190fa2d5319fe24993ffec45c3f8e}{read\+\_\+bit}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Read a single bit. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classBitBuffer_3_01In_00_01T_01_4_a2ddf9e6adc36b0875c84546693a2ceac}{read\+\_\+int}} (size\+\_\+t nb)
 \item 
+void \mbox{\hyperlink{classBitBuffer_3_01In_00_01T_01_4_ad896d62e3e3c8b9d0d58b34c74c8325e}{clear}} ()
+\item 
 void \mbox{\hyperlink{classBitBuffer_3_01In_00_01T_01_4_a7d1d5fa272d89616d39b02c904700134}{close}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Close the \doxylink{classBitBuffer}{Bit\+Buffer}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Bit\+Buffer$<$ In, T $>$}
+Class for input \doxylink{classBitBuffer}{Bit\+Buffer}. It can read bits from an input object containing a stream of Bytes. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classBitBuffer_3_01In_00_01T_01_4_aaf3b023246c73d5fbc8f8663b5a960bb}\index{BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}!BitBuffer@{BitBuffer}}
+\Hypertarget{classBitBuffer_3_01In_00_01T_01_4_ae4b05245883e890b2fa59a04be392468}\index{BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}!BitBuffer@{BitBuffer}}
 \index{BitBuffer@{BitBuffer}!BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}}
 \doxysubsubsection{\texorpdfstring{BitBuffer()}{BitBuffer()}}
-{\footnotesize\ttfamily \label{classBitBuffer_3_01In_00_01T_01_4_aaf3b023246c73d5fbc8f8663b5a960bb} 
+{\footnotesize\ttfamily \label{classBitBuffer_3_01In_00_01T_01_4_ae4b05245883e890b2fa59a04be392468} 
 template$<$class T $>$ \\
-\mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}}, T $>$\mbox{\hyperlink{classBitBuffer}{\+::\+Bit\+Buffer}} (\begin{DoxyParamCaption}\item[{T \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}}, T $>$\mbox{\hyperlink{classBitBuffer}{\+::\+Bit\+Buffer}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructo. 
 
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classBitBuffer_3_01In_00_01T_01_4_ad896d62e3e3c8b9d0d58b34c74c8325e}\index{BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}!clear@{clear}}
+\index{clear@{clear}!BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{classBitBuffer_3_01In_00_01T_01_4_ad896d62e3e3c8b9d0d58b34c74c8325e} 
+template$<$class T $>$ \\
+void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}}, T $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \Hypertarget{classBitBuffer_3_01In_00_01T_01_4_a7d1d5fa272d89616d39b02c904700134}\index{BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}!close@{close}}
 \index{close@{close}!BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}}
 \doxysubsubsection{\texorpdfstring{close()}{close()}}
 {\footnotesize\ttfamily \label{classBitBuffer_3_01In_00_01T_01_4_a7d1d5fa272d89616d39b02c904700134} 
 template$<$class T $>$ \\
 void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}}, T $>$\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Close the \doxylink{classBitBuffer}{Bit\+Buffer}. 
+
+\Hypertarget{classBitBuffer_3_01In_00_01T_01_4_a13df154a33a940944037080cb48ef8f0}\index{BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}!open@{open}}
+\index{open@{open}!BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \label{classBitBuffer_3_01In_00_01T_01_4_a13df154a33a940944037080cb48ef8f0} 
+template$<$class T $>$ \\
+void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}}, T $>$\+::open (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Open a Bit\+Buffer$<$\+In$>$ with given input. 
 
 \Hypertarget{classBitBuffer_3_01In_00_01T_01_4_aa11190fa2d5319fe24993ffec45c3f8e}\index{BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}!read\_bit@{read\_bit}}
 \index{read\_bit@{read\_bit}!BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}}
@@ -42,6 +77,10 @@ void \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8
 template$<$class T $>$ \\
 bool \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}}, T $>$\+::read\+\_\+bit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Read a single bit. 
+
 \Hypertarget{classBitBuffer_3_01In_00_01T_01_4_a2ddf9e6adc36b0875c84546693a2ceac}\index{BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}!read\_int@{read\_int}}
 \index{read\_int@{read\_int}!BitBuffer$<$ In, T $>$@{BitBuffer$<$ In, T $>$}}
 \doxysubsubsection{\texorpdfstring{read\_int()}{read\_int()}}
@@ -49,6 +88,14 @@ bool \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8
 template$<$class T $>$ \\
 size\+\_\+t \mbox{\hyperlink{classBitBuffer}{Bit\+Buffer}}$<$ \mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}}, T $>$\+::read\+\_\+int (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Read an integer from bits 
+\begin{DoxyParams}{Parameters}
+{\em nb} & number of bits to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the integer whose binary decompositio corresponds of read bits 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

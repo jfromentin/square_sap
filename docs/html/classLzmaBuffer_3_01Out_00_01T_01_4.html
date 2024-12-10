@@ -104,16 +104,25 @@ Inheritance diagram for LzmaBuffer&lt; Out, T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a33927546429478b54e48f5f06d75d745" id="r_a33927546429478b54e48f5f06d75d745"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33927546429478b54e48f5f06d75d745">LzmaBuffer</a> (T &amp;output)</td></tr>
-<tr class="separator:a33927546429478b54e48f5f06d75d745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c24dc528cdc2a88c9bd3094069458b" id="r_aa3c24dc528cdc2a88c9bd3094069458b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3c24dc528cdc2a88c9bd3094069458b">LzmaBuffer</a> ()</td></tr>
+<tr class="memdesc:aa3c24dc528cdc2a88c9bd3094069458b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty constructor.  <br /></td></tr>
+<tr class="separator:aa3c24dc528cdc2a88c9bd3094069458b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c364b6fa4c9ff2233187214b8703c4" id="r_a17c364b6fa4c9ff2233187214b8703c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17c364b6fa4c9ff2233187214b8703c4">open</a> (T *output)</td></tr>
+<tr class="memdesc:a17c364b6fa4c9ff2233187214b8703c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the LZMA defalte buffer to flush in output object.  <br /></td></tr>
+<tr class="separator:a17c364b6fa4c9ff2233187214b8703c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab49c4c51549d7032e39c043e2a88bb2f" id="r_ab49c4c51549d7032e39c043e2a88bb2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab49c4c51549d7032e39c043e2a88bb2f">write</a> (<a class="el" href="buffer_8hpp.html#a4598833cddd0ea684d351ebd793b5bb7">Byte</a> *buffer, size_t size)</td></tr>
+<tr class="memdesc:ab49c4c51549d7032e39c043e2a88bb2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to deflate in the LZMA buffer.  <br /></td></tr>
 <tr class="separator:ab49c4c51549d7032e39c043e2a88bb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11d1cd57a9981f681b8246c4a6ca935a" id="r_a11d1cd57a9981f681b8246c4a6ca935a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11d1cd57a9981f681b8246c4a6ca935a">close</a> ()</td></tr>
+<tr class="memdesc:a11d1cd57a9981f681b8246c4a6ca935a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the buffer.  <br /></td></tr>
 <tr class="separator:a11d1cd57a9981f681b8246c4a6ca935a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3396db6e8bc568850f11530bedb19dd4" id="r_a3396db6e8bc568850f11530bedb19dd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3396db6e8bc568850f11530bedb19dd4">clear</a> ()</td></tr>
+<tr class="memdesc:a3396db6e8bc568850f11530bedb19dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all internal data.  <br /></td></tr>
+<tr class="separator:a3396db6e8bc568850f11530bedb19dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a33927546429478b54e48f5f06d75d745" name="a33927546429478b54e48f5f06d75d745"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33927546429478b54e48f5f06d75d745">&#9670;&#160;</a></span>LzmaBuffer()</h2>
+<a id="aa3c24dc528cdc2a88c9bd3094069458b" name="aa3c24dc528cdc2a88c9bd3094069458b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c24dc528cdc2a88c9bd3094069458b">&#9670;&#160;</a></span>LzmaBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,15 +132,38 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classLzmaBuffer.html">LzmaBuffer</a>&lt; <a class="el" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a>, T &gt;<a class="el" href="classLzmaBuffer.html">::LzmaBuffer</a> </td>
           <td>(</td>
-          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Empty constructor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3396db6e8bc568850f11530bedb19dd4" name="a3396db6e8bc568850f11530bedb19dd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3396db6e8bc568850f11530bedb19dd4">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classLzmaBuffer.html">LzmaBuffer</a>&lt; <a class="el" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a>, T &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear all internal data. </p>
+
+</div>
+</div>
 <a id="a11d1cd57a9981f681b8246c4a6ca935a" name="a11d1cd57a9981f681b8246c4a6ca935a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11d1cd57a9981f681b8246c4a6ca935a">&#9670;&#160;</a></span>close()</h2>
 
@@ -148,6 +180,29 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Close the buffer. </p>
+
+</div>
+</div>
+<a id="a17c364b6fa4c9ff2233187214b8703c4" name="a17c364b6fa4c9ff2233187214b8703c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c364b6fa4c9ff2233187214b8703c4">&#9670;&#160;</a></span>open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classLzmaBuffer.html">LzmaBuffer</a>&lt; <a class="el" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a>, T &gt;::open </td>
+          <td>(</td>
+          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open the LZMA defalte buffer to flush in output object. </p>
 
 </div>
 </div>
@@ -171,6 +226,8 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write data to deflate in the LZMA buffer. </p>
 
 </div>
 </div>

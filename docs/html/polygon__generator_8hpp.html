@@ -95,11 +95,7 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">polygon_generator.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cassert&gt;</code><br />
-<code>#include &lt;cstdint&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;lzma.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="array_8hpp_source.html">array.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="array_8hpp_source.html">array.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gameboard_8hpp_source.html">gameboard.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="polygon_8hpp_source.html">polygon.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="polygon__buffer_8hpp_source.html">polygon_buffer.hpp</a>&quot;</code><br />
@@ -121,15 +117,13 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af515bb0fab396a384f975f904ed1762a" id="r_af515bb0fab396a384f975f904ed1762a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af515bb0fab396a384f975f904ed1762a">to_char</a> (<a class="el" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> s)</td></tr>
-<tr class="separator:af515bb0fab396a384f975f904ed1762a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeec0fbe2ae6076dcf735c6c0871bd0db" id="r_aeec0fbe2ae6076dcf735c6c0871bd0db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8c0f9d2c617cf4ae0abe53f2b30fd9e6">StackInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeec0fbe2ae6076dcf735c6c0871bd0db">init_stack_info</a> (uint16_t c, uint8_t k, <a class="el" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> s)</td></tr>
+<tr class="memitem:aeec0fbe2ae6076dcf735c6c0871bd0db" id="r_aeec0fbe2ae6076dcf735c6c0871bd0db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8c0f9d2c617cf4ae0abe53f2b30fd9e6">StackInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeec0fbe2ae6076dcf735c6c0871bd0db">init_stack_info</a> (uint16_t c, uint8_t k, <a class="el" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> s)</td></tr>
 <tr class="separator:aeec0fbe2ae6076dcf735c6c0871bd0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91611d984dba74c79aaed72ead5f5d90" id="r_a91611d984dba74c79aaed72ead5f5d90"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91611d984dba74c79aaed72ead5f5d90">get_c</a> (<a class="el" href="#a8c0f9d2c617cf4ae0abe53f2b30fd9e6">StackInfo</a> s)</td></tr>
 <tr class="separator:a91611d984dba74c79aaed72ead5f5d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a739f47a164d43f779ceae168b6a46312" id="r_a739f47a164d43f779ceae168b6a46312"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a739f47a164d43f779ceae168b6a46312">get_k</a> (<a class="el" href="#a8c0f9d2c617cf4ae0abe53f2b30fd9e6">StackInfo</a> s)</td></tr>
 <tr class="separator:a739f47a164d43f779ceae168b6a46312"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9" id="r_ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9">get_s</a> (<a class="el" href="#a8c0f9d2c617cf4ae0abe53f2b30fd9e6">StackInfo</a> s)</td></tr>
+<tr class="memitem:ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9" id="r_ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9">get_s</a> (<a class="el" href="#a8c0f9d2c617cf4ae0abe53f2b30fd9e6">StackInfo</a> s)</td></tr>
 <tr class="separator:ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -208,7 +202,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> get_s </td>
+          <td class="memname"><a class="el" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> get_s </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a8c0f9d2c617cf4ae0abe53f2b30fd9e6">StackInfo</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
           <td></td>
@@ -245,7 +239,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -253,23 +247,6 @@ Functions</h2></td></tr>
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af515bb0fab396a384f975f904ed1762a" name="af515bb0fab396a384f975f904ed1762a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af515bb0fab396a384f975f904ed1762a">&#9670;&#160;</a></span>to_char()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char to_char </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="polygon_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>

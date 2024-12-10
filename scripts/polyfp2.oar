@@ -1,9 +1,0 @@
-#OAR -n polyfp
-#OAR -l /core=1,walltime=48:00:00
-#OAR --array-param-file /nfs/home/lmpa/jfromentin/git/square_sap/scripts/polyfp2.arg
-#OAR -t besteffort
-#OAR -t idempotent
-#OAR -O oar/polyfp.%jobid%.out
-#OAR -E oar/polyfp.%jobid%.err
-
-/nfs/home/lmpa/jfromentin/git/square_sap/scripts/polyfp_oar.sh "$@"

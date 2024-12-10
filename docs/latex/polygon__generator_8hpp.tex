@@ -1,9 +1,5 @@
 \doxysection{src/polygon\+\_\+generator.hpp File Reference}
 \hypertarget{polygon__generator_8hpp}{}\label{polygon__generator_8hpp}\index{src/polygon\_generator.hpp@{src/polygon\_generator.hpp}}
-{\ttfamily \#include $<$cassert$>$}\newline
-{\ttfamily \#include $<$cstdint$>$}\newline
-{\ttfamily \#include $<$iostream$>$}\newline
-{\ttfamily \#include $<$lzma.\+h$>$}\newline
 {\ttfamily \#include "{}array.\+hpp"{}}\newline
 {\ttfamily \#include "{}gameboard.\+hpp"{}}\newline
 {\ttfamily \#include "{}polygon.\+hpp"{}}\newline
@@ -24,15 +20,13 @@ using \mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-char \mbox{\hyperlink{polygon__generator_8hpp_af515bb0fab396a384f975f904ed1762a}{to\+\_\+char}} (\mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}} s)
-\item 
-\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}} \mbox{\hyperlink{polygon__generator_8hpp_aeec0fbe2ae6076dcf735c6c0871bd0db}{init\+\_\+stack\+\_\+info}} (uint16\+\_\+t c, uint8\+\_\+t k, \mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}} s)
+\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}} \mbox{\hyperlink{polygon__generator_8hpp_aeec0fbe2ae6076dcf735c6c0871bd0db}{init\+\_\+stack\+\_\+info}} (uint16\+\_\+t c, uint8\+\_\+t k, \mbox{\hyperlink{step_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}} s)
 \item 
 uint16\+\_\+t \mbox{\hyperlink{polygon__generator_8hpp_a91611d984dba74c79aaed72ead5f5d90}{get\+\_\+c}} (\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}} s)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{polygon__generator_8hpp_a739f47a164d43f779ceae168b6a46312}{get\+\_\+k}} (\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}} s)
 \item 
-\mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}} \mbox{\hyperlink{polygon__generator_8hpp_ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9}{get\+\_\+s}} (\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}} s)
+\mbox{\hyperlink{step_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}} \mbox{\hyperlink{polygon__generator_8hpp_ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9}{get\+\_\+s}} (\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}} s)
 \end{DoxyCompactItemize}
 
 
@@ -62,17 +56,11 @@ uint8\+\_\+t get\+\_\+k (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{polygon
 \index{get\_s@{get\_s}!polygon\_generator.hpp@{polygon\_generator.hpp}}
 \doxysubsubsection{\texorpdfstring{get\_s()}{get\_s()}}
 {\footnotesize\ttfamily \label{polygon__generator_8hpp_ab2d6a6ca3f5b6a0d4a32ec38fd85fbb9} 
-\mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}} get\+\_\+s (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{step_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}} get\+\_\+s (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \Hypertarget{polygon__generator_8hpp_aeec0fbe2ae6076dcf735c6c0871bd0db}\index{polygon\_generator.hpp@{polygon\_generator.hpp}!init\_stack\_info@{init\_stack\_info}}
 \index{init\_stack\_info@{init\_stack\_info}!polygon\_generator.hpp@{polygon\_generator.hpp}}
 \doxysubsubsection{\texorpdfstring{init\_stack\_info()}{init\_stack\_info()}}
 {\footnotesize\ttfamily \label{polygon__generator_8hpp_aeec0fbe2ae6076dcf735c6c0871bd0db} 
-\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}} init\+\_\+stack\+\_\+info (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{c}{, }\item[{uint8\+\_\+t}]{k}{, }\item[{\mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\Hypertarget{polygon__generator_8hpp_af515bb0fab396a384f975f904ed1762a}\index{polygon\_generator.hpp@{polygon\_generator.hpp}!to\_char@{to\_char}}
-\index{to\_char@{to\_char}!polygon\_generator.hpp@{polygon\_generator.hpp}}
-\doxysubsubsection{\texorpdfstring{to\_char()}{to\_char()}}
-{\footnotesize\ttfamily \label{polygon__generator_8hpp_af515bb0fab396a384f975f904ed1762a} 
-char to\+\_\+char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}}]{s}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{polygon__generator_8hpp_a8c0f9d2c617cf4ae0abe53f2b30fd9e6}{Stack\+Info}} init\+\_\+stack\+\_\+info (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{c}{, }\item[{uint8\+\_\+t}]{k}{, }\item[{\mbox{\hyperlink{step_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 

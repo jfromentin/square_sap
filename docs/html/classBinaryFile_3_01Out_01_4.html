@@ -91,20 +91,31 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>Class for output binary file. It allow us to have a Buffer's like interface.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="binary__file_8hpp_source.html">binary_file.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a76654b20185b29f6287a32dcda68535b" id="r_a76654b20185b29f6287a32dcda68535b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76654b20185b29f6287a32dcda68535b">BinaryFile</a> (const string filename)</td></tr>
-<tr class="separator:a76654b20185b29f6287a32dcda68535b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a8e6ea6e84ac552b6c3338b2195bac" id="r_a06a8e6ea6e84ac552b6c3338b2195bac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06a8e6ea6e84ac552b6c3338b2195bac">close</a> ()</td></tr>
-<tr class="separator:a06a8e6ea6e84ac552b6c3338b2195bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae39218ccc077bd173ae932f7ab4245a1" id="r_ae39218ccc077bd173ae932f7ab4245a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae39218ccc077bd173ae932f7ab4245a1">BinaryFile</a> ()</td></tr>
+<tr class="memdesc:ae39218ccc077bd173ae932f7ab4245a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty constructor.  <br /></td></tr>
+<tr class="separator:ae39218ccc077bd173ae932f7ab4245a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d320c61569dfa509bc41e1cc4bf6a0a" id="r_a1d320c61569dfa509bc41e1cc4bf6a0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d320c61569dfa509bc41e1cc4bf6a0a">open</a> (const string filename)</td></tr>
+<tr class="separator:a1d320c61569dfa509bc41e1cc4bf6a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07d342383ebf9679825806c3e0dff845" id="r_a07d342383ebf9679825806c3e0dff845"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07d342383ebf9679825806c3e0dff845">write</a> (<a class="el" href="buffer_8hpp.html#a4598833cddd0ea684d351ebd793b5bb7">Byte</a> *buffer, size_t size)</td></tr>
 <tr class="separator:a07d342383ebf9679825806c3e0dff845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f52c0ac99f3fc72e558bd13f9b69ef3" id="r_a1f52c0ac99f3fc72e558bd13f9b69ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f52c0ac99f3fc72e558bd13f9b69ef3">clear</a> ()</td></tr>
+<tr class="separator:a1f52c0ac99f3fc72e558bd13f9b69ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06a8e6ea6e84ac552b6c3338b2195bac" id="r_a06a8e6ea6e84ac552b6c3338b2195bac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06a8e6ea6e84ac552b6c3338b2195bac">close</a> ()</td></tr>
+<tr class="memdesc:a06a8e6ea6e84ac552b6c3338b2195bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the <a class="el" href="classBinaryFile.html" title="Class for In/Output binary file.">BinaryFile</a>.  <br /></td></tr>
+<tr class="separator:a06a8e6ea6e84ac552b6c3338b2195bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a76654b20185b29f6287a32dcda68535b" name="a76654b20185b29f6287a32dcda68535b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76654b20185b29f6287a32dcda68535b">&#9670;&#160;</a></span>BinaryFile()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for output binary file. It allow us to have a Buffer's like interface. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae39218ccc077bd173ae932f7ab4245a1" name="ae39218ccc077bd173ae932f7ab4245a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae39218ccc077bd173ae932f7ab4245a1">&#9670;&#160;</a></span>BinaryFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -115,7 +126,35 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classBinaryFile.html">BinaryFile</a>&lt; <a class="el" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a> &gt;<a class="el" href="classBinaryFile.html">::BinaryFile</a> </td>
           <td>(</td>
-          <td class="paramtype">const string</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Empty constructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1f52c0ac99f3fc72e558bd13f9b69ef3" name="a1f52c0ac99f3fc72e558bd13f9b69ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f52c0ac99f3fc72e558bd13f9b69ef3">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classBinaryFile.html">BinaryFile</a>&lt; <a class="el" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a> &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -128,7 +167,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a06a8e6ea6e84ac552b6c3338b2195bac" name="a06a8e6ea6e84ac552b6c3338b2195bac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06a8e6ea6e84ac552b6c3338b2195bac">&#9670;&#160;</a></span>close()</h2>
 
@@ -151,6 +189,39 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Close the <a class="el" href="classBinaryFile.html" title="Class for In/Output binary file.">BinaryFile</a>. </p>
+
+</div>
+</div>
+<a id="a1d320c61569dfa509bc41e1cc4bf6a0a" name="a1d320c61569dfa509bc41e1cc4bf6a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d320c61569dfa509bc41e1cc4bf6a0a">&#9670;&#160;</a></span>open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classBinaryFile.html">BinaryFile</a>&lt; <a class="el" href="buffer_8hpp.html#a0cd32bef1a29cec2e3365845947b5a3aabba45258e8122cd853f27f4c8b5d3871">Out</a> &gt;::open </td>
+          <td>(</td>
+          <td class="paramtype">const string</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Open the output <a class="el" href="classBinaryFile.html" title="Class for In/Output binary file.">BinaryFile</a> from a filename </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>name of the file to open </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -180,6 +251,13 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Write Bytes in the output <a class="el" href="classBinaryFile.html" title="Class for In/Output binary file.">BinaryFile</a> from a buffer </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">the</td><td>source buffer </td></tr>
+    <tr><td class="paramname">size</td><td>number of bytes to write </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

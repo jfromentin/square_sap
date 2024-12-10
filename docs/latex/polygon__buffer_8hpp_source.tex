@@ -7,12 +7,12 @@
 \DoxyCodeLine{00003\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00004\ \textcolor{comment}{//\ \ This\ file\ is\ part\ of\ SquareSAP\ <https://github.com/jfromentin/square\_sap>\ //}}
 \DoxyCodeLine{00005\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
-\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ \ //}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ SquareSAP\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify\ it\ \ \ \ \ \ //}}
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ \ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ the\ \ \ \ \ //}}
 \DoxyCodeLine{00008\ \textcolor{comment}{//\ \ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or\ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00009\ \textcolor{comment}{//\ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
 \DoxyCodeLine{00010\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
-\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ HP-\/Combi\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ \ //}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ SquareSap\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ \ //}}
 \DoxyCodeLine{00012\ \textcolor{comment}{//\ \ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or\ \ \ \ \ //}}
 \DoxyCodeLine{00013\ \textcolor{comment}{//\ \ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ //}}
 \DoxyCodeLine{00014\ \textcolor{comment}{//\ \ for\ \ more\ details.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}}
@@ -36,60 +36,81 @@
 \DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{classPolygon}{Polygon}}\ last;}
 \DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classBitBuffer}{BitBuffer<Out,T>}}\ buffer;}
 \DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer}}(T\&\ ouput,\ \textcolor{keywordtype}{size\_t}\ l);}
-\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ write(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ polygon);}
-\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ close();}
-\DoxyCodeLine{00038\ \};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}},\ T>\{}
-\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{size\_t}\ length;}
-\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classPolygon}{Polygon}}\ last;}
-\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>}}\ buffer;}
-\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer}}(T\&\ input,\ \textcolor{keywordtype}{size\_t}\ length);}
-\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{void}\ read(\mbox{\hyperlink{classPolygon}{Polygon}}\&\ P);}
-\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ close();}
-\DoxyCodeLine{00050\ \};}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<Out,\ T>::PolygonBuffer}}(T\&\ output,\ \textcolor{keywordtype}{size\_t}\ l):buffer(output)\ \{}
-\DoxyCodeLine{00053\ \ \ length\ =\ l;}
-\DoxyCodeLine{00054\ \ \ last.set\_length(l);}
-\DoxyCodeLine{00055\ \}}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<Out,\ T>::write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ p)\ \{}
-\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{size\_t}\ lp\ =\ p.\mbox{\hyperlink{classPolygon_a3fac72ee0350975ed24c4f69749d32c6}{common\_prefix}}(last);}
-\DoxyCodeLine{00059\ \ \ buffer.write\_int(lp,\ 6);}
-\DoxyCodeLine{00060\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ lp;\ i\ <\ length\ -\/\ 1;\ ++\ i)\ \{}
-\DoxyCodeLine{00061\ \ \ \ \ buffer.write\_int(p[i],\ 2);}
-\DoxyCodeLine{00062\ \ \ \}}
-\DoxyCodeLine{00063\ \ \ last\ =\ p;}
-\DoxyCodeLine{00064\ \}}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<Out,\ T>::close}}()\ \{}
-\DoxyCodeLine{00067\ \ \ buffer.close();}
-\DoxyCodeLine{00068\ \}}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<In,\ T>::PolygonBuffer}}(T\&\ input,\ \textcolor{keywordtype}{size\_t}\ l):buffer(input)\ \{}
-\DoxyCodeLine{00071\ \ \ length\ =\ l;}
-\DoxyCodeLine{00072\ \ \ last.set\_length(l);}
-\DoxyCodeLine{00073\ \}}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<In,\ T>::read}}(\mbox{\hyperlink{classPolygon}{Polygon}}\&\ P)\ \{}
-\DoxyCodeLine{00077\ \ \ P\ =\ last;}
-\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{size\_t}\ lp\ =\ buffer.read\_int(6);}
-\DoxyCodeLine{00079\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ lp;\ i\ <\ length\ -\/\ 1;\ ++\ i)\ \{}
-\DoxyCodeLine{00080\ \ \ \ \ P[i]\ =\ (\mbox{\hyperlink{polygon_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}})buffer.read\_int(2);}
-\DoxyCodeLine{00081\ \ \ \}}
-\DoxyCodeLine{00082\ \ \ last\ =\ P;}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer}}();}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ open(T*\ output,\ \textcolor{keywordtype}{size\_t}\ l);}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ write(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ polygon);}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer}}<\mbox{\hyperlink{buffer_8hpp_a0cd32bef1a29cec2e3365845947b5a3aad8ff8dfc9381018e97fce86d909f8975}{In}},\ T>\{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{size\_t}\ length;}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classPolygon}{Polygon}}\ last;}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classBitBuffer}{BitBuffer<In,\ T>}}\ buffer;}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer}}();}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ open(T*\ input,\ \textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ read(\mbox{\hyperlink{classPolygon}{Polygon}}\&\ P);}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<Out,\ T>::PolygonBuffer}}()\ \{}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<Out,\ T>::open}}(T*\ output,\ \textcolor{keywordtype}{size\_t}\ l)\ \{}
+\DoxyCodeLine{00059\ \ \ buffer.open(output);}
+\DoxyCodeLine{00060\ \ \ length\ =\ l;}
+\DoxyCodeLine{00061\ \ \ last.set\_length(l);}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<Out,\ T>::write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPolygon}{Polygon}}\&\ p)\ \{}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{size\_t}\ lp\ =\ p.\mbox{\hyperlink{classPolygon_a3fac72ee0350975ed24c4f69749d32c6}{common\_prefix}}(last);}
+\DoxyCodeLine{00066\ \ \ buffer.write\_int(lp,\ 6);}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ lp;\ i\ <\ length\ -\/\ 1;\ ++\ i)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ buffer.write\_int(p[i],\ 2);}
+\DoxyCodeLine{00069\ \ \ \}}
+\DoxyCodeLine{00070\ \ \ last\ =\ p;}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<Out,\ T>::clear}}()\ \{}
+\DoxyCodeLine{00074\ \ \ last.set\_length(length);}
+\DoxyCodeLine{00075\ \ \ buffer.clear();}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<Out,\ T>::close}}()\ \{}
+\DoxyCodeLine{00079\ \ \ buffer.close();}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<In,\ T>::PolygonBuffer}}()\ \{}
 \DoxyCodeLine{00083\ \}}
 \DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<In,\ T>::close}}()\ \{}
-\DoxyCodeLine{00086\ \ \ buffer.close();}
-\DoxyCodeLine{00087\ \}}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<In,\ T>::open}}(T*\ input,\ \textcolor{keywordtype}{size\_t}\ l)\ \{}
+\DoxyCodeLine{00086\ \ \ buffer.open(input);}
+\DoxyCodeLine{00087\ \ \ length\ =\ l;}
+\DoxyCodeLine{00088\ \ \ last.set\_length(length);}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<In,\ T>::read}}(\mbox{\hyperlink{classPolygon}{Polygon}}\&\ P)\ \{}
+\DoxyCodeLine{00093\ \ \ P\ =\ last;}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{size\_t}\ lp\ =\ buffer.read\_int(6);}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ lp;\ i\ <\ length\ -\/\ 1;\ ++\ i)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ P[i]\ =\ (\mbox{\hyperlink{step_8hpp_a7551b44b443633567069e7f1de6fac65}{Step}})buffer.read\_int(2);}
+\DoxyCodeLine{00097\ \ \ \}}
+\DoxyCodeLine{00098\ \ \ last\ =\ P;}
+\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<In,\ T>::clear}}()\ \{}
+\DoxyCodeLine{00102\ \ \ last.set\_length(length);}
+\DoxyCodeLine{00103\ \ \ buffer.clear();}
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPolygonBuffer}{PolygonBuffer<In,\ T>::close}}()\ \{}
+\DoxyCodeLine{00107\ \ \ buffer.close();}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

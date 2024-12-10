@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['read_0',['read',['../classArray.html#a267ca54eee516e795b32232b19251a20',1,'Array::read()'],['../classBinaryFile_3_01In_01_4.html#a1172adb7ccd6d365c94f7b226c46beac',1,'BinaryFile&lt; In &gt;::read()'],['../classLzmaBuffer_3_01In_00_01T_01_4.html#a7cd7c43c1730151d4df3b7df943d84b8',1,'LzmaBuffer&lt; In, T &gt;::read()'],['../classPolygonBuffer_3_01In_00_01T_01_4.html#aff2160693b1827b01edfd820908e32d7',1,'PolygonBuffer&lt; In, T &gt;::read()']]],
-  ['read_5fbit_1',['read_bit',['../classBitBuffer_3_01In_00_01T_01_4.html#aa11190fa2d5319fe24993ffec45c3f8e',1,'BitBuffer&lt; In, T &gt;']]],
-  ['read_5fint_2',['read_int',['../classBitBuffer_3_01In_00_01T_01_4.html#a2ddf9e6adc36b0875c84546693a2ceac',1,'BitBuffer&lt; In, T &gt;']]]
+  ['polygon_0',['Polygon',['../classPolygon.html#ac183e712f8be1e13f1c9d5b4d4512ead',1,'Polygon']]],
+  ['polygonbuffer_1',['PolygonBuffer',['../classPolygonBuffer_3_01Out_00_01T_01_4.html#a061a82758e66368209c54e6aa71b5df2',1,'PolygonBuffer&lt; Out, T &gt;::PolygonBuffer()'],['../classPolygonBuffer_3_01In_00_01T_01_4.html#a09d9eb4b532bcac4a5bca17dda65ade2',1,'PolygonBuffer&lt; In, T &gt;::PolygonBuffer()']]],
+  ['polygongenerator_2',['PolygonGenerator',['../classPolygonGenerator.html#a0e2caf68820a44b9a981f8eec826aef0',1,'PolygonGenerator']]],
+  ['pop_3',['pop',['../classStack.html#afb38e09bef8fb93c8b5f82f777e908a1',1,'Stack']]],
+  ['pos_4',['pos',['../coefficients_8hpp.html#acfc068efa8d3f0b762f8d72cd0428073',1,'coefficients.hpp']]],
+  ['push_5',['push',['../classStack.html#a7a4b3b18d87183bde0bbfc20e900fea4',1,'Stack']]]
 ];

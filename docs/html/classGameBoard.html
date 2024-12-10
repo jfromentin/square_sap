@@ -86,10 +86,14 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classGameBoard-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">GameBoard Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for the Gameboard where self avoiding polygons will be contructed.  
+ <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="gameboard_8hpp_source.html">gameboard.hpp</a>&gt;</code></p>
 <table class="memberdecls">
@@ -97,14 +101,25 @@ $(function(){ initResizable(false); });
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad437d09a131a917f48ee1e2348a18234" id="r_ad437d09a131a917f48ee1e2348a18234"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad437d09a131a917f48ee1e2348a18234">GameBoard</a> (size_t length)</td></tr>
 <tr class="separator:ad437d09a131a917f48ee1e2348a18234"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49d352a02fe13ebb84ed117a03d7c6b4" id="r_a49d352a02fe13ebb84ed117a03d7c6b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gameboard_8hpp.html#a61f37df146c50fd5c3b098283e28cc53">CellData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49d352a02fe13ebb84ed117a03d7c6b4">operator[]</a> (size_t size)</td></tr>
-<tr class="separator:a49d352a02fe13ebb84ed117a03d7c6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62641678e3d3447f637bae18cd262de5" id="r_a62641678e3d3447f637bae18cd262de5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="gameboard_8hpp.html#a61f37df146c50fd5c3b098283e28cc53">CellData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62641678e3d3447f637bae18cd262de5">operator[]</a> (size_t size) const</td></tr>
+<tr class="memitem:a5206b347699c5dee8aaf6a961bd74b79" id="r_a5206b347699c5dee8aaf6a961bd74b79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gameboard_8hpp.html#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5206b347699c5dee8aaf6a961bd74b79">operator[]</a> (size_t i)</td></tr>
+<tr class="memdesc:a5206b347699c5dee8aaf6a961bd74b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return access to the CellData of the cell of index i <br  />
+  <br /></td></tr>
+<tr class="separator:a5206b347699c5dee8aaf6a961bd74b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62641678e3d3447f637bae18cd262de5" id="r_a62641678e3d3447f637bae18cd262de5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="gameboard_8hpp.html#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62641678e3d3447f637bae18cd262de5">operator[]</a> (size_t size) const</td></tr>
+<tr class="memdesc:a62641678e3d3447f637bae18cd262de5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return CellData of the cell of index i.  <br /></td></tr>
 <tr class="separator:a62641678e3d3447f637bae18cd262de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc0cf7d7c9a22fb7c17391d513379c31" id="r_afc0cf7d7c9a22fb7c17391d513379c31"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc0cf7d7c9a22fb7c17391d513379c31">base_cell</a> () const</td></tr>
+<tr class="memdesc:afc0cf7d7c9a22fb7c17391d513379c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the index of the base cell.  <br /></td></tr>
 <tr class="separator:afc0cf7d7c9a22fb7c17391d513379c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a3f0d81c41fb4f8da9a9cbad6bdf811da" id="r_a3f0d81c41fb4f8da9a9cbad6bdf811da"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f0d81c41fb4f8da9a9cbad6bdf811da">move</a> (size_t c, <a class="el" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a> s)</td></tr>
+<tr class="separator:a3f0d81c41fb4f8da9a9cbad6bdf811da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for the Gameboard where self avoiding polygons will be contructed. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad437d09a131a917f48ee1e2348a18234" name="ad437d09a131a917f48ee1e2348a18234"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad437d09a131a917f48ee1e2348a18234">&#9670;&#160;</a></span>GameBoard()</h2>
 
@@ -119,6 +134,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Construct a Gameboard </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>length of the self avoidinf polygons we want to construct </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -146,10 +167,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return the index of the base cell. </p>
+
 </div>
 </div>
-<a id="a49d352a02fe13ebb84ed117a03d7c6b4" name="a49d352a02fe13ebb84ed117a03d7c6b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49d352a02fe13ebb84ed117a03d7c6b4">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="a3f0d81c41fb4f8da9a9cbad6bdf811da" name="a3f0d81c41fb4f8da9a9cbad6bdf811da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f0d81c41fb4f8da9a9cbad6bdf811da">&#9670;&#160;</a></span>move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,9 +181,45 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="gameboard_8hpp.html#a61f37df146c50fd5c3b098283e28cc53">CellData</a> &amp; GameBoard::operator[] </td>
+          <td class="memname">size_t GameBoard::move </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="step_8hpp.html#a7551b44b443633567069e7f1de6fac65">Step</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Return the index of the cell we reach after a move </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>index of the cell we start with </td></tr>
+    <tr><td class="paramname">s</td><td>the step we perform from c </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5206b347699c5dee8aaf6a961bd74b79" name="a5206b347699c5dee8aaf6a961bd74b79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5206b347699c5dee8aaf6a961bd74b79">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gameboard_8hpp.html#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> &amp; GameBoard::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -170,6 +229,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return access to the CellData of the cell of index i <br  />
+ </p>
 
 </div>
 </div>
@@ -183,7 +245,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="gameboard_8hpp.html#a61f37df146c50fd5c3b098283e28cc53">CellData</a> &amp; GameBoard::operator[] </td>
+          <td class="memname">const <a class="el" href="gameboard_8hpp.html#a1f3e1389093ff3e9ea5abc0293579d90">CellData</a> &amp; GameBoard::operator[] </td>
           <td>(</td>
           <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
           <td> const</td>
@@ -195,6 +257,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return CellData of the cell of index i. </p>
 
 </div>
 </div>
